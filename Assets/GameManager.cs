@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     private string playerName;
     private int nPlayers = 0;
+    public int charachter = 0;
 
     private int currentScene = 0;
 
