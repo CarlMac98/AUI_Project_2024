@@ -14,10 +14,11 @@ public class GameManager : MonoBehaviour
     private string playerName;
     private int nPlayers = 0;
     public int charachter = 0;
-
+    public int story;
+    
     private int currentScene = 0;
-
-    public GameObject firstScene, secondScene, thirdScene;
+    
+    public GameObject firstScene, secondScene, thirdScene, fourthScene;
     //public GameObject[] scenes;
     public Button goButton, backButton;
     public LinkedList<GameObject> scenes = new LinkedList<GameObject>();
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         scenes.AddLast(firstScene);
         scenes.AddLast(secondScene);
         scenes.AddLast(thirdScene);
+        scenes.AddLast(fourthScene);
         goButton.onClick.AddListener(GoAhead);
         //backButton.onClick.AddListener(GoBack);
 

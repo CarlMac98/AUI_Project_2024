@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class SelectCharacter : MonoBehaviour
+public class SelectStory : MonoBehaviour
 {
     [SerializeField]
     //public Image border;
@@ -30,7 +30,7 @@ public class SelectCharacter : MonoBehaviour
 
         for (int i = 0; i < button.Length; i++)
         {
-            int idx = i;    
+            int idx = i;
             //Debug.Log(i);
             button[i].onClick.AddListener(() => ActivateBorder(idx));
         }
@@ -39,7 +39,7 @@ public class SelectCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void ActivateBorder(int i)
@@ -52,9 +52,9 @@ public class SelectCharacter : MonoBehaviour
         {
             Transform t = rectTransforms[j];
             t.localScale = Vector3.one;
-            if(i == j) t.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+            if (i == j) t.localScale = new Vector3(1.2f, 1.2f, 1.2f);
         }
 
-        gm.charachter = i;
+        gm.story = i;
     }
 }
