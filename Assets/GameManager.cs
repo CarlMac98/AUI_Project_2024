@@ -18,10 +18,10 @@ public class GameManager : MonoBehaviour
     
     private int currentScene = 0;
     
-    public GameObject firstScene, secondScene, thirdScene, fourthScene;
-    //public GameObject[] scenes;
+    //public GameObject firstScene, secondScene, thirdScene, fourthScene;
+    public GameObject[] scenes;
     public Button goButton, backButton;
-    public LinkedList<GameObject> scenes = new LinkedList<GameObject>();
+    //public LinkedList<GameObject> scenes = new LinkedList<GameObject>();
     public TMP_InputField playerInput;
     public TMP_Dropdown numPlayers;
 
@@ -29,10 +29,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //scenes = new GameObject[firstScene, secondScene];
-        scenes.AddLast(firstScene);
-        scenes.AddLast(secondScene);
-        scenes.AddLast(thirdScene);
-        scenes.AddLast(fourthScene);
+        //scenes.AddLast(firstScene);
+        //scenes.AddLast(secondScene);
+        //scenes.AddLast(thirdScene);
+        //scenes.AddLast(fourthScene);
+        //scenes = GameObject.FindGameObjectsWithTag("Scene");
         goButton.onClick.AddListener(GoAhead);
         //backButton.onClick.AddListener(GoBack);
 
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
         {
             s.SetActive(false);
         }
-        firstScene.SetActive(true);
+        scenes[0].SetActive(true);
         //Debug.Log(scenes.Count);
     }
 
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void GoAhead()
     {
-        if (scenes.Count - 1 > currentScene)
+        if (scenes.Length - 1 > currentScene)
         {
             if (currentScene == 1)
             {
