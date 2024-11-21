@@ -20,7 +20,7 @@ public class SelectCharacter : MonoBehaviour
         outline = GetComponentsInChildren<Outline>();
         button = GetComponentsInChildren<Button>();
         characters = GetComponentsInChildren<RawImage>();
-        Debug.Log(characters.Length);
+        //Debug.Log(characters.Length);
         rectTransforms = new RectTransform[characters.Length];
 
         for (int i = 0; i < characters.Length; i++)
@@ -32,7 +32,7 @@ public class SelectCharacter : MonoBehaviour
         {
             int idx = i;    
             //Debug.Log(i);
-            button[i].onClick.AddListener(() => ActivateBorder(idx));
+            button[i].onClick.AddListener(() => Highlight(idx));
         }
     }
 
@@ -42,7 +42,8 @@ public class SelectCharacter : MonoBehaviour
         
     }
 
-    void ActivateBorder(int i)
+    //highlight chosen charachter
+    void Highlight(int i)
     {
         //Debug.Log(i);
         //foreach (var o in outline) o.enabled = false;
