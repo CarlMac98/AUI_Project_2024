@@ -10,16 +10,16 @@ using System.Runtime.CompilerServices;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-
     //private vars
 
-    private string playerName;
-    
     private int nPlayers = 0;
     private int currentScene = 0;
+    [SerializeField]
+    ChatManager chatManager;
     
-    //public vars 
+    //public vars
+
+    public string playerName;
     public int charachter = 0;
     public int story;
 
@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
             //change the background when the game itself starts
             if (currentScene == 4)
             {
+                chatManager.userName = playerName;
                 background.Handle();
             }
 
