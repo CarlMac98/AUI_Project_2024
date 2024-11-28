@@ -1,17 +1,16 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BackgroundHandler : MonoBehaviour
 {
 
     [SerializeField]
-    private RawImage[] bckgs;
+    private GameObject[] bckgs;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         foreach (var bc in bckgs)
         {
-            bc.enabled = true;
+            bc.SetActive(true);
         }
     }
 
@@ -23,10 +22,8 @@ public class BackgroundHandler : MonoBehaviour
 
     public void Handle()
     {
-        //bckgs[0].enabled = true;
-        //bckgs[1].enabled = true;
-        bckgs[2].enabled = false;
-        bckgs[3].enabled = false;
+        bckgs[2].SetActive(false);
+        bckgs[3].SetActive(false);
     }
 
 
