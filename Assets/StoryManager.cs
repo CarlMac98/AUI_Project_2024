@@ -3,13 +3,13 @@ using UnityEngine;
 using TMPro;
 
 
-public class ChatManager : MonoBehaviour
+public class StoryManager : MonoBehaviour
 {
     [SerializeField]
     public string userName;
-    
+
     [SerializeField]
-    private GameManager gameManager; 
+    private GameManager gameManager;
 
     //public int maxMessages = 25;
 
@@ -58,7 +58,7 @@ public class ChatManager : MonoBehaviour
         //    Destroy(messageList[0].textObject.gameObject);
         //    messageList.Remove(messageList[0]);
         //}
-        
+
         Message newMessage = new Message();
 
         newMessage.text = text;
@@ -88,16 +88,16 @@ public class ChatManager : MonoBehaviour
     }
 }
 
-[System.Serializable]
-public class Message
-{
-    public string text;
-    public TMP_Text textObject;
+//[System.Serializable]
+//public class Message
+//{
+//    public string text;
+//    public TMP_Text textObject;
 
-    public enum messageType
-    {
-        playerMessage,
-        info
-    }
-}
+//    public enum messageType
+//    {
+//        playerMessage,
+//        info
+//    }
+//}
 
