@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SelectCharacter : MonoBehaviour
 {
     [SerializeField]
+    private ShowCharacterImage showCharacterImage;
     //public Image border;
     public Button[] button;
     public Outline[] outline;
@@ -57,5 +58,7 @@ public class SelectCharacter : MonoBehaviour
         }
 
         gm.charachter = i;
+
+        showCharacterImage.SelectCharachterImage(i);
     }
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Azure.AI.OpenAI</id>
+    <version>2.0.0</version>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>azureicon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.OpenAI_2.0.0/sdk/openai/Azure.AI.OpenAI/README.md</projectUrl>
+    <description>Azure OpenAI's official extension package for using OpenAI's .NET library with the Azure OpenAI Service.</description>
+    <releaseNotes>https://github.com/Azure/azure-sdk-for-net/blob/Azure.AI.OpenAI_2.0.0/sdk/openai/Azure.AI.OpenAI/CHANGELOG.md</releaseNotes>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>Microsoft Azure OpenAI</tags>
+    <repository type="git" url="https://github.com/Azure/azure-sdk-for-net" commit="c5bc53adb7006da46c9e5cbe1092f6e1e074b76d" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Azure.Core" version="1.43.0" exclude="Build,Analyzers" />
+        <dependency id="OpenAI" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
