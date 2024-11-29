@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
             if (currentScene == 1)
             {
                 nPlayers = numPlayers.value + 1;
-                //Debug.Log(nPlayers);    
+                playerInput.ActivateInputField();
+    
                 if (playerInput.text != "")
                 {
                     playerName = playerInput.text;

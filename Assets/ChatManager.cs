@@ -38,7 +38,7 @@ public class ChatManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                sendMessageToChat(userName + ": " + chatBox.text, Message.messageType.playerMessage);
+                sendMessageToChat("<color=blue><b>" + userName + "</b></color>: " + chatBox.text, Message.messageType.playerMessage);
                 chatBox.text = "";
             }
         }
@@ -97,7 +97,7 @@ public class Message
     public enum messageType
     {
         playerMessage,
-        info
+        assistantMessage
     }
 }
 
