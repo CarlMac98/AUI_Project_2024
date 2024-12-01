@@ -1,16 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 
 public class ChatManager : MonoBehaviour
 {
     [SerializeField]
     public string userName;
-    
     [SerializeField]
-    private GameManager gameManager; 
+    public OpenAIChat chatSystem;
 
+    [SerializeField]
+    private GameManager gameManager;
+    
     //public int maxMessages = 25;
 
     public GameObject chatPanel, textObject;//, wholeChat;
@@ -26,6 +29,8 @@ public class ChatManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameObject myObject = new GameObject("MyObject");
+        chatSystem = myObject.AddComponent<OpenAIChat>();
         //userName = gameManager.playerName;
         //wholeChat.SetActive(false);
         //chatButton.onClick.AddListener(ShowChat);
@@ -38,8 +43,7 @@ public class ChatManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                sendMessageToChat("<color=blue><b>" + userName + "</b></color>: " + chatBox.text, Message.messageType.playerMessage);
-                chatBox.text = "";
+                HandleChatMessage();
             }
         }
 
@@ -51,6 +55,19 @@ public class ChatManager : MonoBehaviour
             }
         }
     }
+    public void HandleChatMessage()
+    {
+        StartCoroutine(ProcessChatMessage());
+    }
+    private IEnumerator ProcessChatMessage()
+    {
+        sendMessageToChat("<color=blue><b>" + userName + "</b></color>: " + chatBox.text, Message.messageType.playerMessage);
+        yield return chatSystem.SendMessageToAzure(chatBox.text);
+        if (!chatSystem.response.Equals("None"))
+            sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response, Message.messageType.assistantMessage);
+        chatBox.text = "";
+    }
+
     public void sendMessageToChat(string text, Message.messageType messageType)
     {
         //if (messageList.Count >= maxMessages)

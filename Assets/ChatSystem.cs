@@ -8,12 +8,11 @@ public class OpenAIChat : MonoBehaviour
 {
 
     private string backendEndpoint = "http://127.0.0.1:5000/api/demo";
-    [SerializeField] private string promptToSend = "";
-
-    public void SendMessageToAzure()
+    public string response = "";
+    public IEnumerator SendMessageToAzure(string promptToSend)
     {
         if (promptToSend.Length > 0)
-            StartCoroutine(SendRequest(promptToSend));
+            yield return StartCoroutine(SendRequest(promptToSend));
     }
 
     private IEnumerator SendRequest(string prompt)
@@ -39,14 +38,14 @@ public class OpenAIChat : MonoBehaviour
         }
         else
         {
-            string answer = request.downloadHandler.text;
-            if (answer == "None")
+            response = request.downloadHandler.text;
+            if (response == "None")
             {
                 Debug.Log("First interaction");
             }
             else
             {
-                Debug.Log("Response: " + answer);
+                Debug.Log("Response: " + response);
             }
         }
     }

@@ -27,6 +27,8 @@ assistant = client.beta.assistants.create(
 
 counter = 0
 interactions = 0
+question = ""
+intervention = ""
 
 # Load the story configuration
 with open('storia.json', 'r') as file:
@@ -86,6 +88,7 @@ sendMessage(intro)
 # Flask endpoint to handle Unity requests
 @app.route('/api/demo', methods=['POST'])
 def handle_request():
+    global counter, interactions, question, intervention
     # Parse the incoming JSON
     request_data = request.get_json()
     if not request_data or 'prompt' not in request_data:
@@ -95,14 +98,13 @@ def handle_request():
         question = ""
     
     interactions += 1
-    intervention = ""
 
     prompt = request_data['prompt']
     print(f"Received prompt: {prompt}")
-    question += "\n" + "Utente " + counter + ': ' + prompt
+    question += "\n" + "Utente " + str(counter) + ': ' + prompt
 
     # Determine the intervention based on story logic
-    intervention = ""
+
     if interactions == 1:
         intervention = "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
     elif interactions == 4:
@@ -111,7 +113,7 @@ def handle_request():
         intervention = "I bambini devonos scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva', altrimenti non introdurre le parole 'scena successiva'."
 
     # Send the message to Azure OpenAI and get the response
-    if counter % 2 == 0:
+    if counter % 2 == 1:
         question += f"\nIntervento: {intervention}"
         response = sendMessage(prompt)
     else:
@@ -121,8 +123,8 @@ def handle_request():
     counter = (counter + 1) % 2
 
     # Return the response back to Unity
-    return jsonify({"response": response})
+    return response
 
 if __name__ == '__main__':
     # Run the Flask app
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=False)
