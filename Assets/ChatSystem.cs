@@ -17,9 +17,9 @@ public class OpenAIChat : MonoBehaviour
 
     private IEnumerator SendRequest(string prompt)
     {
-
+        string cleanPrompt = prompt.Trim();
         // Construct payload
-        string jsonPayload = "{\"prompt\":\"" + prompt + "\"}";
+        string jsonPayload = "{\"prompt\":\"" + cleanPrompt + "\"}";
         Debug.Log("Payload being sent: " + jsonPayload);
 
         // Set up the UnityWebRequest
