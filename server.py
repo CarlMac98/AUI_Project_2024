@@ -3,14 +3,15 @@ import json
 import time
 from flask import Flask, request, jsonify
 from openai import AzureOpenAI
+import apiData
 
 # Flask setup
 app = Flask(__name__)
 
 # Azure OpenAI client setup
 client = AzureOpenAI(
-    azure_endpoint="",
-    api_key="",
+    azure_endpoint=apiData.azure_endpoint,
+    api_key=apiData.api_key,
     api_version="2024-05-01-preview"
 )
 
@@ -32,6 +33,7 @@ intervention = ""
 
 # Load the story configuration
 with open('storia.json', 'r') as file:
+#with open("C:/Users/Utente/Desktop/Karl/Uni/Poli/AUI/Unity/AUI_Project_2024/storia.json", 'r') as file:
     JSON = json.load(file)
 
 # Create a thread for interactions
