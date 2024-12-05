@@ -28,10 +28,11 @@ public class GameManager : MonoBehaviour
     public TMP_InputField playerInput;
     public TMP_Dropdown numPlayers;
     public BackgroundHandler background;
-
+    private bool imageGenerated;
 
     void Start()
     {
+        imageGenerated = false;
         //initialize first go button
         goButton.onClick.AddListener(GoAhead);
 
@@ -56,6 +57,10 @@ public class GameManager : MonoBehaviour
             //forbid passage to the third scene if name is not inserted
             if (currentScene == 1)
             {
+                if (!imageGenerated) {
+                    background.HandleImageRequest();
+                    imageGenerated = true;
+                }
                 nPlayers = numPlayers.value + 1;
                 playerInput.ActivateInputField();
     

@@ -4,6 +4,7 @@ import time
 from flask import Flask, request, jsonify
 from openai import AzureOpenAI
 import apiData
+import urllib.request
 
 # Flask setup
 app = Flask(__name__)
@@ -13,6 +14,12 @@ client = AzureOpenAI(
     azure_endpoint=apiData.azure_endpoint,
     api_key=apiData.api_key,
     api_version="2024-05-01-preview"
+)
+
+client_image = AzureOpenAI(
+    api_version="2024-02-01",
+    azure_endpoint=apiData.azure_image_endpoint,
+    api_key=apiData.api_image_key,
 )
 
 # Initialize assistant
@@ -30,6 +37,7 @@ counter = 0
 interactions = 0
 question = ""
 intervention = ""
+n_image = 0
 
 # Load the story configuration
 with open('storia.json', 'r') as file:
@@ -88,9 +96,9 @@ sendMessage(intro)
 
 
 # Flask endpoint to handle Unity requests
-@app.route('/api/demo', methods=['POST'])
-def handle_request():
-    global counter, interactions, question, intervention
+@app.route('/api/chat', methods=['POST'])
+def handle_request_chat():
+    global counter, interactions, question, intervention, JSON
     # Parse the incoming JSON
     request_data = request.get_json()
     if not request_data or 'prompt' not in request_data:
@@ -127,6 +135,43 @@ def handle_request():
     # Return the response back to Unity
     return response
 
+@app.route('/api/image', methods=['POST'])
+def handle_request_image():
+    global n_image, JSON
+    try:
+        print(request.get_json()) 
+        ramification = request.get_json()
+        if ramification and 'imagePrompt' in ramification:
+            direction = ramification["imagePrompt"]
+        match n_image:
+            case 0:
+                section = "inizio"
+                prompt = JSON[section]["descrizione_scena"]
+            case 1:
+                section = "fase_intermedia"
+                prompt = JSON[section][direction]["descrizione_scena"]
+            case 2:
+                section = "conclusione"
+                prompt = JSON[section]["descrizione_scena"]
+            case _:
+                prompt = "Una immagine neutra"
+
+        result = client_image.images.generate(
+            model="Image-generator", # the name of your DALL-E 3 deployment
+            prompt=prompt,
+            n=1
+        )
+
+        image_url = json.loads(result.model_dump_json())['data'][0]['url']
+        urllib.request.urlretrieve(image_url, f"Assets/Images/Backgrounds/image{n_image}.png")
+        n_image += 1
+        
+        return jsonify({"status": "success"}), 200
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": "Server error"}), 400
+
+
 if __name__ == '__main__':
     # Run the Flask app
-    app.run(host='127.0.0.1', port=5000, debug=False)
+    app.run(host='127.0.0.1', port=7000, debug=False)

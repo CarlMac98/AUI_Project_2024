@@ -9,7 +9,7 @@ public class ChatManager : MonoBehaviour
     [SerializeField]
     public string userName;
     [SerializeField]
-    public OpenAIChat chatSystem;
+    public OpenAIChatImage chatSystem;
 
     [SerializeField]
     private GameManager gameManager;
@@ -30,7 +30,7 @@ public class ChatManager : MonoBehaviour
     void Start()
     {
         GameObject myObject = new GameObject("MyObject");
-        chatSystem = myObject.AddComponent<OpenAIChat>();
+        chatSystem = myObject.AddComponent<OpenAIChatImage>();
         //userName = gameManager.playerName;
         //wholeChat.SetActive(false);
         //chatButton.onClick.AddListener(ShowChat);
@@ -62,7 +62,7 @@ public class ChatManager : MonoBehaviour
     private IEnumerator ProcessChatMessage()
     {
         sendMessageToChat("<color=blue><b>" + userName + "</b></color>: " + chatBox.text, Message.messageType.playerMessage);
-        yield return chatSystem.SendMessageToAzure(chatBox.text);
+        yield return chatSystem.SendMessageToAzureChat(chatBox.text);
         if (!chatSystem.response.Equals("None"))
             sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response, Message.messageType.assistantMessage);
         chatBox.text = "";
