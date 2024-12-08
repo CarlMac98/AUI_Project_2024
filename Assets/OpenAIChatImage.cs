@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEditor;
 
 
 // This is used to communicate with your backend
@@ -81,6 +83,10 @@ public class OpenAIChatImage : MonoBehaviour
         else
         {
             Debug.Log("Image downloaded correctly");
+            GameObject imageComponent = GameObject.Find("Bckg");
+            RawImage backgroundImage = imageComponent.GetComponent<RawImage>();
+            Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Images/Backgrounds/image0.png");
+            backgroundImage.texture = newTexture;
         }
     }
 }

@@ -118,17 +118,18 @@ def handle_request_chat():
     if interactions == 1:
         intervention = "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
     elif interactions == 4:
-        intervention = f"{JSON['inizio']['avventura']['collegamento_scena_successiva']}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere, la loro scelta deve essere la stessa."
+        intervention = f"{JSON["inizio"]["avventura"]["collegamento_scena_successiva"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere, la loro scelta deve essere la stessa."
     elif interactions >= 6:
         intervention = "I bambini devonos scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva', altrimenti non introdurre le parole 'scena successiva'."
 
     # Send the message to Azure OpenAI and get the response
     if counter % 2 == 1:
         question += f"\nIntervento: {intervention}"
-        response = sendMessage(prompt)
+        #print(f"Question: {question}")
+        response = sendMessage(question)
     else:
         response = "None"
-    print(f"Response: {response}")
+    #print(f"Response: {response}")
 
     counter = (counter + 1) % 2
 
