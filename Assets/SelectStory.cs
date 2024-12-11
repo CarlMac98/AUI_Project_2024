@@ -4,12 +4,11 @@ using UnityEngine.UI;
 
 public class SelectStory : MonoBehaviour
 {
-    [SerializeField]
     //public Image border;
-    public Button[] button;
-    public Outline[] outline;
-    public RawImage[] characters;
-    public RectTransform[] rectTransforms;
+    private Button[] buttons;
+    //public Outline[] outline;
+    private Image[] stories;
+    private RectTransform[] rectTransforms;
 
     public GameManager gm;
 
@@ -17,22 +16,24 @@ public class SelectStory : MonoBehaviour
     void Start()
     {
         //border = gameObject.GetComponent<Image>();
-        outline = GetComponentsInChildren<Outline>();
-        button = GetComponentsInChildren<Button>();
-        characters = GetComponentsInChildren<RawImage>();
-        //Debug.Log(characters.Length);
-        rectTransforms = new RectTransform[characters.Length];
+        //outline = GetComponentsInChildren<Outline>();
+        
+        stories = GetComponentsInChildren<Image>();
+        buttons = GetComponentsInChildren<Button>();
+        //Debug.Log(stories.Length);
+        rectTransforms = new RectTransform[stories.Length];
 
-        for (int i = 0; i < characters.Length; i++)
+        for (int i = 0; i < stories.Length; i++)
         {
-            rectTransforms[i] = characters[i].GetComponent<RectTransform>();
+            
+            rectTransforms[i] = stories[i].GetComponent<RectTransform>();
         }
 
-        for (int i = 0; i < button.Length; i++)
+        for (int i = 0; i < buttons.Length; i++)
         {
             int idx = i;
             //Debug.Log(i);
-            button[i].onClick.AddListener(() => Highlight(idx));
+            buttons[i].onClick.AddListener(() => Highlight(idx));
         }
     }
 
@@ -51,7 +52,7 @@ public class SelectStory : MonoBehaviour
 
         for (int j = 0; j < rectTransforms.Length; j++)
         {
-            Transform t = rectTransforms[j];
+            RectTransform t = rectTransforms[j];
             t.localScale = Vector3.one;
             if (i == j) t.localScale = new Vector3(1.2f, 1.2f, 1.2f);
         }
