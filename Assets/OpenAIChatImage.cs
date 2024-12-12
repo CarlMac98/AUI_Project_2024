@@ -3,19 +3,27 @@ using UnityEngine.Networking;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
+using System.Collections.Generic;
 
 
 // This is used to communicate with your backend
 public class OpenAIChatImage : MonoBehaviour
 {
 
-    private string backendEndpointChat = "http://127.0.0.1:7000/api/chat";
-    private string backEndpointImage = "http://127.0.0.1:7000/api/image";
+    private Dictionary<string, string> backendEndpoint = new Dictionary<string, string> {
+        {"chat", "http://127.0.0.1:7000/api/chat"},
+        {"init", "http://127.0.0.1:7000/api/init"},
+        {"image", "http://127.0.0.1:7000/api/image"}
+    };
     public string response = "";
     public IEnumerator SendMessageToAzureChat(string promptToSend)
     {
         if (promptToSend.Length > 0)
             yield return StartCoroutine(SendRequest(promptToSend));
+    }
+    public IEnumerator InitialMessageAzureChat()
+    {
+        yield return StartCoroutine(SendInitialRequest());
     }
     public IEnumerator RequestToAzureImage(string prompt)
     {    
@@ -29,7 +37,7 @@ public class OpenAIChatImage : MonoBehaviour
         Debug.Log("Payload being sent: " + jsonPayload);
 
         // Set up the UnityWebRequest
-        var request = new UnityWebRequest(backendEndpointChat, "POST");
+        var request = new UnityWebRequest(backendEndpoint["chat"], "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();
@@ -55,6 +63,33 @@ public class OpenAIChatImage : MonoBehaviour
             }
         }
     }
+    private IEnumerator SendInitialRequest()
+    {
+        // Construct payload
+        string jsonPayload = "";
+        Debug.Log("Initial message sent");
+
+        // Set up the UnityWebRequest
+        var request = new UnityWebRequest(backendEndpoint["init"], "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        // Send the request and wait for a response
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            response = request.downloadHandler.text;
+            Debug.Log("Response: " + response);
+            
+        }
+    }
 
     private IEnumerator RequestImage(string prompt)
     {
@@ -64,8 +99,8 @@ public class OpenAIChatImage : MonoBehaviour
         Debug.Log("Payload being sent: " + jsonPayload);
 
         // Set up the UnityWebRequest
-        var request = new UnityWebRequest(backEndpointImage, "POST");
-        Debug.Log("Endpoint being called: " + backEndpointImage);
+        var request = new UnityWebRequest(backendEndpoint["image"], "POST");
+        Debug.Log("Endpoint being called: " + backendEndpoint["image"]);
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();

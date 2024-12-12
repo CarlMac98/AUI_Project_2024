@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using Azure.AI.OpenAI.Assistants;
 
 
 public class ChatManager : MonoBehaviour
@@ -29,8 +30,8 @@ public class ChatManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject myObject = new GameObject("MyObject");
-        chatSystem = myObject.AddComponent<OpenAIChatImage>();
+        //GameObject myObject = new GameObject("MyObject");
+        //chatSystem = myObject.AddComponent<OpenAIChatImage>();
         //userName = gameManager.playerName;
         //wholeChat.SetActive(false);
         //chatButton.onClick.AddListener(ShowChat);
@@ -61,11 +62,21 @@ public class ChatManager : MonoBehaviour
     }
     private IEnumerator ProcessChatMessage()
     {
-        sendMessageToChat("<color=blue><b>" + userName + "</b></color>: " + chatBox.text, Message.messageType.playerMessage);
-        yield return chatSystem.SendMessageToAzureChat(chatBox.text);
+        string message = chatBox.text;
+        chatBox.text = "";
+        sendMessageToChat("<color=blue><b>" + userName + "</b></color>: " + message, Message.messageType.playerMessage);
+        yield return chatSystem.SendMessageToAzureChat(message);
         if (!chatSystem.response.Equals("None"))
             sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response, Message.messageType.assistantMessage);
-        chatBox.text = "";
+    }
+    public void HandleInitialMessage()
+    {
+        StartCoroutine(InitialMessage());
+    }
+    private IEnumerator InitialMessage()
+    {
+        yield return chatSystem.InitialMessageAzureChat();
+        sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response, Message.messageType.assistantMessage);
     }
 
     public void sendMessageToChat(string text, Message.messageType messageType)

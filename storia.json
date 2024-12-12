@@ -1,48 +1,45 @@
 {
     "inizio": {
-        "introduzione_capitolo": "La storia inizia in un pomeriggio dorato, quando Sofia e Matteo decidono di esplorare il bosco vicino al loro villaggio. Il vento leggero trasporta profumi di fiori selvatici e terra umida, mentre il canto degli uccelli riecheggia tra le fronde. Il bosco, con i suoi alberi antichi e il misterioso fascino che li ha sempre attratti, sembra invitarli a entrare e scoprire i suoi segreti. Non sanno ancora che quell'avventura cambiera il loro giorno e forse anche loro stessi.",
-        "descrizione_scena": "Un bosco incantato si estende davanti ai bambini. Gli alberi sono alti e contorti, con foglie che brillano di una luce verde-oro. Raggi di sole filtrano tra i rami, creando un gioco di ombre sul terreno muschioso. In lontananza, si sente il gorgoglio di un ruscello.",
+        "introduzione_capitolo": "Due bambini si avventurano in un bosco incantato, seguendo una luce misteriosa che si intravede tra gli alberi.",
+        "descrizione_scena": "Un bosco pieno di alberi maestosi, con un tappeto di muschio soffice e lucciole che illuminano il sentiero.",
         "personaggio_unico": {
-            "nome": "Gufo Saggio",
-            "descrizione": "Un gufo con piume argentate e occhi profondi che conosce ogni angolo del bosco."
+            "nome": "Lumi",
+            "descrizione": "Un gufo parlante con piume argentate e occhi luminosi, che conosce i segreti del bosco."
         },
-        "avventura": {
-            "collegamento_scena_successiva": "Il Gufo Saggio consegna ai bambini una mappa misteriosa con due percorsi segnati: il 'Sentiero della Luce' e il 'Tunnel delle Radici'. Invita i bambini a scegliere quale intraprendere, dando inizio al loro viaggio verso il lago."
+        "collegamento_scena_successiva": {
+            "fine_capitolo": "Lumi indica ai bambini due sentieri, uno conduce alla Quercia Dorata e l'altro alla Radura Magica. Devono scegliere quale seguire.",
+            "percorso_1": "Sentiero della Quercia Dorata",
+            "percorso_2": "Sentiero della Radura Magica"
         }
     },
     "fase_intermedia": {
-        "sentiero della luce": {
-            "introduzione_capitolo": "Sofia e Matteo si incamminano sul Sentiero della Luce, attirati dalla promessa di un percorso splendente e accogliente. Il sole, ormai basso sull'orizzonte, tinge tutto di una calda tonalità dorata. Con ogni passo, i suoni della foresta si fanno più dolci, come se li stessero guidando verso una melodia nascosta. Il sentiero sembra animarsi sotto i loro occhi, trasformando una semplice camminata in una danza di luce e colori.",
-            "descrizione_scena": "Il 'Sentiero della Luce' è una strada scintillante che attraversa una radura piena di fiori luminescenti. Gli alberi intorno sembrano piegarsi dolcemente, come per accogliere chi passa. Piccole scintille di luce fluttuano nell'aria, come minuscole lanterne viventi.",
+        "percorso_1": {
+            "introduzione_capitolo": "I bambini imboccano il sentiero che conduce alla Quercia Dorata, incuriositi dalla luce dorata che si intravede tra le foglie.",
+            "descrizione_scena": "Un albero gigantesco con foglie d'oro che brillano al sole. Intorno si trovano piccole creature che giocano e cantano.",
             "personaggio_unico": {
-                "nome": "Flick",
-                "descrizione": "Una lucciola amichevole che si offre di guidarli lungo il sentiero."
-            },
-            "avventura": {
-                "collegamento_scena_successiva": "Flick guida i bambini fino a un ponte sospeso sopra un ruscello scintillante. I bambini devono trovare un modo per attraversarlo e continuare il loro cammino verso il lago."
+                "nome": "Arlo",
+                "descrizione": "Un simpatico scoiattolo parlante che vive nella Quercia Dorata. Ama raccontare storie e aiutare i visitatori del bosco."
             }
         },
-        "tunnel delle radici": {
-            "introduzione_capitolo": "Quando Sofia e Matteo si avventurano nel Tunnel delle Radici, una fresca brezza li avvolge, portando con sé il profumo della terra e dell'umidità. Il tunnel sembra quasi un passaggio segreto verso un mondo nascosto, con radici nodose che si intrecciano creando strane forme. I cristalli luminescenti riflettono debolmente la loro luce, come piccoli occhi che li osservano. Ogni passo è accompagnato dal suono lieve delle gocce d'acqua che scivolano lungo le pareti.",
-            "descrizione_scena": "Il 'Tunnel delle Radici' è un passaggio buio sotto un antico albero, con pareti intrecciate da radici nodose. Piccoli cristalli luminescenti spuntano dalle radici, illuminando debolmente il cammino. L'aria è fresca e profuma di terra umida.",
+        "percorso_2": {
+            "introduzione_capitolo": "I bambini scelgono il sentiero verso la Radura Magica, attratti da una luce soffusa che illumina il cammino.",
+            "descrizione_scena": "Una radura circondata da fiori che emettono una luce delicata. Al centro si trova una pietra che pulsa di energia magica.",
             "personaggio_unico": {
-                "nome": "Mina",
-                "descrizione": "Una piccola talpa coraggiosa che conosce tutti i segreti del tunnel."
-            },
-            "avventura": {
-                "collegamento_scena_successiva": "Mina accompagna i bambini fino a un crocevia sotterraneo con tre passaggi distinti. Devono scegliere quale strada seguire per avvicinarsi al lago."
+                "nome": "Nia",
+                "descrizione": "Una fata dai capelli scintillanti e ali luminose. Custodisce la magia della radura e accoglie i viaggiatori."
             }
+        },
+        "collegamento_scena_successiva": {
+            "fine_capitolo": "Dopo aver incontrato Arlo o Nia, i bambini vengono accompagnati verso una radura centrale, dove il bosco nasconde un grande segreto."
         }
     },
     "conclusione": {
-        "introduzione_capitolo": "Finalmente, Sofia e Matteo arrivano al lago, e il panorama che si apre davanti a loro toglie il fiato. Il cielo è un mosaico di stelle, riflesse sull'acqua calma e scintillante. Al centro del lago, una piccola isola è illuminata da mille luci colorate, come se una festa magica li stesse aspettando da sempre. Le risate degli animali e una melodia dolce li invitano a unirsi alla celebrazione.",
-        "descrizione_scena": "Il lago è un vasto specchio d'acqua cristallina, circondato da prati fioriti e alberi che si riflettono sulla superficie. L'acqua brilla al chiaro di luna e al centro del lago c'è una piccola isola illuminata da luci colorate, dove gli animali si sono radunati per la festa.",
+        "introduzione_capitolo": "I bambini raggiungono una radura speciale, dove il bosco sembra prendere vita e i suoi segreti vengono svelati.",
+        "descrizione_scena": "Una grande radura illuminata da un maestoso albero al centro, con rami che sembrano toccare il cielo. Il luogo è pervaso da un'atmosfera magica e serena.",
         "personaggio_unico": {
-            "nome": "Luna",
-            "descrizione": "Una civetta saggia e gentile che racconta storie e dà il benvenuto agli ospiti della festa."
+            "nome": "Lumi",
+            "descrizione": "Il gufo che li ha guidati fin dall'inizio. Ora si mostra orgoglioso del viaggio compiuto dai bambini."
         },
-        "avventura": {
-            "collegamento_scena_successiva": "Luna invita i bambini a raccontare la loro avventura agli altri ospiti e a partecipare ai giochi e alle attività della festa. La loro storia diventa parte della celebrazione."
-        }
+        "conclusione": "Lumi spiega che il bosco premia sempre chi lo esplora con curiosità e rispetto. I bambini, pieni di meraviglia, promettono di tornare presto per nuove avventure."
     }
 }

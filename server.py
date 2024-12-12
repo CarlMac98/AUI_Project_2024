@@ -23,7 +23,7 @@ client_image = AzureOpenAI(
 )
 
 # Initialize assistant
-assistant = client.beta.assistants.create(
+""" assistant = client.beta.assistants.create(
     model="AI-assistant",
     instructions =  "You are a helpful AI assistant that helps children in creating stories. "
                     + "Answer in a few lines, the child cannot read too much. You should resolve any conflicts between the children and help them to create a story. "
@@ -31,13 +31,16 @@ assistant = client.beta.assistants.create(
                     + "Non fargli introdurre nuovi personaggi e non far abbandonare i personaggi presenti nella scena. Non fare la parte dei bambini",
     temperature=0.8,
     top_p=1
-)
+) """
+assistant = client.beta.assistants.retrieve(assistant_id="asst_pTSWCQOb7icv8fwUnjv03dYL")
 
 counter = 0
 interactions = 0
 question = ""
 intervention = ""
 n_image = 0
+section = "inizio"
+percorso = "percorso_1"
 
 # Load the story configuration
 with open('storia.json', 'r') as file:
@@ -46,6 +49,28 @@ with open('storia.json', 'r') as file:
 
 # Create a thread for interactions
 thread = client.beta.threads.create()
+def int_intro(interactions):
+    if interactions == 1:
+        return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
+    elif interactions == 4:
+        return f"{JSON["inizio"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]}, la loro scelta deve essere la stessa."
+    elif interactions >= 6 and interactions < 10:
+        return f"I bambini devono scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva' e la scelta fatta tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} (metti le parole esatte, non aggiungere parole in mezzo), altrimenti non introdurre le parole 'scena successiva'."
+    elif interactions >= 10:
+        return f"Scegli tu la strada da seguire tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} e metti le parole 'scena successiva' e il percorso scelto nella tua risposta."
+
+def int_intermedia(interactions):
+    if interactions == 1:
+        return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
+    elif interactions >= 4:
+        return f"{JSON["fase_intermedia"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'. Non fare scattare il content filter mantieni la risposta per bambini"
+
+
+def int_concl(interactions):
+    if interactions == 1:
+        return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
+    elif interactions >= 4:
+        return f"{JSON["conclusione"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'."
 
 # Helper function to send messages to Azure OpenAI
 def sendMessage(question):
@@ -90,15 +115,34 @@ def sendMessage(question):
         print("status: " + run.status)
         return f"Run Details: {run.model_dump_json(indent=2)}"
 
-
-intro = "Intervento: " + JSON["inizio"]["introduzione_capitolo"] + f"Il personaggio che li guida sarà {JSON["inizio"]["personaggio_unico"]["nome"]}, {JSON["inizio"]["personaggio_unico"]["descrizione"]}. questa è la introduzione del capitolo. Racconta cosa succede e chiedi ai bambini di continuare la storia, non dare consigli se non te lo chiedono loro, inizia come parlando direttamente a loro"
-sendMessage(intro)
-
+def determina_percorso(response):
+    if JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"].lower() in response.lower():
+        return "percorso_1"
+    else:
+        return "percorso_2"
 
 # Flask endpoint to handle Unity requests
+@app.route('/api/create_story', methods=['POST'])
+def handle_story_creation():
+    story = ""
+    return story, 200
+
+@app.route('/api/init', methods=['POST'])
+def handle_initial_call():
+    global section, percorso
+    match section:
+        case "inizio":
+            intro = "Intervento: " + JSON["inizio"]["introduzione_capitolo"] + f"Il personaggio che li guida sarà {JSON["inizio"]["personaggio_unico"]["nome"]}, {JSON["inizio"]["personaggio_unico"]["descrizione"]}. Questa è la introduzione del capitolo. Saluta i bambini e riassumi molto brevemente ciò che accade e chiedi a loro di continuare la storia, non dare consigli se non te lo chiedono loro. Il contenuto deve essere adatto per bambini."
+        case "fase_intermedia":
+            intro = "Intervento: " + JSON["fase_intermedia"][percorso]["introduzione_capitolo"] + f"Il personaggio che li guida sarà {JSON["fase_intermedia"][percorso]["personaggio_unico"]["nome"]}, {JSON["fase_intermedia"][percorso]["personaggio_unico"]["descrizione"]}. Questa è la introduzione del capitolo. Riassumi molto brevemente ciò che accade e chiedi a loro di continuare la storia, non dare consigli se non te lo chiedono loro. Il contenuto deve essere adatto per bambini."
+        case "conclusione":
+            intro = "Intervento: " + JSON["conclusione"]["introduzione_capitolo"] + f"Il personaggio che li guida sarà {JSON["conclusione"]["personaggio_unico"]["nome"]}, {JSON["conclusione"]["personaggio_unico"]["descrizione"]}. Questa è la introduzione del capitolo. Riassumi molto brevemente ciò che accade e chiedi a loro di continuare la storia, non dare consigli se non te lo chiedono loro. Il contenuto deve essere adatto per bambini."
+    response = sendMessage(intro)
+    return response, 200
+
 @app.route('/api/chat', methods=['POST'])
 def handle_request_chat():
-    global counter, interactions, question, intervention, JSON
+    global counter, interactions, question, intervention, JSON, section, percorso
     # Parse the incoming JSON
     request_data = request.get_json()
     if not request_data or 'prompt' not in request_data:
@@ -114,13 +158,13 @@ def handle_request_chat():
     question += "\n" + "Utente " + str(counter) + ': ' + prompt
 
     # Determine the intervention based on story logic
-
-    if interactions == 1:
-        intervention = "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions == 4:
-        intervention = f"{JSON["inizio"]["avventura"]["collegamento_scena_successiva"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere, la loro scelta deve essere la stessa."
-    elif interactions >= 6:
-        intervention = "I bambini devonos scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva', altrimenti non introdurre le parole 'scena successiva'."
+    match section:
+        case "inizio":  
+            intervention = int_intro(interactions)
+        case "fase_intermedia":
+            intervention = int_intermedia(interactions)
+        case "conclusione":        
+            intervention = int_concl(interactions)
 
     # Send the message to Azure OpenAI and get the response
     if counter % 2 == 1:
@@ -133,39 +177,49 @@ def handle_request_chat():
 
     counter = (counter + 1) % 2
 
+    if "scena successiva" in response.lower():
+        if section == "inizio":
+            section = "fase_intermedia"
+            percorso = determina_percorso(response)
+        elif section == "fase_intermedia":
+            section = "conclusione"
+        else:
+            section = "inizio"
+        interactions = 0
+
     # Return the response back to Unity
-    return response
+    return response, 200
 
 @app.route('/api/image', methods=['POST'])
 def handle_request_image():
-    global n_image, JSON
+    global n_image, JSON, section, percorso
     try:
         print(request.get_json()) 
         ramification = request.get_json()
         if ramification and 'imagePrompt' in ramification:
             direction = ramification["imagePrompt"]
-        match n_image:
-            case 0:
-                section = "inizio"
-                prompt = JSON[section]["descrizione_scena"]
-            case 1:
-                section = "fase_intermedia"
-                prompt = JSON[section][direction]["descrizione_scena"]
-            case 2:
-                section = "conclusione"
-                prompt = JSON[section]["descrizione_scena"]
+        match section:
+            case "inizio":
+                prompt = JSON["inizio"]["descrizione_scena"]
+                n_image = 0
+            case "fase_intermedia":
+                prompt = JSON["fase_intermedia"][percorso]["descrizione_scena"]
+                n_image = 1
+            case "conclusione":
+                prompt = JSON["conclusione"]["descrizione_scena"]
+                n_image = 2
             case _:
                 prompt = "Una immagine neutra"
+                n_image = 3
 
         result = client_image.images.generate(
-            model="Image-generator", # the name of your DALL-E 3 deployment
+            model="Image-generator",
             prompt=prompt,
             n=1
         )
 
         image_url = json.loads(result.model_dump_json())['data'][0]['url']
         urllib.request.urlretrieve(image_url, f"Assets/Images/Backgrounds/image{n_image}.png")
-        n_image += 1
         
         return jsonify({"status": "success"}), 200
     except Exception as e:

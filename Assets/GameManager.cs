@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void GoAhead()
     {
+        Debug.Log(currentScene);
         //check current number of scenes
         if (scenes.Length - 1 > currentScene)
         {
@@ -83,12 +84,15 @@ public class GameManager : MonoBehaviour
                 background.Handle();
             }
 
-
             //scenes going forward handling
             scenes[currentScene].SetActive(false);
             currentScene += 1;
             scenes[currentScene].SetActive(true);
-
+            
+            if (currentScene == 5)
+            {
+                chatManager.HandleInitialMessage();
+            }
             //update buttons
             if (!GameObject.Find("Go").IsUnityNull())
             {

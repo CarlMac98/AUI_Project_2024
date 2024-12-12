@@ -1,0 +1,45 @@
+{
+    "inizio": {
+        "introduzione_capitolo": "",
+        "descrizione_scena": "",
+        "personaggio_unico": {
+            "nome": "",
+            "descrizione": ""
+        },
+        "collegamento_scena_successiva": {
+            "fine_capitolo": "", 
+            "percorso_1": "",
+            "percorso_2": ""
+        }
+    },
+    "fase_intermedia": {
+        "percorso_1": {
+            "introduzione_capitolo": "",
+            "descrizione_scena": "",
+            "personaggio_unico": {
+                "nome": "",
+                "descrizione": ""
+            }
+        },
+        "percorso_2": {
+            "introduzione_capitolo": "",
+            "descrizione_scena": "",
+            "personaggio_unico": {
+                "nome": "",
+                "descrizione": ""
+            }
+        },
+        "collegamento_scena_successiva": {
+            "fine_capitolo": ""
+        }
+    },
+    "conclusione": {
+        "introduzione_capitolo":"",
+        "descrizione_scena":"",
+        "personaggio_unico": {
+            "nome":"",
+            "descrizione":""
+        },
+        "conclusione": ""
+    }
+}

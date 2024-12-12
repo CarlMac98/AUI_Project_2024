@@ -8,12 +8,13 @@ public class BackgroundHandler : MonoBehaviour
 
     [SerializeField]
     private GameObject[] bckgs;
+    [SerializeField]
     private OpenAIChatImage imageSystem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject imageBackground = new GameObject("ImageBackground");
-        imageSystem = imageBackground.AddComponent<OpenAIChatImage>();
+        //GameObject imageBackground = new GameObject("ImageBackground");
+        //imageSystem = imageBackground.AddComponent<OpenAIChatImage>();
         foreach (var bc in bckgs)
         {
             bc.SetActive(true);
