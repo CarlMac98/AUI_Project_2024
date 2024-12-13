@@ -8,7 +8,7 @@ public class ShowCharacterImage : MonoBehaviour
     private Sprite[] images;
     [SerializeField]
     private GameManager gameManager;
-
+    [SerializeField]
     private Image[] imgContainers;
 
     //private Transform tr;
@@ -16,7 +16,7 @@ public class ShowCharacterImage : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        imgContainers = GetComponentsInChildren<Image>();
+        //imgContainers = GetComponentsInChildren<Image>();
         
         //for (int i = 0; i < imgContainers.Length; i++)
         //{

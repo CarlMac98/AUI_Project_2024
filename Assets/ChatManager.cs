@@ -1,12 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using TMPro;
 using System.Collections;
 using Azure.AI.OpenAI.Assistants;
+using OpenAI.Chat;
+using System;
 
 
-public class ChatManager : MonoBehaviour
+public class ChatManager : NetworkBehaviour
 {
+    public static ChatManager Singleton;
+
     [SerializeField]
     public string userName;
     [SerializeField]
@@ -14,13 +19,13 @@ public class ChatManager : MonoBehaviour
 
     [SerializeField]
     private GameManager gameManager;
-    
-    //public int maxMessages = 25;
 
-    public GameObject chatPanel, textObject;//, wholeChat;
+    public GameObject chatPanel, textObject;
     public TMP_InputField chatBox;
 
-    public Color playerMessage, info;
+    public Color playerMessage, player2Message;
+
+    public Message msg;
 
 
     [SerializeField]
@@ -28,13 +33,17 @@ public class ChatManager : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        ChatManager.Singleton = this;
+    }
+
     void Start()
     {
-        //GameObject myObject = new GameObject("MyObject");
-        //chatSystem = myObject.AddComponent<OpenAIChatImage>();
-        //userName = gameManager.playerName;
-        //wholeChat.SetActive(false);
-        //chatButton.onClick.AddListener(ShowChat);
+        msg = new Message();
+        msg.text = "";
+        msg.player = Message.messageType.firstPlayerMessage;
+        msg.username = "";
     }
 
     // Update is called once per frame
@@ -44,7 +53,10 @@ public class ChatManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                HandleChatMessage();
+                msg.text = chatBox.text;
+                chatBox.text = "";
+                msg.username = userName;
+                HandleChatMessage(msg);
             }
         }
 
@@ -56,18 +68,35 @@ public class ChatManager : MonoBehaviour
             }
         }
     }
-    public void HandleChatMessage()
+    public void HandleChatMessage(Message message)
     {
-        StartCoroutine(ProcessChatMessage());
+        StartCoroutine(ProcessChatMessage(message));
     }
-    private IEnumerator ProcessChatMessage()
+    private IEnumerator ProcessChatMessage(Message message)
     {
-        string message = chatBox.text;
-        chatBox.text = "";
-        sendMessageToChat("<color=blue><b>" + userName + "</b></color>: " + message, Message.messageType.playerMessage);
-        yield return chatSystem.SendMessageToAzureChat(message);
+        if(message.player == Message.messageType.firstPlayerMessage)
+        {
+            sendMessageToChat("<color=blue><b>" + message.username + "</b></color>: " + message.text);
+            SendChatMessageServerRpc(message);
+        }
+        else if(message.player == Message.messageType.secondPlayerMessage)
+        {
+            sendMessageToChat("<color=green><b>" + message.username + "</b></color>: " + message.text);
+            //SendChatMessageServerRpc(message);
+        }
+        yield return chatSystem.SendMessageToAzureChat(message.text);
         if (!chatSystem.response.Equals("None"))
-            sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response, Message.messageType.assistantMessage);
+        {
+            sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
+
+            Message msg = new Message();
+
+            msg.text = chatSystem.response;
+            msg.player = Message.messageType.assistantMessage;
+
+            SendChatMessageServerRpc(message);
+        }
+        
     }
     public void HandleInitialMessage()
     {
@@ -76,16 +105,11 @@ public class ChatManager : MonoBehaviour
     private IEnumerator InitialMessage()
     {
         yield return chatSystem.InitialMessageAzureChat();
-        sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response, Message.messageType.assistantMessage);
+        sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
     }
 
-    public void sendMessageToChat(string text, Message.messageType messageType)
+    public void sendMessageToChat(string text)
     {
-        //if (messageList.Count >= maxMessages)
-        //{
-        //    Destroy(messageList[0].textObject.gameObject);
-        //    messageList.Remove(messageList[0]);
-        //}
         
         Message newMessage = new Message();
 
@@ -93,39 +117,80 @@ public class ChatManager : MonoBehaviour
 
         GameObject newText = Instantiate(textObject, chatPanel.transform);
 
-        newMessage.textObject = newText.GetComponent<TMP_Text>();
+        TMP_Text chat = newText.GetComponent<TMP_Text>();
 
-        newMessage.textObject.text = newMessage.text;
-        newMessage.textObject.color = messageTypeColor(messageType);
+        chat.text = newMessage.text;
+        //chat.color = messageTypeColor(messageType);
 
         messageList.Add(newMessage);
     }
 
-    Color messageTypeColor(Message.messageType messageType)
+    //Color messageTypeColor(Message.messageType messageType)
+    //{
+    //    Color color = Color.black;
+
+    //    switch (messageType)
+    //    {
+    //        case Message.messageType.firstPlayerMessage:
+    //            color = playerMessage;
+    //            break;
+    //        case Message.messageType.secondPlayerMessage:
+    //            color = player2Message;
+    //            break;
+    //    }
+
+    //    return color;
+    //}
+
+    void AddMessage(Message msg)
     {
-        Color color = info;
+        //Message CM = Instantiate(msg, chatPanel.transform);
+        ////CM.SetText(msg);
+        //CM.text = msg.text;
+        GameObject newText = Instantiate(textObject, chatPanel.transform);
 
-        switch (messageType)
-        {
-            case Message.messageType.playerMessage:
-                color = playerMessage;
-                break;
-        }
+        TMP_Text chat = newText.GetComponent<TMP_Text>();
 
-        return color;
+        chat.text = msg.text;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    void SendChatMessageServerRpc(Message message)
+    {
+        ReceiveChatMessageClientRpc(message);
+    }
+
+    [ClientRpc, SerializeField]
+    void ReceiveChatMessageClientRpc(Message message)
+    {
+        if (message.player != Message.messageType.assistantMessage)
+            message.player = Message.messageType.secondPlayerMessage;
+        //ChatManager.Singleton.AddMessage(message);
+        ChatManager.Singleton.AddMessage(message);
     }
 }
 
 [System.Serializable]
-public class Message
+public class Message : INetworkSerializable
 {
     public string text;
-    public TMP_Text textObject;
+    //public TMP_Text textObject;
+    public messageType player;
+    public string username;
 
     public enum messageType
     {
-        playerMessage,
+        firstPlayerMessage,
+        secondPlayerMessage,
         assistantMessage
+    }
+
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        serializer.SerializeValue(ref text);
+        //serializer.SerializeValue(ref textObject);
+        serializer.SerializeValue(ref player);
+        serializer.SerializeValue(ref username);
     }
 }
 
