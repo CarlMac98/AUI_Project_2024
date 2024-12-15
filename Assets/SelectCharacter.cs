@@ -51,9 +51,11 @@ public class SelectCharacter : MonoBehaviour
     //highlight chosen charachter
     void Highlight(int i)
     {
-        Debug.Log(i);
+        //Debug.Log(i);
         //foreach (var o in outline) o.enabled = false;
         //outline[i].enabled = true;
+
+        int hs = 0, cl = 2 ;
 
         for (int j = 0; j < rectTransforms.Length; j++)
         {
@@ -66,17 +68,18 @@ public class SelectCharacter : MonoBehaviour
         if (ns.IsHost)
         {
             ns.host_char.Value = i;
-            showCharacterImage.ShowCharachterImage(0, i);
         }
 
         else
         {
+            hs = 2;
+            cl = 0;
             //ns.cli_char.Value += i;
             ns.ChangeServerRpc(i);
-            showCharacterImage.ShowCharachterImage(1, i);
         }
-            
 
-        
+        showCharacterImage.ShowCharachterImage(hs, ns.host_char.Value);
+        showCharacterImage.ShowCharachterImage(cl, ns.cli_char.Value);
+
     }
 }

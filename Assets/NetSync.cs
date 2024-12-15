@@ -14,6 +14,7 @@ public class NetSync : NetworkBehaviour
         if (IsServer)
         {
             host_char.Value = 0;
+            cli_char.Value = 0;
             if (NetworkManager.ConnectedClients.Count > 1)
             {
                 var clientId = NetworkManager.ConnectedClientsList[1].ClientId; // Example: Assign ownership to first client
@@ -32,7 +33,7 @@ public class NetSync : NetworkBehaviour
             else
             {
                 Debug.Log($"NetworkVariable is {host_char.Value} when spawned.");
-                cli_char.Value = 0;
+                //cli_char.Value = 0;
             }
         }
         host_char.OnValueChanged += OnSomeValueChanged;
