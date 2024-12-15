@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
             
             if (currentScene == 5)
             {
-                chatManager.HandleInitialMessage();
+                //chatManager.HandleInitialMessage();
             }
             //update buttons
             if (!GameObject.Find("Go").IsUnityNull())

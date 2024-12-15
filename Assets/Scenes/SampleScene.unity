@@ -4296,7 +4296,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 127.0.0.1
+    Address: 192.168.1.146
     Port: 7777
     ServerListenAddress: 0.0.0.0
   DebugSimulator:
@@ -5447,22 +5447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b550f745293fdfc47b4b3a6ca3c11274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userName: 
-  gameManager: {fileID: 347883017}
-  chatPanel: {fileID: 1520492513}
-  textObject: {fileID: 3135783953748185420, guid: 54fb638b09257fc45bff3c2c3b859f6e, type: 3}
-  chatBox: {fileID: 0}
-  playerMessage:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  info:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  messageList: []
 --- !u!1 &939292684
 GameObject:
   m_ObjectHideFlags: 0
@@ -7202,6 +7186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hostBtn: {fileID: 1569908452}
   joinBtn: {fileID: 1072670662}
+  gameManager: {fileID: 347883017}
 --- !u!1 &1321801248
 GameObject:
   m_ObjectHideFlags: 0
@@ -7733,7 +7718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20, y: 0}
+  m_AnchoredPosition: {x: 19.999939, y: 0}
   m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1422742985

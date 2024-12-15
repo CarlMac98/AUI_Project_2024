@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MultiplayerUI : MonoBehaviour
 {
     [SerializeField] Button hostBtn, joinBtn;
-
+    [SerializeField] GameManager gameManager;
     void Awake()
     {
         AssignInputs();
@@ -17,5 +17,6 @@ public class MultiplayerUI : MonoBehaviour
     {
         hostBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartHost(); });
         joinBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartClient(); });
+        joinBtn.onClick.AddListener(delegate { gameManager.GoAhead(); });
     }
 }
