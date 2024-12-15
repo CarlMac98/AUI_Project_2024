@@ -80,25 +80,29 @@ public class ChatManager : NetworkBehaviour
             //ChatManager.Singleton.AddMessage(message);
             SendChatMessageServerRpc(message);
         }
-        else if(message.player == Message.messageType.secondPlayerMessage)
+        //else if(message.player == Message.messageType.secondPlayerMessage)
+        //{
+        //    //sendMessageToChat("<color=green><b>" + message.username + "</b></color>: " + message.text);
+        //    ChatManager.Singleton.AddMessage(message);
+        //    //SendChatMessageServerRpc(message);
+        //}
+        if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
         {
-            //sendMessageToChat("<color=green><b>" + message.username + "</b></color>: " + message.text);
-            ChatManager.Singleton.AddMessage(message);
-            //SendChatMessageServerRpc(message);
+            yield return chatSystem.SendMessageToAzureChat(message.text);
+            if (!chatSystem.response.Equals("None"))
+            {
+                //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
+
+                Message msg = new Message();
+
+                msg.text = chatSystem.response;
+                msg.player = Message.messageType.assistantMessage;
+                msg.username = "Assistant";
+
+                SendChatMessageServerRpc(msg);
+            }
         }
-        yield return chatSystem.SendMessageToAzureChat(message.text);
-        if (!chatSystem.response.Equals("None"))
-        {
-            //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
-
-            Message msg = new Message();
-
-            msg.text = chatSystem.response;
-            msg.player = Message.messageType.assistantMessage;
-            msg.username = "Assistant";
-
-            SendChatMessageServerRpc(msg);
-        }
+        
         
     }
     public void HandleInitialMessage()

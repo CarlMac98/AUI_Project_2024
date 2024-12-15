@@ -8,6 +8,7 @@ public class MultiplayerUI : MonoBehaviour
 {
     [SerializeField] Button hostBtn, joinBtn;
     [SerializeField] GameManager gameManager;
+    [SerializeField] PythonBackendManager pythonBackendManager;
     void Awake()
     {
         AssignInputs();
@@ -15,8 +16,8 @@ public class MultiplayerUI : MonoBehaviour
 
     void AssignInputs()
     {
-        hostBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartHost(); });
-        joinBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartClient(); });
+        hostBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartHost(); GameManager.isServer = true; });
+        joinBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartClient(); GameManager.isServer = false; });
         joinBtn.onClick.AddListener(delegate { gameManager.GoAhead(); });
     }
 }

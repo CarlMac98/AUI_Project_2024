@@ -11,7 +11,7 @@ public class PythonBackendManager : MonoBehaviour
         StartPythonBackend();
     }
 
-    void StartPythonBackend()
+    public void StartPythonBackend()
     {
         string pythonExecutable = "python"; // or specify the full path to python.exe
         string scriptPath = "server.py"; // Replace with your script path

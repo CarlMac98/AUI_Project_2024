@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 public class GameManager : MonoBehaviour
 {
     //private vars
-
+    public static bool isServer;
     private int nPlayers = 0;
     private int currentScene = 0;
     [SerializeField]
