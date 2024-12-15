@@ -77,7 +77,7 @@ public class ChatManager : NetworkBehaviour
         if(message.player == Message.messageType.firstPlayerMessage)
         {
             sendMessageToChat("<color=blue><b>" + message.username + "</b></color>: " + message.text);
-            SendChatMessageServerRpc(message);
+            SendChatMessageServerRpc(message.text);
         }
         else if(message.player == Message.messageType.secondPlayerMessage)
         {
@@ -94,7 +94,7 @@ public class ChatManager : NetworkBehaviour
             msg.text = chatSystem.response;
             msg.player = Message.messageType.assistantMessage;
 
-            SendChatMessageServerRpc(message);
+            SendChatMessageServerRpc(message.text);
         }
         
     }
@@ -155,23 +155,29 @@ public class ChatManager : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    void SendChatMessageServerRpc(Message message)
+    void SendChatMessageServerRpc(string message)
     {
         ReceiveChatMessageClientRpc(message);
     }
 
-    [ClientRpc, SerializeField]
-    void ReceiveChatMessageClientRpc(Message message)
+    [ClientRpc]
+    void ReceiveChatMessageClientRpc(string message)
     {
-        if (message.player != Message.messageType.assistantMessage)
-            message.player = Message.messageType.secondPlayerMessage;
+        //if (message.player != Message.messageType.assistantMessage)
+        //    message.player = Message.messageType.secondPlayerMessage;
         //ChatManager.Singleton.AddMessage(message);
-        ChatManager.Singleton.AddMessage(message);
+        Message msg = new Message();
+        msg.text = message;
+        msg.username = "pippo";
+        if (msg.username == "Assistant")
+            msg.player = Message.messageType.assistantMessage;
+        else
+            msg.player = Message.messageType.secondPlayerMessage;
+        ChatManager.Singleton.AddMessage(msg);
     }
 }
 
-[System.Serializable]
-public class Message : INetworkSerializable
+public class Message
 {
     public string text;
     //public TMP_Text textObject;
@@ -185,12 +191,5 @@ public class Message : INetworkSerializable
         assistantMessage
     }
 
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-    {
-        serializer.SerializeValue(ref text);
-        //serializer.SerializeValue(ref textObject);
-        serializer.SerializeValue(ref player);
-        serializer.SerializeValue(ref username);
-    }
 }
 
