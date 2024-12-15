@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
             currentScene += 1;
             scenes[currentScene].SetActive(true);
             
-            if (currentScene == 5)
+            if (currentScene == 5 && isServer)
             {
                 chatManager.HandleInitialMessage();
             }

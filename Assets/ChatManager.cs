@@ -112,7 +112,13 @@ public class ChatManager : NetworkBehaviour
     private IEnumerator InitialMessage()
     {
         yield return chatSystem.InitialMessageAzureChat();
-        sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
+        Message msg = new Message();
+
+        msg.text = chatSystem.response;
+        msg.player = Message.messageType.assistantMessage;
+        msg.username = "Assistant";
+
+        SendChatMessageServerRpc(msg);
     }
 
     public void sendMessageToChat(string text)

@@ -5,6 +5,9 @@ from flask import Flask, request, jsonify
 from openai import AzureOpenAI
 import apiData
 import urllib.request
+import signal
+import sys
+
 
 # Flask setup
 app = Flask(__name__)
@@ -49,6 +52,21 @@ with open('storia.json', 'r') as file:
 
 # Create a thread for interactions
 thread = client.beta.threads.create()
+
+def cleanup(signum, frame):
+    print(f"Signal {signum} received. Cleaning up...")
+    # Call your cleanup function here
+    try:
+        outcome = client.beta.threads.delete(thread.id)
+        print(f"Cleanup response: {outcome}")
+    except Exception as e:
+        print(f"Error during cleanup: {e}")
+    sys.exit(0)  # Exit after cleanup
+
+# Register signal handlers
+signal.signal(signal.SIGINT, cleanup)  # Handle Ctrl+C
+signal.signal(signal.SIGTERM, cleanup)  # Handle termination signal
+
 def int_intro(interactions):
     if interactions == 1:
         return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
