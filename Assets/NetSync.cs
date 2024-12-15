@@ -7,6 +7,9 @@ public class NetSync : NetworkBehaviour
     public NetworkVariable<int> host_char = new NetworkVariable<int>();
     public NetworkVariable<int> cli_char = new NetworkVariable<int>();
 
+    public NetworkVariable<string> host_name = new NetworkVariable<string>();
+    public NetworkVariable<string> cli_name = new NetworkVariable<string>();
+
     //public GameManager ;
 
     public override void OnNetworkSpawn()
@@ -15,12 +18,15 @@ public class NetSync : NetworkBehaviour
         {
             host_char.Value = 0;
             cli_char.Value = 0;
-            if (NetworkManager.ConnectedClients.Count > 1)
-            {
-                var clientId = NetworkManager.ConnectedClientsList[1].ClientId; // Example: Assign ownership to first client
-                NetworkObject.ChangeOwnership(clientId);
-            }
-            //NetworkManager.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
+            host_name.Value = "";
+            cli_name.Value = "";
+
+            //if (NetworkManager.ConnectedClients.Count > 1)
+            //{
+            //    var clientId = NetworkManager.ConnectedClientsList[1].ClientId; // Example: Assign ownership to first client
+            //    NetworkObject.ChangeOwnership(clientId);
+            //}
+            ////NetworkManager.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
         }
         else
         {
@@ -52,9 +58,15 @@ public class NetSync : NetworkBehaviour
 
 
     [ServerRpc(RequireOwnership = false)]
-    public void ChangeServerRpc(int i)
+    public void ChangeCharNumServerRpc(int i)
     {
         cli_char.Value = i;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ChangeCharNameServerRpc(string name)
+    {
+        cli_name.Value = name;
     }
 
     //private IEnumerator StartChangingNetworkVariable()

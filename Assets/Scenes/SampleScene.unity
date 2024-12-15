@@ -2846,6 +2846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatManager: {fileID: 775380131}
+  ns: {fileID: 1762046685}
   playerName: 
   story: 0
   scenes:
@@ -4433,7 +4434,7 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 192.168.1.58
+    Address: 192.168.1.146
     Port: 7777
     ServerListenAddress: 0.0.0.0
   DebugSimulator:
@@ -10196,6 +10197,10 @@ MonoBehaviour:
     m_InternalValue: 0
   cli_char:
     m_InternalValue: 0
+  host_name:
+    m_InternalValue: 
+  cli_name:
+    m_InternalValue: 
 --- !u!4 &1762046686
 Transform:
   m_ObjectHideFlags: 0

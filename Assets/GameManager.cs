@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private int currentScene = 0;
     [SerializeField]
     ChatManager chatManager;
+    [SerializeField]
+    NetSync ns;
     
     //public vars
 
@@ -70,6 +72,12 @@ public class GameManager : MonoBehaviour
                 if (playerInput.text != "")
                 {
                     playerName = playerInput.text;
+                    if(isServer)
+                    {
+                        ns.host_name.Value = playerName;
+                    }
+                    else
+                        ns.ChangeCharNameServerRpc(playerName);
                 }
                 else
                 {
