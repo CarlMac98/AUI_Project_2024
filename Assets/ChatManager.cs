@@ -120,7 +120,15 @@ public class ChatManager : NetworkBehaviour
 
         SendChatMessageServerRpc(msg);
     }
-
+    public void HandleReset()
+    {
+        StartCoroutine(ResetChat());
+    }
+    private IEnumerator ResetChat()
+    {
+        messageList.Clear();
+        yield return chatSystem.ResetStory();
+    }
     public void sendMessageToChat(string text)
     {
         
@@ -146,13 +154,13 @@ public class ChatManager : NetworkBehaviour
         switch (msg.player)
         {
             case Message.messageType.assistantMessage:
-                chat.text = "<color=red><b>" + msg.username + ":</color> " + msg.text;
+                chat.text = "<color=red><b>" + msg.username + ":</b></color> " + msg.text;
                 break;
             case Message.messageType.firstPlayerMessage:
-                chat.text = "<color=blue><b>" + msg.username + ":</color> " + msg.text;
+                chat.text = "<color=blue><b>" + msg.username + ":</b></color> " + msg.text;
                 break;
             case Message.messageType.secondPlayerMessage:
-                chat.text = "<color=green><b>" + msg.username + ":</color> " + msg.text;
+                chat.text = "<color=green><b>" + msg.username + ":</b></color> " + msg.text;
                 break;
             default:
                 chat.text = "Error";

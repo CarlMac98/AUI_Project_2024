@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public TMP_Dropdown numPlayers;
     public BackgroundHandler background;
     private bool imageGenerated;
+    private bool reset = false;
 
     void Start()
     {
@@ -96,6 +97,11 @@ public class GameManager : MonoBehaviour
             
             if (currentScene == 5 && isServer)
             {
+                if (!reset)
+                {
+                    chatManager.HandleReset();
+                    reset = true;
+                }
                 chatManager.HandleInitialMessage();
             }
             //update buttons

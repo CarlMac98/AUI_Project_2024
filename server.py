@@ -53,19 +53,22 @@ with open('storia.json', 'r') as file:
 # Create a thread for interactions
 thread = client.beta.threads.create()
 
-def cleanup(signum, frame):
-    print(f"Signal {signum} received. Cleaning up...")
+def cleanup():
+    global counter, interactions, question, intervention, section, percorso, n_image
     # Call your cleanup function here
     try:
+        counter = 0
+        interactions = 0
+        question = ""
+        intervention = ""
+        n_image = 0
+        section = "inizio"
+        percorso = "percorso_1"
         outcome = client.beta.threads.delete(thread.id)
         print(f"Cleanup response: {outcome}")
     except Exception as e:
         print(f"Error during cleanup: {e}")
-    sys.exit(0)  # Exit after cleanup
 
-# Register signal handlers
-signal.signal(signal.SIGINT, cleanup)  # Handle Ctrl+C
-signal.signal(signal.SIGTERM, cleanup)  # Handle termination signal
 
 def int_intro(interactions):
     if interactions == 1:
@@ -144,6 +147,18 @@ def determina_percorso(response):
 def handle_story_creation():
     story = ""
     return story, 200
+
+@app.route('/api/reset', methods=['POST'])
+def handle_reset():
+    global counter, interactions, question, intervention, section, percorso, n_image
+    counter = 0
+    interactions = 0
+    question = ""
+    intervention = ""
+    n_image = 0
+    section = "inizio"
+    percorso = "percorso_1"
+    return jsonify({"status": "success"}), 200
 
 @app.route('/api/init', methods=['POST'])
 def handle_initial_call():
@@ -244,6 +259,14 @@ def handle_request_image():
         print("Error:", e)
         return jsonify({"error": "Server error"}), 400
 
+@app.route('/shutdown', methods=['POST'])
+def shutdown():
+    cleanup()
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
+    return 'Server shutting down...', 200
 
 if __name__ == '__main__':
     # Run the Flask app
