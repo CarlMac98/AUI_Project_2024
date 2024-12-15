@@ -76,25 +76,28 @@ public class ChatManager : NetworkBehaviour
     {
         if(message.player == Message.messageType.firstPlayerMessage)
         {
-            sendMessageToChat("<color=blue><b>" + message.username + "</b></color>: " + message.text);
-            SendChatMessageServerRpc(message.text);
+            //sendMessageToChat("<color=blue><b>" + message.username + "</b></color>: " + message.text);
+            //ChatManager.Singleton.AddMessage(message);
+            SendChatMessageServerRpc(message);
         }
         else if(message.player == Message.messageType.secondPlayerMessage)
         {
-            sendMessageToChat("<color=green><b>" + message.username + "</b></color>: " + message.text);
+            //sendMessageToChat("<color=green><b>" + message.username + "</b></color>: " + message.text);
+            ChatManager.Singleton.AddMessage(message);
             //SendChatMessageServerRpc(message);
         }
         yield return chatSystem.SendMessageToAzureChat(message.text);
         if (!chatSystem.response.Equals("None"))
         {
-            sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
+            //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
 
             Message msg = new Message();
 
             msg.text = chatSystem.response;
             msg.player = Message.messageType.assistantMessage;
+            msg.username = "Assistant";
 
-            SendChatMessageServerRpc(message.text);
+            SendChatMessageServerRpc(msg);
         }
         
     }
@@ -151,33 +154,30 @@ public class ChatManager : NetworkBehaviour
 
         TMP_Text chat = newText.GetComponent<TMP_Text>();
 
-        chat.text = msg.text;
+        chat.text = msg.username + ": " + msg.text;
     }
 
     [ServerRpc(RequireOwnership = false)]
-    void SendChatMessageServerRpc(string message)
+    void SendChatMessageServerRpc(Message message)
     {
         ReceiveChatMessageClientRpc(message);
     }
 
     [ClientRpc]
-    void ReceiveChatMessageClientRpc(string message)
+    void ReceiveChatMessageClientRpc(Message message)
     {
-        //if (message.player != Message.messageType.assistantMessage)
-        //    message.player = Message.messageType.secondPlayerMessage;
+        if (message.player != Message.messageType.assistantMessage && message.username != userName){
+            message.player = Message.messageType.secondPlayerMessage;
+            Debug.Log("Second player wrote");
+        }
         //ChatManager.Singleton.AddMessage(message);
-        Message msg = new Message();
-        msg.text = message;
-        msg.username = "pippo";
-        if (msg.username == "Assistant")
-            msg.player = Message.messageType.assistantMessage;
-        else
-            msg.player = Message.messageType.secondPlayerMessage;
-        ChatManager.Singleton.AddMessage(msg);
+        
+        ChatManager.Singleton.AddMessage(message);
     }
 }
 
-public class Message
+[System.Serializable]
+public class Message : INetworkSerializable
 {
     public string text;
     //public TMP_Text textObject;
@@ -191,5 +191,12 @@ public class Message
         assistantMessage
     }
 
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        serializer.SerializeValue(ref text);
+        //serializer.SerializeValue(ref textObject);
+        serializer.SerializeValue(ref player);
+        serializer.SerializeValue(ref username);
+    }
 }
 
