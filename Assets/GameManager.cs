@@ -92,6 +92,11 @@ public class GameManager : MonoBehaviour
             {
                 chatManager.userName = playerName;
                 background.Handle();
+                if (!reset)
+                {
+                    chatManager.HandleReset();
+                    reset = true;
+                }
             }
 
             //scenes going forward handling
@@ -105,11 +110,6 @@ public class GameManager : MonoBehaviour
             
             if (currentScene == 5 && isServer)
             {
-                if (!reset)
-                {
-                    chatManager.HandleReset();
-                    reset = true;
-                }
                 chatManager.HandleInitialMessage();
             }
             //update buttons

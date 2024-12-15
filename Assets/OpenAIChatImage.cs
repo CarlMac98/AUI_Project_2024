@@ -11,10 +11,10 @@ public class OpenAIChatImage : MonoBehaviour
 {
 
     private Dictionary<string, string> backendEndpoint = new Dictionary<string, string> {
-        {"chat", "http://127.0.0.1:7000/api/chat"},
-        {"init", "http://127.0.0.1:7000/api/init"},
-        {"image", "http://127.0.0.1:7000/api/image"},
-        {"reset", "http://127.0.0.1:7000/api/reset"}
+        {"chat", "http://127.0.0.1:7001/api/chat"},
+        {"init", "http://127.0.0.1:7001/api/init"},
+        {"image", "http://127.0.0.1:7001/api/image"},
+        {"reset", "http://127.0.0.1:7001/api/reset"}
     };
     public string response = "";
     public IEnumerator SendMessageToAzureChat(string promptToSend)
@@ -95,7 +95,7 @@ public class OpenAIChatImage : MonoBehaviour
     {
         // Construct payload
         string jsonPayload = "";
-        Debug.Log("Initial message sent");
+        Debug.Log("Reset");
 
         // Set up the UnityWebRequest
         var request = new UnityWebRequest(backendEndpoint["reset"], "POST");
@@ -113,8 +113,7 @@ public class OpenAIChatImage : MonoBehaviour
         }
         else
         {
-            response = request.downloadHandler.text;
-            Debug.Log("Response: " + response);
+            Debug.Log("Reset done");
 
         }
     }

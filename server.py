@@ -64,8 +64,8 @@ def cleanup():
         n_image = 0
         section = "inizio"
         percorso = "percorso_1"
-        outcome = client.beta.threads.delete(thread.id)
-        print(f"Cleanup response: {outcome}")
+        #outcome = client.beta.threads.delete(thread.id)
+        #print(f"Cleanup response: {outcome}")
     except Exception as e:
         print(f"Error during cleanup: {e}")
 
@@ -270,4 +270,4 @@ def shutdown():
 
 if __name__ == '__main__':
     # Run the Flask app
-    app.run(host='127.0.0.1', port=7000, debug=False)
+    app.run(host='127.0.0.1', port=7001, debug=False)
