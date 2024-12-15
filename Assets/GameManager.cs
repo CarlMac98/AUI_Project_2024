@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     //public vars
 
     public string playerName;
-    public int charachter = 0;
+    //public int charachter = 0;
     public int story;
 
     public GameObject[] scenes;

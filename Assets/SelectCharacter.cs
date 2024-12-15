@@ -15,6 +15,7 @@ public class SelectCharacter : MonoBehaviour
     private RectTransform[] rectTransforms;
 
     public GameManager gm;
+    public NetSync ns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,8 +62,20 @@ public class SelectCharacter : MonoBehaviour
             if(i == j) t.localScale = new Vector3(1.1f, 1.1f, 1.1f);
         }
 
-        gm.charachter = i;
+        //gm.charachter = i;
+        if (ns.IsHost)
+        {
+            ns.host_char.Value = i;
+            showCharacterImage.ShowCharachterImage(0, i);
+        }
 
-        showCharacterImage.ShowCharachterImage(0, i);
+        else
+        {
+            ns.cli_char.Value += i;
+            showCharacterImage.ShowCharachterImage(1, i);
+        }
+            
+
+        
     }
 }
