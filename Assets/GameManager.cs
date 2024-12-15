@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(currentScene);
         //check current number of scenes
+
         if (scenes.Length - 1 > currentScene)
         {
             //forbid passage to the third scene if name is not inserted
@@ -86,6 +87,10 @@ public class GameManager : MonoBehaviour
 
             //scenes going forward handling
             scenes[currentScene].SetActive(false);
+            if (!isServer && currentScene == 2)
+            {
+                currentScene++;
+            }
             currentScene += 1;
             scenes[currentScene].SetActive(true);
             
@@ -117,6 +122,10 @@ public class GameManager : MonoBehaviour
         if (currentScene > 0)
         {
             scenes.ToArray()[currentScene].SetActive(false);
+            if (!isServer && currentScene == 4)
+            {
+                currentScene--;
+            }
             currentScene -= 1;
             scenes.ToArray()[currentScene].SetActive(true);
             

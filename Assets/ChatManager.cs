@@ -132,33 +132,26 @@ public class ChatManager : NetworkBehaviour
         messageList.Add(newMessage);
     }
 
-    //Color messageTypeColor(Message.messageType messageType)
-    //{
-    //    Color color = Color.black;
-
-    //    switch (messageType)
-    //    {
-    //        case Message.messageType.firstPlayerMessage:
-    //            color = playerMessage;
-    //            break;
-    //        case Message.messageType.secondPlayerMessage:
-    //            color = player2Message;
-    //            break;
-    //    }
-
-    //    return color;
-    //}
-
     void AddMessage(Message msg)
     {
-        //Message CM = Instantiate(msg, chatPanel.transform);
-        ////CM.SetText(msg);
-        //CM.text = msg.text;
         GameObject newText = Instantiate(textObject, chatPanel.transform);
 
         TMP_Text chat = newText.GetComponent<TMP_Text>();
-
-        chat.text = msg.username + ": " + msg.text;
+        switch (msg.player)
+        {
+            case Message.messageType.assistantMessage:
+                chat.text = "<color=red><b>" + msg.username + ":</color> " + msg.text;
+                break;
+            case Message.messageType.firstPlayerMessage:
+                chat.text = "<color=blue><b>" + msg.username + ":</color> " + msg.text;
+                break;
+            case Message.messageType.secondPlayerMessage:
+                chat.text = "<color=green><b>" + msg.username + ":</color> " + msg.text;
+                break;
+            default:
+                chat.text = "Error";
+                break;
+        }    
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -173,8 +166,8 @@ public class ChatManager : NetworkBehaviour
         if (message.player != Message.messageType.assistantMessage && message.username != userName){
             message.player = Message.messageType.secondPlayerMessage;
             Debug.Log("Second player wrote");
+            HandleChatMessage(message);
         }
-        //ChatManager.Singleton.AddMessage(message);
         
         ChatManager.Singleton.AddMessage(message);
     }
