@@ -6,6 +6,7 @@ public class NetSync : NetworkBehaviour
 {
     public NetworkVariable<int> host_char = new NetworkVariable<int>();
     public NetworkVariable<int> cli_char = new NetworkVariable<int>();
+
     //public GameManager ;
 
     public override void OnNetworkSpawn()
@@ -13,6 +14,11 @@ public class NetSync : NetworkBehaviour
         if (IsServer)
         {
             host_char.Value = 0;
+            if (NetworkManager.ConnectedClients.Count > 1)
+            {
+                var clientId = NetworkManager.ConnectedClientsList[1].ClientId; // Example: Assign ownership to first client
+                NetworkObject.ChangeOwnership(clientId);
+            }
             //NetworkManager.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
         }
         else
@@ -41,6 +47,13 @@ public class NetSync : NetworkBehaviour
     private void OnSomeValueChanged(int previous, int current)
     {
         Debug.Log($"Detected NetworkVariable Change: Previous: {previous} | Current: {current}");
+    }
+
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ChangeServerRpc(int i)
+    {
+        cli_char.Value = i;
     }
 
     //private IEnumerator StartChangingNetworkVariable()

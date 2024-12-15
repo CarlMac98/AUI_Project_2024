@@ -71,7 +71,8 @@ public class SelectCharacter : MonoBehaviour
 
         else
         {
-            ns.cli_char.Value += i;
+            //ns.cli_char.Value += i;
+            ns.ChangeServerRpc(i);
             showCharacterImage.ShowCharachterImage(1, i);
         }
             
