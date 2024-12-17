@@ -165,7 +165,8 @@ public class ChatManager : NetworkBehaviour
             default:
                 chat.text = "Error";
                 break;
-        }    
+        }
+        messageList.Add(msg);
     }
 
     [ServerRpc(RequireOwnership = false)]

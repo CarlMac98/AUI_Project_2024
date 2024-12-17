@@ -7,8 +7,8 @@ public class NetSync : NetworkBehaviour
     public NetworkVariable<int> host_char = new NetworkVariable<int>();
     public NetworkVariable<int> cli_char = new NetworkVariable<int>();
 
-    public NetworkVariable<string> host_name = new NetworkVariable<string>();
-    public NetworkVariable<string> cli_name = new NetworkVariable<string>();
+    //public NetworkVariable<string> host_name = new NetworkVariable<string>();
+    //public NetworkVariable<string> cli_name = new NetworkVariable<string>();
 
     //public GameManager ;
 
@@ -18,8 +18,8 @@ public class NetSync : NetworkBehaviour
         {
             host_char.Value = 0;
             cli_char.Value = 0;
-            host_name.Value = "";
-            cli_name.Value = "";
+            //host_name.Value = "";
+            //cli_name.Value = "";
 
             //if (NetworkManager.ConnectedClients.Count > 1)
             //{
@@ -63,11 +63,12 @@ public class NetSync : NetworkBehaviour
         cli_char.Value = i;
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void ChangeCharNameServerRpc(string name)
-    {
-        cli_name.Value = name;
-    }
+    //[ServerRpc(RequireOwnership = false)]
+    //public void ChangeCharNameServerRpc(string name)
+    //{
+    //    cli_name.Value = name;
+    //    Debug.Log(cli_name.Value);
+    //}
 
     //private IEnumerator StartChangingNetworkVariable()
     //{

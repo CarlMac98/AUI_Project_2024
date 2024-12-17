@@ -72,12 +72,12 @@ public class GameManager : MonoBehaviour
                 if (playerInput.text != "")
                 {
                     playerName = playerInput.text;
-                    if(isServer)
-                    {
-                        ns.host_name.Value = playerName;
-                    }
-                    else
-                        ns.ChangeCharNameServerRpc(playerName);
+                    //if(isServer)
+                    //{
+                    //    ns.host_name.Value = playerName;
+                    //}
+                    //else
+                    //    ns.ChangeCharNameServerRpc(playerName);
                 }
                 else
                 {
