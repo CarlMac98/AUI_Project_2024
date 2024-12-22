@@ -148,6 +148,24 @@ def handle_story_creation():
     story = ""
     return story, 200
 
+@app.route('/api/aiuto', methods=['POST'])
+def handle_aiuto():
+    request_data = request.get_json()
+    if not request_data or 'utente' not in request_data:
+        return jsonify({"error": "Invalid request. 'prompt' is required."}), 400
+
+    utente = request_data['utente']
+    domanda = request_data['domanda']
+    prompt = f"Intervento: {utente} ti sta parlando in privato solo per questo prompt, devi aiutarlo per qualsiasi dubbio lui abbia, non far andare avanti la storia, questa la sua domanda.\n {utente}:'{domanda}'"
+    response = sendMessage(prompt)
+    return response, 200
+
+@app.route('/api/summary', methods=['POST'])
+def handle_summary():
+    prompt = "Intervento: fai un riassunto della storia, non far andare avanti la storia, racconta cosa è successo finora. Il contenuto deve essere adatto per bambini."
+    response = sendMessage(prompt)
+    return response, 200
+
 @app.route('/api/reset', methods=['POST'])
 def handle_reset():
     global counter, interactions, question, intervention, section, percorso, n_image
@@ -201,7 +219,7 @@ def handle_request_chat():
 
     # Send the message to Azure OpenAI and get the response
     if counter % 2 == 1:
-        question += f"\nIntervento: {intervention}"
+        question += f"\nIntervento: stai parlando a entrambi i bambini, {intervention}"
         #print(f"Question: {question}")
         response = sendMessage(question)
     else:
@@ -209,8 +227,9 @@ def handle_request_chat():
     #print(f"Response: {response}")
 
     counter = (counter + 1) % 2
-
+    next_scene = False
     if "scena successiva" in response.lower():
+        next_scene = True
         if section == "inizio":
             section = "fase_intermedia"
             percorso = determina_percorso(response)
@@ -221,7 +240,7 @@ def handle_request_chat():
         interactions = 0
 
     # Return the response back to Unity
-    return response, 200
+    return jsonify({"response": response, "next_scene": next_scene }), 200
 
 @app.route('/api/image', methods=['POST'])
 def handle_request_image():
