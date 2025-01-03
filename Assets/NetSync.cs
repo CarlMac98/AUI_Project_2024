@@ -10,6 +10,9 @@ public class NetSync : NetworkBehaviour
 
     public NetworkVariable<bool> next_scene = new NetworkVariable<bool>();
 
+    [SerializeField]
+    public GameManager gameManager;
+
     //public NetworkVariable<string> host_name = new NetworkVariable<string>();
     //public NetworkVariable<string> cli_name = new NetworkVariable<string>();
 
@@ -54,6 +57,11 @@ public class NetSync : NetworkBehaviour
     public void SetNextSceneServerRpc(bool next)
     {
         next_scene.Value = next;
+        if (next)
+        {
+            StartCoroutine(gameManager.GoToNextScene());
+        }
+
     }
 
     //private void NetworkManager_OnClientConnectedCallback(ulong obj)

@@ -6,7 +6,7 @@ using System.Collections;
 public class PythonBackendManager : MonoBehaviour
 {
     private Process pythonProcess;
-    private string flaskShutdownURL = "http://127.0.0.1:7000/shutdown";
+    private string flaskShutdownURL = "http://127.0.0.1:7001/shutdown";
 
     // Start is called before the first frame update
     void Start()

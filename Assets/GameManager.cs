@@ -50,10 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(ns.next_scene.Value)
-        {
-            StartCoroutine(GoToNextScene());       
-        }
+        
     }
 
     public void GoAhead()
@@ -163,7 +160,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator GoToNextScene()
+    public IEnumerator GoToNextScene()
     {
         chatManager.NextSceneReset();
         GoBack();

@@ -239,8 +239,8 @@ def handle_request_chat():
         else:
             section = "inizio"
         interactions = 0
-    if "content filter" or "token" in response.lower():
-        response = "Non ho capito, potete ripetere quello che volete raccontare?"
+    #if "content filter" in response.lower() or "token" in response.lower():
+    #    response = "Non ho capito, potete ripetere quello che volete raccontare? " + response
 
     # Return the response back to Unity
     return jsonify({"response": response, "next_scene": next_scene }), 200
@@ -274,9 +274,10 @@ def handle_request_image():
         )
 
         image_url = json.loads(result.model_dump_json())['data'][0]['url']
-        urllib.request.urlretrieve(image_url, f"Assets/Images/Backgrounds/image{n_image}.png")
+        directory = f"Assets/Images/Backgrounds/image{n_image}.png"
+        urllib.request.urlretrieve(image_url, directory)
         
-        return f"Assets/Images/Backgrounds/image{n_image}.png", 200
+        return directory, 200
     except Exception as e:
         print("Error:", e)
         return jsonify({"error": "Server error"}), 400
