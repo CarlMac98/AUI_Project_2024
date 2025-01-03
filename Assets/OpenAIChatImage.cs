@@ -9,6 +9,12 @@ using System.Collections.Generic;
 // This is used to communicate with your backend
 public class OpenAIChatImage : MonoBehaviour
 {
+    [System.Serializable]
+    public class Response
+    {
+        public bool next_scene;
+        public string response;
+    }
 
     private Dictionary<string, string> backendEndpoint = new Dictionary<string, string> {
         {"chat", "http://127.0.0.1:7001/api/chat"},
@@ -59,7 +65,25 @@ public class OpenAIChatImage : MonoBehaviour
         }
         else
         {
-            response = request.downloadHandler.text;
+            string response_json = request.downloadHandler.text;
+            Debug.Log("Response: " + response_json);
+
+            try
+            {
+                Response parsedResponse = JsonUtility.FromJson<Response>(response_json);
+
+                Debug.Log("Next Scene: " + parsedResponse.next_scene);
+                //Debug.Log("Response Message: " + parsedResponse.response);
+
+                // cambiare variabile network cambio scena
+
+                response = parsedResponse.response;
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError("Failed to parse JSON: " + ex.Message);
+            }
+
             if (response == "None")
             {
                 Debug.Log("First interaction");
@@ -71,7 +95,7 @@ public class OpenAIChatImage : MonoBehaviour
         }
     }
 
-    private IEnumerator SendHelpRequest(string prompt, string user)
+    public IEnumerator SendHelpRequest(string prompt, string user)
     {
         string cleanPrompt = prompt.Trim();
         // Construct payload
@@ -134,7 +158,7 @@ public class OpenAIChatImage : MonoBehaviour
         }
     }
 
-    public IEnumerator RequestSummary() {
+    private IEnumerator RequestSummary() {
         // Construct payload
         string jsonPayload = "";
         Debug.Log("Summary request");
