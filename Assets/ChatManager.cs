@@ -148,6 +148,13 @@ public class ChatManager : NetworkBehaviour
         messageList.Clear();
         yield return chatSystem.ResetStory();
     }
+    public IEnumerator NextSceneReset() 
+    {
+        chatBox.DeactivateInputField();
+        yield return new WaitForSeconds(5);
+        messageList.Clear();
+        chatBox.ActivateInputField();
+    }
     public void sendMessageToChat(string text)
     {
         
@@ -187,6 +194,8 @@ public class ChatManager : NetworkBehaviour
         }
         messageList.Add(msg);
     }
+
+
 
     [ServerRpc(RequireOwnership = false)]
     void SendChatMessageServerRpc(Message message)

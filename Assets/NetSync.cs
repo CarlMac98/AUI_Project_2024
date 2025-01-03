@@ -1,11 +1,14 @@
 using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
+using System;
 
 public class NetSync : NetworkBehaviour
 {
     public NetworkVariable<int> host_char = new NetworkVariable<int>();
     public NetworkVariable<int> cli_char = new NetworkVariable<int>();
+
+    public NetworkVariable<bool> next_scene = new NetworkVariable<bool>();
 
     //public NetworkVariable<string> host_name = new NetworkVariable<string>();
     //public NetworkVariable<string> cli_name = new NetworkVariable<string>();
@@ -18,6 +21,7 @@ public class NetSync : NetworkBehaviour
         {
             host_char.Value = 0;
             cli_char.Value = 0;
+            next_scene.Value = false;
             //host_name.Value = "";
             //cli_name.Value = "";
 
@@ -44,6 +48,12 @@ public class NetSync : NetworkBehaviour
         }
         host_char.OnValueChanged += OnSomeValueChanged;
         cli_char.OnValueChanged += OnSomeValueChanged;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void SetNextSceneServerRpc(bool next)
+    {
+        next_scene.Value = next;
     }
 
     //private void NetworkManager_OnClientConnectedCallback(ulong obj)

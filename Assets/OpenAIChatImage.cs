@@ -9,6 +9,9 @@ using System.Collections.Generic;
 // This is used to communicate with your backend
 public class OpenAIChatImage : MonoBehaviour
 {
+    [SerializeField]
+    private NetSync ns;
+
     [System.Serializable]
     public class Response
     {
@@ -76,8 +79,9 @@ public class OpenAIChatImage : MonoBehaviour
                 //Debug.Log("Response Message: " + parsedResponse.response);
 
                 // cambiare variabile network cambio scena
-
+                
                 response = parsedResponse.response;
+                ns.SetNextSceneServerRpc(parsedResponse.next_scene);
             }
             catch (System.Exception ex)
             {

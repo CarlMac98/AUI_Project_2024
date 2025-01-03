@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using static UnityEngine.ParticleSystem;
 using System.Runtime.CompilerServices;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,7 +50,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        if(ns.next_scene.Value)
+        {
+            StartCoroutine(GoToNextScene());       
+        }
     }
 
     public void GoAhead()
@@ -157,5 +161,21 @@ public class GameManager : MonoBehaviour
                 backButton.onClick.AddListener(GoBack);
             }
         }
+    }
+
+    private IEnumerator GoToNextScene()
+    {
+        chatManager.NextSceneReset();
+        GoBack();
+
+        if (!GameObject.Find("Go").IsUnityNull()) 
+        {
+            backButton.gameObject.SetActive(false);
+            goButton.gameObject.SetActive(false);
+        }
+
+        //update riassuntozzo
+        yield return new WaitForSeconds(10);
+        GoAhead();
     }
 }
