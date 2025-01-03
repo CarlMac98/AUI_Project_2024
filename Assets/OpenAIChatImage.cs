@@ -14,9 +14,12 @@ public class OpenAIChatImage : MonoBehaviour
         {"chat", "http://127.0.0.1:7001/api/chat"},
         {"init", "http://127.0.0.1:7001/api/init"},
         {"image", "http://127.0.0.1:7001/api/image"},
-        {"reset", "http://127.0.0.1:7001/api/reset"}
+        {"reset", "http://127.0.0.1:7001/api/reset"},
+        {"summary", "http://127.0.0.1:7001/api/summary" },
+        {"help", "http://127.0.0.1:7001/api/help" }
     };
     public string response = "";
+    public string summary = "";
     public IEnumerator SendMessageToAzureChat(string promptToSend)
     {
         if (promptToSend.Length > 0)
@@ -26,9 +29,12 @@ public class OpenAIChatImage : MonoBehaviour
     {
         yield return StartCoroutine(SendInitialRequest());
     }
-    public IEnumerator RequestToAzureImage(string prompt)
+    public IEnumerator SendRequestSummmary() {
+        yield return StartCoroutine(RequestSummary());
+    }
+    public IEnumerator RequestToAzureImage()
     {    
-        yield return StartCoroutine(RequestImage(prompt));
+        yield return StartCoroutine(RequestImage());
     }
     private IEnumerator SendRequest(string prompt)
     {
@@ -64,6 +70,42 @@ public class OpenAIChatImage : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator SendHelpRequest(string prompt, string user)
+    {
+        string cleanPrompt = prompt.Trim();
+        // Construct payload
+        string jsonPayload = "{\"domanda\":\"" + cleanPrompt + "\", \"utente\":\""+ user + "\"}";
+        Debug.Log("Payload being sent: " + jsonPayload);
+
+        // Set up the UnityWebRequest
+        var request = new UnityWebRequest(backendEndpoint["chat"], "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        // Send the request and wait for a response
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            response = request.downloadHandler.text;
+            if (response == "None")
+            {
+                Debug.Log("First interaction");
+            }
+            else
+            {
+                Debug.Log("Response: " + response);
+            }
+        }
+    }
+
     private IEnumerator SendInitialRequest()
     {
         // Construct payload
@@ -90,6 +132,34 @@ public class OpenAIChatImage : MonoBehaviour
             Debug.Log("Response: " + response);
             
         }
+    }
+
+    public IEnumerator RequestSummary() {
+        // Construct payload
+        string jsonPayload = "";
+        Debug.Log("Summary request");
+
+        // Set up the UnityWebRequest
+        var request = new UnityWebRequest(backendEndpoint["summary"], "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        // Send the request and wait for a response
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            summary = request.downloadHandler.text;
+            Story.Summary = summary;
+            Debug.Log("Summary: " + Story.Summary);
+        }
+
     }
     public IEnumerator ResetStory()
     {
@@ -118,10 +188,8 @@ public class OpenAIChatImage : MonoBehaviour
         }
     }
 
-    private IEnumerator RequestImage(string prompt)
+    private IEnumerator RequestImage()
     {
-        string cleanPrompt = prompt.Trim();
-        // Construct payload
         string jsonPayload = "{}";
         Debug.Log("Payload being sent: " + jsonPayload);
 

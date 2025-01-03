@@ -148,7 +148,7 @@ def handle_story_creation():
     story = ""
     return story, 200
 
-@app.route('/api/aiuto', methods=['POST'])
+@app.route('/api/help', methods=['POST'])
 def handle_aiuto():
     request_data = request.get_json()
     if not request_data or 'utente' not in request_data:
@@ -238,6 +238,8 @@ def handle_request_chat():
         else:
             section = "inizio"
         interactions = 0
+    if "content filter" in response.lower():
+        response = "Non ho capito, potete ripetere quello che volete raccontare?"
 
     # Return the response back to Unity
     return jsonify({"response": response, "next_scene": next_scene }), 200

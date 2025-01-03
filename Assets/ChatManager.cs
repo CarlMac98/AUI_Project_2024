@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Unity.Netcode;
 using TMPro;
 using System.Collections;
@@ -19,8 +20,10 @@ public class ChatManager : NetworkBehaviour
 
     [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    public Button storyButton, chatButton;
 
-    public GameObject chatPanel, textObject;
+    public GameObject chatPanel, textObject, chatSection, summarySection;
     public TMP_InputField chatBox;
 
     public Color playerMessage, player2Message;
@@ -40,6 +43,8 @@ public class ChatManager : NetworkBehaviour
 
     void Start()
     {
+        storyButton.onClick.AddListener(Summary);
+        chatButton.onClick.AddListener(Chat);
         msg = new Message();
         msg.text = "";
         msg.player = Message.messageType.firstPlayerMessage;
@@ -108,6 +113,20 @@ public class ChatManager : NetworkBehaviour
     public void HandleInitialMessage()
     {
         StartCoroutine(InitialMessage());
+    }
+
+    public void Summary()
+    {
+        chatSection.SetActive(false);
+        summarySection.SetActive(true);
+        StartCoroutine(RequestSummary());
+    }
+    public void Chat() {
+        chatSection.SetActive(true);
+        summarySection.SetActive(false);
+    }
+    public IEnumerator RequestSummary() { 
+        yield return chatSystem.SendRequestSummmary();
     }
     private IEnumerator InitialMessage()
     {
