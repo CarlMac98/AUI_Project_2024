@@ -23,8 +23,9 @@ public class ChatManager : NetworkBehaviour
     [SerializeField]
     public Button storyButton, chatButton;
 
-    public GameObject chatPanel, textObject, chatSection, summarySection;
+    public GameObject chatPanel, storyPanel, textObject, chatSection, summarySection;
     public TMP_InputField chatBox;
+    GameObject storyPanelText;
 
     public Color playerMessage, player2Message;
 
@@ -49,6 +50,7 @@ public class ChatManager : NetworkBehaviour
         msg.text = "";
         msg.player = Message.messageType.firstPlayerMessage;
         msg.username = "";
+        storyPanelText = Instantiate(textObject, storyPanel.transform);
     }
 
     // Update is called once per frame
@@ -93,7 +95,7 @@ public class ChatManager : NetworkBehaviour
         //}
         if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
         {
-            yield return chatSystem.SendMessageToAzureChat(message.text);
+            yield return chatSystem.SendMessageToAzureChat(message.player + ": "+ message.text);
             if (!chatSystem.response.Equals("None"))
             {
                 //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
@@ -121,12 +123,20 @@ public class ChatManager : NetworkBehaviour
         summarySection.SetActive(true);
         StartCoroutine(RequestSummary());
     }
+    public void VisualizeSummary() {
+
+        TMP_Text chat = storyPanelText.GetComponent<TMP_Text>();
+
+        chat.text = Story.Summary;
+
+    }
     public void Chat() {
         chatSection.SetActive(true);
         summarySection.SetActive(false);
     }
     public IEnumerator RequestSummary() { 
         yield return chatSystem.SendRequestSummmary();
+        VisualizeSummary();
     }
     private IEnumerator InitialMessage()
     {

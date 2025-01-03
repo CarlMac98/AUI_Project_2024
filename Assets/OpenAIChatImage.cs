@@ -243,7 +243,8 @@ public class OpenAIChatImage : MonoBehaviour
             Debug.Log("Image downloaded correctly");
             GameObject imageComponent = GameObject.Find("Bckg");
             RawImage backgroundImage = imageComponent.GetComponent<RawImage>();
-            Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Images/Backgrounds/image0.png");
+            string directory_image = request.downloadHandler.text;
+            Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(directory_image);
             backgroundImage.texture = newTexture;
         }
     }

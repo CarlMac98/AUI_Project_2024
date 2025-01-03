@@ -73,9 +73,9 @@ def cleanup():
 def int_intro(interactions):
     if interactions == 1:
         return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions == 4:
+    elif interactions == 2:
         return f"{JSON["inizio"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]}, la loro scelta deve essere la stessa."
-    elif interactions >= 6 and interactions < 10:
+    elif interactions >= 4 and interactions < 10:
         return f"I bambini devono scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva' e la scelta fatta tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} (metti le parole esatte, non aggiungere parole in mezzo), altrimenti non introdurre le parole 'scena successiva'."
     elif interactions >= 10:
         return f"Scegli tu la strada da seguire tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} e metti le parole 'scena successiva' e il percorso scelto nella tua risposta."
@@ -162,7 +162,7 @@ def handle_aiuto():
 
 @app.route('/api/summary', methods=['POST'])
 def handle_summary():
-    prompt = "Intervento: fai un riassunto della storia, non far andare avanti la storia, racconta cosa è successo finora. Il contenuto deve essere adatto per bambini."
+    prompt = "Intervento: fai un riassunto della storia, non far andare avanti la storia, racconta cosa è successo finora. Il contenuto deve essere adatto per bambini. Metti subito il riassunto, non mettere 'Va bene' 'Certo!' o cose del genere, metti subito il testo utile "
     response = sendMessage(prompt)
     return response, 200
 
@@ -206,7 +206,8 @@ def handle_request_chat():
 
     prompt = request_data['prompt']
     print(f"Received prompt: {prompt}")
-    question += "\n" + "Utente " + str(counter) + ': ' + prompt
+    #question += "\n" + "Utente " + str(counter) + ': ' + prompt
+    question += "\n" + prompt
 
     # Determine the intervention based on story logic
     match section:
@@ -238,7 +239,7 @@ def handle_request_chat():
         else:
             section = "inizio"
         interactions = 0
-    if "content filter" in response.lower():
+    if "content filter" or "token" in response.lower():
         response = "Non ho capito, potete ripetere quello che volete raccontare?"
 
     # Return the response back to Unity
@@ -248,10 +249,10 @@ def handle_request_chat():
 def handle_request_image():
     global n_image, JSON, section, percorso
     try:
-        print(request.get_json()) 
-        ramification = request.get_json()
-        if ramification and 'imagePrompt' in ramification:
-            direction = ramification["imagePrompt"]
+        #print(request.get_json()) 
+        #ramification = request.get_json()
+        #if ramification and 'imagePrompt' in ramification:
+        #    direction = ramification["imagePrompt"]
         match section:
             case "inizio":
                 prompt = JSON["inizio"]["descrizione_scena"]
@@ -275,7 +276,7 @@ def handle_request_image():
         image_url = json.loads(result.model_dump_json())['data'][0]['url']
         urllib.request.urlretrieve(image_url, f"Assets/Images/Backgrounds/image{n_image}.png")
         
-        return jsonify({"status": "success"}), 200
+        return f"Assets/Images/Backgrounds/image{n_image}.png", 200
     except Exception as e:
         print("Error:", e)
         return jsonify({"error": "Server error"}), 400
