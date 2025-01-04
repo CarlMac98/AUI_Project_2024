@@ -53,8 +53,7 @@ public class GameManager : MonoBehaviour
         if (ns.next_scene.Value)
         {
             ns.next_scene.Value = false;
-            StartCoroutine(GoToNextScene());
-            
+            StartCoroutine(GoToNextScene());           
         }
 
     }
@@ -98,7 +97,7 @@ public class GameManager : MonoBehaviour
             if (currentScene == 4)
             {
                 chatManager.userName = playerName;
-                background.Handle();
+                background.HandleOff();
                 if (!reset)
                 {
                     chatManager.HandleReset();
@@ -150,7 +149,12 @@ public class GameManager : MonoBehaviour
             }
             currentScene -= 1;
             scenes.ToArray()[currentScene].SetActive(true);
-            
+
+            if (currentScene == 4)
+            {
+                background.HandleOn();
+            }
+
             //update buttons
             if (!GameObject.Find("Go").IsUnityNull())
             {
@@ -169,7 +173,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GoToNextScene()
     {
-        StartCoroutine(chatManager.NextSceneReset());
+        chatManager.NextSceneReset();
+        yield return new WaitForSeconds(5);
         GoBack();
         background.HandleImageRequest();
 

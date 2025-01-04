@@ -158,7 +158,9 @@ public class OpenAIChatImage : MonoBehaviour
         {
             response = request.downloadHandler.text;
             Debug.Log("Response: " + response);
-            
+
+            ns.recap.Value = response;   
+            //Debug.Log(ns.recap.Value);
         }
     }
 
@@ -184,7 +186,8 @@ public class OpenAIChatImage : MonoBehaviour
         else
         {
             summary = request.downloadHandler.text;
-            Story.Summary = summary;
+            //Story.Summary = summary;
+            ns.recap.Value = summary;
             Debug.Log("Summary: " + Story.Summary);
         }
 

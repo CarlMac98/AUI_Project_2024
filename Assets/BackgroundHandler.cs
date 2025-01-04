@@ -27,10 +27,16 @@ public class BackgroundHandler : MonoBehaviour
         
     }
 
-    public void Handle()
+    public void HandleOff()
     {
         bckgs[2].SetActive(false);
         bckgs[3].SetActive(false);
+    }
+
+    public void HandleOn()
+    {
+        bckgs[2].SetActive(true);
+        bckgs[3].SetActive(true);
     }
 
     public void HandleImageRequest()

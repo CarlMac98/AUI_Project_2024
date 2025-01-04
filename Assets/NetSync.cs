@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.Netcode;
 using System.Collections;
 using System;
+using Unity.Collections;
 
 public class NetSync : NetworkBehaviour
 {
@@ -10,11 +11,16 @@ public class NetSync : NetworkBehaviour
 
     public NetworkVariable<bool> next_scene = new NetworkVariable<bool>();
 
-    [SerializeField]
-    public GameManager gameManager;
-
     //public NetworkVariable<string> host_name = new NetworkVariable<string>();
     //public NetworkVariable<string> cli_name = new NetworkVariable<string>();
+
+    public NetworkVariable<FixedString4096Bytes> recap = new NetworkVariable<FixedString4096Bytes>();
+    
+
+    //[SerializeField]
+    //public GameManager gameManager;
+
+
 
     //public GameManager ;
 

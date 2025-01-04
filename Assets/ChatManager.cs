@@ -20,10 +20,15 @@ public class ChatManager : NetworkBehaviour
 
     [SerializeField]
     private GameManager gameManager;
+
+    [SerializeField]
+    private NetSync ns;
+
     [SerializeField]
     public Button storyButton, chatButton;
 
     public GameObject chatPanel, storyPanel, textObject, chatSection, summarySection;
+    public TMP_Text storySummary;
     public TMP_InputField chatBox;
     GameObject storyPanelText;
 
@@ -126,9 +131,11 @@ public class ChatManager : NetworkBehaviour
     public void VisualizeSummary() {
 
         TMP_Text chat = storyPanelText.GetComponent<TMP_Text>();
+        //TMP_Text recap = recapPanelText.GetComponent<TMP_Text>();
 
-        chat.text = Story.Summary;
-
+        //chat.text = Story.Summary;
+        chat.text = ns.recap.Value.ToString();
+        storySummary.text = ns.recap.Value.ToString();
     }
     public void Chat() {
         chatSection.SetActive(true);
@@ -158,10 +165,10 @@ public class ChatManager : NetworkBehaviour
         messageList.Clear();
         yield return chatSystem.ResetStory();
     }
-    public IEnumerator NextSceneReset() 
+    public void NextSceneReset() 
     {
         chatBox.DeactivateInputField();
-        yield return new WaitForSeconds(5);
+        //yield return new WaitForSeconds(5);
         messageList.Clear();
         RemoveAllChildren(chatPanel);
         chatBox.ActivateInputField();

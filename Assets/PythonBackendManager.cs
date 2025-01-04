@@ -16,7 +16,7 @@ public class PythonBackendManager : MonoBehaviour
 
     public void StartPythonBackend()
     {
-        string pythonExecutable = "python"; // or specify the full path to python.exe
+        string pythonExecutable = "C:\\Users\\Utente\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"; // or specify the full path to python.exe
         string scriptPath = "server.py"; // Replace with your script path
 
         pythonProcess = new Process();
