@@ -163,6 +163,7 @@ public class ChatManager : NetworkBehaviour
         chatBox.DeactivateInputField();
         yield return new WaitForSeconds(5);
         messageList.Clear();
+        RemoveAllChildren(chatPanel);
         chatBox.ActivateInputField();
     }
     public void sendMessageToChat(string text)
@@ -203,6 +204,14 @@ public class ChatManager : NetworkBehaviour
                 break;
         }
         messageList.Add(msg);
+    }
+
+    public void RemoveAllChildren(GameObject parent)
+    {
+        foreach (Transform child in parent.transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
 

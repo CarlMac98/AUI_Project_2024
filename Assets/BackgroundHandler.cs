@@ -40,7 +40,7 @@ public class BackgroundHandler : MonoBehaviour
     private IEnumerator ProcessImageRequest()
     {
         yield return imageSystem.RequestToAzureImage();
-        
+
     }
 
 

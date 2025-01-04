@@ -91,7 +91,7 @@ def int_concl(interactions):
     if interactions == 1:
         return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
     elif interactions >= 4:
-        return f"{JSON["conclusione"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'."
+        return f"{JSON["conclusione"]["conclusione"]}, non fare la parte dei bambini, racconta cosa succede come conclusione e introduci nella tua risposta 'scena successiva'."
 
 # Helper function to send messages to Azure OpenAI
 def sendMessage(question):
@@ -162,7 +162,7 @@ def handle_aiuto():
 
 @app.route('/api/summary', methods=['POST'])
 def handle_summary():
-    prompt = "Intervento: fai un riassunto della storia, non far andare avanti la storia, racconta cosa è successo finora. Il contenuto deve essere adatto per bambini. Metti subito il riassunto, non mettere 'Va bene' 'Certo!' o cose del genere, metti subito il testo utile "
+    prompt = "Intervento: fai un riassunto dettagliato della storia, se ci sono più capitoli dividili, non far andare avanti la storia, racconta cosa è successo finora. Il contenuto deve essere adatto per bambini. Metti subito il riassunto, non mettere 'Va bene' 'Certo!' o cose del genere, metti subito il testo utile "
     response = sendMessage(prompt)
     return response, 200
 
@@ -239,7 +239,7 @@ def handle_request_chat():
         else:
             section = "inizio"
         interactions = 0
-    #if "content filter" in response.lower() or "token" in response.lower():
+    #if "content_filter" in response.lower() or "token" in response.lower():
     #    response = "Non ho capito, potete ripetere quello che volete raccontare? " + response
 
     # Return the response back to Unity

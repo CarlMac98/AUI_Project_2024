@@ -50,7 +50,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (ns.next_scene.Value)
+        {
+            ns.next_scene.Value = false;
+            StartCoroutine(GoToNextScene());
+            
+        }
+
     }
 
     public void GoAhead()
@@ -63,10 +69,10 @@ public class GameManager : MonoBehaviour
             //forbid passage to the third scene if name is not inserted
             if (currentScene == 1)
             {
-                if (!imageGenerated) {
-                    background.HandleImageRequest();
-                    imageGenerated = true;
-                }
+                //if (!imageGenerated) {
+                //    background.HandleImageRequest();
+                //    imageGenerated = true;
+                //}
                 nPlayers = numPlayers.value + 1;
                 playerInput.ActivateInputField();
     
@@ -98,6 +104,7 @@ public class GameManager : MonoBehaviour
                     chatManager.HandleReset();
                     reset = true;
                 }
+                background.HandleImageRequest();
             }
 
             //scenes going forward handling
@@ -162,8 +169,9 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GoToNextScene()
     {
-        chatManager.NextSceneReset();
+        StartCoroutine(chatManager.NextSceneReset());
         GoBack();
+        background.HandleImageRequest();
 
         if (!GameObject.Find("Go").IsUnityNull()) 
         {

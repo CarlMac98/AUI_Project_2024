@@ -57,11 +57,6 @@ public class NetSync : NetworkBehaviour
     public void SetNextSceneServerRpc(bool next)
     {
         next_scene.Value = next;
-        if (next)
-        {
-            StartCoroutine(gameManager.GoToNextScene());
-        }
-
     }
 
     //private void NetworkManager_OnClientConnectedCallback(ulong obj)
