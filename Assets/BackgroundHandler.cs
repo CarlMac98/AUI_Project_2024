@@ -43,7 +43,7 @@ public class BackgroundHandler : MonoBehaviour
     {
         StartCoroutine(ProcessImageRequest());
     }
-    private IEnumerator ProcessImageRequest()
+    public IEnumerator ProcessImageRequest()
     {
         yield return imageSystem.RequestToAzureImage();
 

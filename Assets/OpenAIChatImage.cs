@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
 using System.Collections.Generic;
+using Microsoft.Identity.Client;
 
 
 // This is used to communicate with your backend
@@ -24,8 +25,9 @@ public class OpenAIChatImage : MonoBehaviour
         {"init", "http://127.0.0.1:7001/api/init"},
         {"image", "http://127.0.0.1:7001/api/image"},
         {"reset", "http://127.0.0.1:7001/api/reset"},
-        {"summary", "http://127.0.0.1:7001/api/summary" },
-        {"help", "http://127.0.0.1:7001/api/help" }
+        {"summary", "http://127.0.0.1:7001/api/summary"},
+        {"create_story", "http://127.0.0.1:7001/api/create_story"},
+        {"help", "http://127.0.0.1:7001/api/help"}
     };
     public string response = "";
     public string summary = "";
@@ -33,6 +35,10 @@ public class OpenAIChatImage : MonoBehaviour
     {
         if (promptToSend.Length > 0)
             yield return StartCoroutine(SendRequest(promptToSend));
+    }
+    public IEnumerator HandleCreateStory(int story)
+    {
+        yield return StartCoroutine(SendStory(story));
     }
     public IEnumerator InitialMessageAzureChat()
     {
@@ -98,7 +104,34 @@ public class OpenAIChatImage : MonoBehaviour
             }
         }
     }
+    public IEnumerator SendStory(int story)
+    {
+        // Construct payload
+        string jsonPayload = "{\"n_story\":\"" + story + "\"}";
+        Debug.Log("Payload being sent: " + jsonPayload);
 
+        // Set up the UnityWebRequest
+        var request = new UnityWebRequest(backendEndpoint["create_story"], "POST");
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        // Send the request and wait for a response
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            summary = request.downloadHandler.text;
+            ns.recap.Value = summary;
+            
+            Debug.Log("Intro: " + summary);
+        }
+    }
     public IEnumerator SendHelpRequest(string prompt, string user)
     {
         string cleanPrompt = prompt.Trim();
@@ -158,8 +191,7 @@ public class OpenAIChatImage : MonoBehaviour
         {
             response = request.downloadHandler.text;
             Debug.Log("Response: " + response);
-
-            ns.recap.Value = response;   
+ 
             //Debug.Log(ns.recap.Value);
         }
     }
@@ -188,7 +220,7 @@ public class OpenAIChatImage : MonoBehaviour
             summary = request.downloadHandler.text;
             //Story.Summary = summary;
             ns.recap.Value = summary;
-            Debug.Log("Summary: " + Story.Summary);
+            Debug.Log("Summary: " + summary);
         }
 
     }

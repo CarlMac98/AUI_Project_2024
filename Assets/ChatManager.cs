@@ -100,7 +100,7 @@ public class ChatManager : NetworkBehaviour
         //}
         if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
         {
-            yield return chatSystem.SendMessageToAzureChat(message.player + ": "+ message.text);
+            yield return chatSystem.SendMessageToAzureChat(message.username + ": "+ message.text);
             if (!chatSystem.response.Equals("None"))
             {
                 //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
@@ -120,6 +120,11 @@ public class ChatManager : NetworkBehaviour
     public void HandleInitialMessage()
     {
         StartCoroutine(InitialMessage());
+    }
+    public IEnumerator CreateStory(int st)
+    {
+        yield return StartCoroutine(chatSystem.HandleCreateStory(st));
+        VisualizeSummary();
     }
 
     public void Summary()
@@ -165,9 +170,11 @@ public class ChatManager : NetworkBehaviour
         messageList.Clear();
         yield return chatSystem.ResetStory();
     }
+    public void Deactivate() {
+        chatBox.DeactivateInputField();
+    }
     public void NextSceneReset() 
     {
-        chatBox.DeactivateInputField();
         //yield return new WaitForSeconds(5);
         messageList.Clear();
         RemoveAllChildren(chatPanel);

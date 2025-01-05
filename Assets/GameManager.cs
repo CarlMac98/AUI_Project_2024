@@ -31,12 +31,12 @@ public class GameManager : MonoBehaviour
     public TMP_InputField playerInput;
     public TMP_Dropdown numPlayers;
     public BackgroundHandler background;
-    private bool imageGenerated;
+    private bool storyCreated;
     private bool reset = false;
 
     void Start()
     {
-        imageGenerated = false;
+        storyCreated = false;
         //initialize first go button
         goButton.onClick.AddListener(GoAhead);
 
@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour
                     chatManager.HandleReset();
                     reset = true;
                 }
-                background.HandleImageRequest();
             }
 
             //scenes going forward handling
@@ -114,10 +113,18 @@ public class GameManager : MonoBehaviour
             }
             currentScene += 1;
             scenes[currentScene].SetActive(true);
-            
+            if (currentScene == 4 && isServer && !storyCreated)
+            {        
+                StartCoroutine(chatManager.CreateStory(story));
+                storyCreated = true;   
+            }
             if (currentScene == 5 && isServer)
             {
                 chatManager.HandleInitialMessage();
+            }
+            if (currentScene == 4)
+            {
+                background.HandleImageRequest();
             }
             //update buttons
             if (!GameObject.Find("Go").IsUnityNull())
@@ -173,16 +180,18 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GoToNextScene()
     {
-        chatManager.NextSceneReset();
+        chatManager.Deactivate();
         yield return new WaitForSeconds(5);
+        yield return StartCoroutine(chatManager.RequestSummary());
+        chatManager.NextSceneReset();
         GoBack();
-        background.HandleImageRequest();
 
         if (!GameObject.Find("Go").IsUnityNull()) 
         {
             backButton.gameObject.SetActive(false);
             goButton.gameObject.SetActive(false);
         }
+        //yield return StartCoroutine(background.ProcessImageRequest());
 
         //update riassuntozzo
         yield return new WaitForSeconds(10);

@@ -26,16 +26,13 @@ client_image = AzureOpenAI(
 )
 
 # Initialize assistant
-""" assistant = client.beta.assistants.create(
+assistant = client.beta.assistants.create(
     model="AI-assistant",
-    instructions =  "You are a helpful AI assistant that helps children in creating stories. "
-                    + "Answer in a few lines, the child cannot read too much. You should resolve any conflicts between the children and help them to create a story. "
-                    + "Keep answers short and simple. You are speaking directly to the children. "
-                    + "Non fargli introdurre nuovi personaggi e non far abbandonare i personaggi presenti nella scena. Non fare la parte dei bambini",
+    instructions =  "Sei un'AI assistente che aiuta i bambini a creare storie. Rispondi in modo breve e semplice, perché i bambini non possono leggere troppo. Risolvi eventuali conflitti tra i bambini e aiutali a sviluppare la storia. Parla direttamente con loro. Non permettere di introdurre nuovi personaggi o di abbandonare quelli già presenti nella scena. Non impersonare i bambini.",
     temperature=0.8,
     top_p=1
-) """
-assistant = client.beta.assistants.retrieve(assistant_id="asst_pTSWCQOb7icv8fwUnjv03dYL")
+)
+#assistant = client.beta.assistants.retrieve(assistant_id="asst_G8vGIkFJcg6za5raTm0xLcaS")
 
 counter = 0
 interactions = 0
@@ -44,19 +41,17 @@ intervention = ""
 n_image = 0
 section = "inizio"
 percorso = "percorso_1"
+JSON = {}
 
-# Load the story configuration
-with open('storia.json', 'r') as file:
-#with open("C:/Users/Utente/Desktop/Karl/Uni/Poli/AUI/Unity/AUI_Project_2024/storia.json", 'r') as file:
-    JSON = json.load(file)
 
 # Create a thread for interactions
 thread = client.beta.threads.create()
 
 def cleanup():
-    global counter, interactions, question, intervention, section, percorso, n_image
+    global counter, interactions, question, intervention, section, percorso, n_image, assistant
     # Call your cleanup function here
     try:
+        client.beta.assistants.delete(assistant.id)
         counter = 0
         interactions = 0
         question = ""
@@ -145,8 +140,29 @@ def determina_percorso(response):
 # Flask endpoint to handle Unity requests
 @app.route('/api/create_story', methods=['POST'])
 def handle_story_creation():
-    story = ""
-    return story, 200
+    global JSON
+    if not request.get_json() or 'n_story' not in request.get_json():
+        n_story = 0
+    else:
+        n_story = request.get_json()["n_story"]
+    # Load the story configuration
+
+
+
+    n_story = 0
+
+
+
+    try:
+        with open(f'storia_{n_story}.json', 'r') as file:
+        #with open("C:/Users/Utente/Desktop/Karl/Uni/Poli/AUI/Unity/AUI_Project_2024/storia.json", 'r') as file:
+            JSON = json.load(file)
+        intro = JSON["inizio"]["introduzione_capitolo"] + f" Il personaggio che guida i protagonisti sarà {JSON["inizio"]["personaggio_unico"]["nome"]}, {JSON["inizio"]["personaggio_unico"]["descrizione"]} I protagonisti si trovano in {JSON["inizio"]["descrizione_scena"].casefold()}"
+    except Exception as e:
+        print(f"Error loading JSON: {e}")
+        return jsonify({"error": f"Server error: {e}"}), 400
+    
+    return intro, 200
 
 @app.route('/api/help', methods=['POST'])
 def handle_aiuto():
@@ -168,7 +184,7 @@ def handle_summary():
 
 @app.route('/api/reset', methods=['POST'])
 def handle_reset():
-    global counter, interactions, question, intervention, section, percorso, n_image
+    global counter, interactions, question, intervention, section, percorso, n_image, thread
     counter = 0
     interactions = 0
     question = ""
