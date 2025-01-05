@@ -9,9 +9,9 @@ using OpenAI.Chat;
 using System;
 
 
-public class ChatManager : NetworkBehaviour
+public class HelperManager : NetworkBehaviour
 {
-    public static ChatManager Singleton;
+    public static HelperManager Singleton;
 
     [SerializeField]
     public string userName;
@@ -25,14 +25,11 @@ public class ChatManager : NetworkBehaviour
     private NetSync ns;
 
     [SerializeField]
-    public Button storyButton, chatButton;
+    //public Button storyButton, chatButton;
 
-    public GameObject chatPanel, storyPanel, textObject, chatSection, summarySection;
-    public TMP_Text storySummary;
+    public GameObject chatPanel, textObject, chatSection;
+
     public TMP_InputField chatBox;
-    GameObject storyPanelText;
-
-    //public Color playerMessage, player2Message;
 
     public Message msg;
 
@@ -44,18 +41,15 @@ public class ChatManager : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
-        ChatManager.Singleton = this;
+        HelperManager.Singleton = this;
     }
 
     void Start()
     {
-        storyButton.onClick.AddListener(Summary);
-        chatButton.onClick.AddListener(Chat);
         msg = new Message();
         msg.text = "";
         msg.player = Message.messageType.firstPlayerMessage;
         msg.username = "";
-        storyPanelText = Instantiate(textObject, storyPanel.transform);
     }
 
     // Update is called once per frame
@@ -86,7 +80,7 @@ public class ChatManager : NetworkBehaviour
     }
     private IEnumerator ProcessChatMessage(Message message)
     {
-        if(message.player == Message.messageType.firstPlayerMessage)
+        if (message.player == Message.messageType.firstPlayerMessage)
         {
             //sendMessageToChat("<color=blue><b>" + message.username + "</b></color>: " + message.text);
             //ChatManager.Singleton.AddMessage(message);
@@ -100,7 +94,7 @@ public class ChatManager : NetworkBehaviour
         //}
         if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
         {
-            yield return chatSystem.SendMessageToAzureChat(message.username + ": "+ message.text);
+            yield return chatSystem.SendMessageToAzureChat(message.username + ": " + message.text);
             if (!chatSystem.response.Equals("None"))
             {
                 //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
@@ -114,75 +108,30 @@ public class ChatManager : NetworkBehaviour
                 SendChatMessageServerRpc(msg);
             }
         }
-        
-        
-    }
-    public void HandleInitialMessage()
-    {
-        StartCoroutine(InitialMessage());
-    }
-    public IEnumerator CreateStory(int st)
-    {
-        yield return StartCoroutine(chatSystem.HandleCreateStory(st));
-        VisualizeSummary();
-    }
 
-    public void Summary()
-    {
-        chatSection.SetActive(false);
-        summarySection.SetActive(true);
-        StartCoroutine(RequestSummary());
-    }
-    public void VisualizeSummary() {
 
-        TMP_Text chat = storyPanelText.GetComponent<TMP_Text>();
-        //TMP_Text recap = recapPanelText.GetComponent<TMP_Text>();
+    }
+    //public void HandleInitialMessage()
+    //{
+    //    StartCoroutine(InitialMessage());
+    //}
 
-        //chat.text = Story.Summary;
-        chat.text = ns.recap.Value.ToString();
-        storySummary.text = ns.recap.Value.ToString();
-    }
-    public void Chat() {
-        chatSection.SetActive(true);
-        summarySection.SetActive(false);
-    }
-    public IEnumerator RequestSummary() { 
-        yield return chatSystem.SendRequestSummmary();
-        VisualizeSummary();
-    }
-    private IEnumerator InitialMessage()
+    //public void HandleReset()
+    //{
+    //    StartCoroutine(ResetChat());
+    //}
+    //private IEnumerator ResetChat()
+    //{
+    //    messageList.Clear();
+    //    yield return chatSystem.ResetStory();
+    //}
+    public void Deactivate()
     {
-        yield return chatSystem.InitialMessageAzureChat();
-        Message msg = new Message();
-
-        msg.text = chatSystem.response;
-        msg.player = Message.messageType.assistantMessage;
-        msg.username = "Assistant";
-
-        SendChatMessageServerRpc(msg);
-    }
-    public void HandleReset()
-    {
-        StartCoroutine(ResetChat());
-    }
-    private IEnumerator ResetChat()
-    {
-        messageList.Clear();
-        yield return chatSystem.ResetStory();
-    }
-    public void Deactivate() {
         chatBox.DeactivateInputField();
-    }
-    public void NextSceneReset() 
-    {
-        //yield return new WaitForSeconds(5);
-        messageList.Clear();
-        RemoveAllChildren(chatPanel);
-        chatBox.ActivateInputField();
     }
     public void sendMessageToChat(string text)
     {
-        
+
         Message newMessage = new Message();
 
         newMessage.text = text;
@@ -239,37 +188,17 @@ public class ChatManager : NetworkBehaviour
     [ClientRpc]
     void ReceiveChatMessageClientRpc(Message message)
     {
-        if (message.player != Message.messageType.assistantMessage && message.username != userName){
-            message.player = Message.messageType.secondPlayerMessage;
-            Debug.Log("Second player wrote");
-            HandleChatMessage(message);
+        if (message.player != Message.messageType.assistantMessage && message.username != userName)
+        {
+            return;
         }
-        
-        ChatManager.Singleton.AddMessage(message);
+        else
+        {
+            Singleton.AddMessage(message);
+        }
+
+
     }
 }
 
-[System.Serializable]
-public class Message : INetworkSerializable
-{
-    public string text;
-    //public TMP_Text textObject;
-    public messageType player;
-    public string username;
-
-    public enum messageType
-    {
-        firstPlayerMessage,
-        secondPlayerMessage,
-        assistantMessage
-    }
-
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-    {
-        serializer.SerializeValue(ref text);
-        //serializer.SerializeValue(ref textObject);
-        serializer.SerializeValue(ref player);
-        serializer.SerializeValue(ref username);
-    }
-}
 

@@ -19,7 +19,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     ChatManager chatManager;
     [SerializeField]
+    HelperManager helperManager;
+    [SerializeField]
     NetSync ns;
+    [SerializeField]
+    private Button menu, help, X, cont, exit; //menuBackButt,
+    [SerializeField]
+    private GameObject menuBckg, helpChat;
     
     //public vars
 
@@ -35,11 +41,23 @@ public class GameManager : MonoBehaviour
     private bool storyCreated;
     private bool reset = false;
 
+
     void Start()
     {
         storyCreated = false;
         //initialize first go button
         goButton.onClick.AddListener(GoAhead);
+
+        menu.onClick.AddListener(ShowMenu);
+        cont.onClick.AddListener(CloseMenu);
+        //menuBackButt.onClick.AddListener(CloseMenu);
+        help.onClick.AddListener(ShowHelper);        
+        X.onClick.AddListener(CloseHelper);
+        exit.onClick.AddListener(ExitGame);
+
+
+        menuBckg.SetActive(false);
+        helpChat.SetActive(false);
 
         //activate only first page
         foreach (var s in scenes)
@@ -104,6 +122,8 @@ public class GameManager : MonoBehaviour
             if (currentScene == 4)
             {
                 chatManager.userName = playerName;
+                helperManager.userName = playerName;
+
                 background.HandleOff();
                 if (!reset)
                 {
@@ -207,5 +227,30 @@ public class GameManager : MonoBehaviour
         //update riassuntozzo
         yield return new WaitForSeconds(10);
         GoAhead();
+    }
+
+    private void ShowMenu()
+    {
+       menuBckg.SetActive(true);
+    }
+
+    private void CloseMenu()
+    {
+        menuBckg.SetActive(false);
+    }
+
+    private void ExitGame()
+    {
+
+    }
+
+    private void ShowHelper()
+    {
+        helpChat.SetActive(true);
+    }
+
+    private void CloseHelper()
+    {
+        helpChat.SetActive(false);
     }
 }
