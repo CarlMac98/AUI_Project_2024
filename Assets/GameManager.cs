@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 {
     //private vars
     public static bool isServer;
+    public static bool imageGenerated = false;
     private int nPlayers = 0;
     private int currentScene = 0;
     [SerializeField]
@@ -55,7 +56,13 @@ public class GameManager : MonoBehaviour
             ns.next_scene.Value = false;
             StartCoroutine(GoToNextScene());           
         }
-
+        if (imageGenerated)
+        {
+            Debug.Log("Image generated");
+            imageGenerated = false;
+            goButton.gameObject.SetActive(true);
+        }
+        
     }
 
     public void GoAhead()
@@ -139,7 +146,10 @@ public class GameManager : MonoBehaviour
                 backButton.onClick.RemoveAllListeners();
                 backButton.onClick.AddListener(GoBack);
             }
-            
+            if (currentScene == 4)
+            {
+                goButton.gameObject.SetActive(false);
+            }
         }
 
     }
@@ -160,6 +170,7 @@ public class GameManager : MonoBehaviour
             if (currentScene == 4)
             {
                 background.HandleOn();
+                background.HandleImageRequest();
             }
 
             //update buttons

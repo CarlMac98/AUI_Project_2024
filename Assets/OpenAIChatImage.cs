@@ -31,10 +31,16 @@ public class OpenAIChatImage : MonoBehaviour
     };
     public string response = "";
     public string summary = "";
+    public string help = "";
     public IEnumerator SendMessageToAzureChat(string promptToSend)
     {
         if (promptToSend.Length > 0)
             yield return StartCoroutine(SendRequest(promptToSend));
+    }
+    public IEnumerator SendHelpMessage(string promptToSend, string user)
+    {
+        if (promptToSend.Length > 0)
+            yield return StartCoroutine(SendHelpRequest(promptToSend, user));
     }
     public IEnumerator HandleCreateStory(int story)
     {
@@ -155,15 +161,9 @@ public class OpenAIChatImage : MonoBehaviour
         }
         else
         {
-            response = request.downloadHandler.text;
-            if (response == "None")
-            {
-                Debug.Log("First interaction");
-            }
-            else
-            {
-                Debug.Log("Response: " + response);
-            }
+            help = request.downloadHandler.text;            
+            Debug.Log("Help: " + help);
+            
         }
     }
 
@@ -281,6 +281,7 @@ public class OpenAIChatImage : MonoBehaviour
             string directory_image = request.downloadHandler.text;
             Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(directory_image);
             backgroundImage.texture = newTexture;
+            GameManager.imageGenerated = true;
         }
     }
 }

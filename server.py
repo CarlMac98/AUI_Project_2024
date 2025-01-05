@@ -51,7 +51,7 @@ def cleanup():
     global counter, interactions, question, intervention, section, percorso, n_image, assistant
     # Call your cleanup function here
     try:
-        client.beta.assistants.delete(assistant.id)
+        outcome2 = client.beta.assistants.delete(assistant.id)
         counter = 0
         interactions = 0
         question = ""
@@ -59,11 +59,19 @@ def cleanup():
         n_image = 0
         section = "inizio"
         percorso = "percorso_1"
-        #outcome = client.beta.threads.delete(thread.id)
+        outcome = client.beta.threads.delete(thread.id)
         #print(f"Cleanup response: {outcome}")
     except Exception as e:
         print(f"Error during cleanup: {e}")
 
+def create_assistant():
+    global assistant
+    assistant = client.beta.assistants.create(
+        model="AI-assistant",
+        instructions =  "Sei un'AI assistente che aiuta i bambini a creare storie. Rispondi in modo breve e semplice, perché i bambini non possono leggere troppo. Risolvi eventuali conflitti tra i bambini e aiutali a sviluppare la storia. Parla direttamente con loro. Non permettere di introdurre nuovi personaggi o di abbandonare quelli già presenti nella scena. Non impersonare i bambini.",
+        temperature=0.8,
+        top_p=1
+    )
 
 def int_intro(interactions):
     if interactions == 1:
@@ -178,7 +186,7 @@ def handle_aiuto():
 
 @app.route('/api/summary', methods=['POST'])
 def handle_summary():
-    prompt = "Intervento: fai un riassunto dettagliato della storia, se ci sono più capitoli dividili, non far andare avanti la storia, racconta cosa è successo finora. Il contenuto deve essere adatto per bambini. Metti subito il riassunto, non mettere 'Va bene' 'Certo!' o cose del genere, metti subito il testo utile "
+    prompt = "Intervento: fai un riassunto un po' dettagliato della storia, se ci sono più capitoli dividili, non far andare avanti la storia, racconta cosa è successo finora. Il contenuto deve essere adatto per bambini. Metti subito il riassunto, non mettere 'Va bene' 'Certo!' o cose del genere, metti subito il testo utile."
     response = sendMessage(prompt)
     return response, 200
 
