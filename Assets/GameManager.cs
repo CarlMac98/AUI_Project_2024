@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
                 helperManager.userName = playerName;
 
                 background.HandleOff();
-                if (!reset)
+                if (!reset && isServer)
                 {
                     chatManager.HandleReset();
                     reset = true;
@@ -145,6 +145,10 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(chatManager.CreateStory(story));
                 storyCreated = true;   
             }
+            //if (currentScene == 4 && !isServer)
+            //{
+            //    chatManager.VisualizeSummary();
+            //}
             if (currentScene == 5 && isServer)
             {
                 chatManager.HandleInitialMessage();

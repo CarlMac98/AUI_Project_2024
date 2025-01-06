@@ -272,7 +272,7 @@ public class OpenAIChatImage : MonoBehaviour
             Debug.LogError("Error: " + request.error);
             Debug.Log($"Response Code: {request.responseCode}");
             Debug.Log($"Response Text: {request.downloadHandler.text}");
-            yield return StartCoroutine(RequestImage());
+            yield return RequestImage();
         }
         else
         {

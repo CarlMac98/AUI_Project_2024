@@ -131,7 +131,15 @@ public class ChatManager : NetworkBehaviour
     {
         chatSection.SetActive(false);
         summarySection.SetActive(true);
-        StartCoroutine(RequestSummary());
+        ns.askSummary.Value = true;
+        //if (GameManager.isServer)
+        //{
+        //    StartCoroutine(RequestSummary());
+        //}
+        //else
+        //{
+        //    askSummaryServerRpc();
+        //}
     }
     public void VisualizeSummary() {
 
@@ -228,7 +236,19 @@ public class ChatManager : NetworkBehaviour
         }
     }
 
-
+    [ServerRpc(RequireOwnership = false)]
+    void askSummaryServerRpc()
+    {
+        askSummaryClientRpc();
+    }
+    [ClientRpc]
+    void askSummaryClientRpc()
+    {
+        if (GameManager.isServer)
+        {
+            StartCoroutine(RequestSummary());
+        }
+    }
 
     [ServerRpc(RequireOwnership = false)]
     void SendChatMessageServerRpc(Message message)

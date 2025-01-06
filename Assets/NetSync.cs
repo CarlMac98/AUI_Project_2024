@@ -10,6 +10,7 @@ public class NetSync : NetworkBehaviour
     public NetworkVariable<int> cli_char = new NetworkVariable<int>();
 
     public NetworkVariable<bool> next_scene = new NetworkVariable<bool>();
+    public NetworkVariable<bool> askSummary = new NetworkVariable<bool>();
 
     //public NetworkVariable<string> host_name = new NetworkVariable<string>();
     //public NetworkVariable<string> cli_name = new NetworkVariable<string>();
@@ -31,6 +32,8 @@ public class NetSync : NetworkBehaviour
             host_char.Value = 0;
             cli_char.Value = 0;
             next_scene.Value = false;
+            askSummary.Value = false;
+
             //host_name.Value = "";
             //cli_name.Value = "";
 
@@ -57,6 +60,8 @@ public class NetSync : NetworkBehaviour
         }
         host_char.OnValueChanged += OnSomeValueChanged;
         cli_char.OnValueChanged += OnSomeValueChanged;
+        askSummary.OnValueChanged += OnAskChanged;
+        recap.OnValueChanged += OnRecapChanged;
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -81,7 +86,22 @@ public class NetSync : NetworkBehaviour
     {
         cli_char.Value = i;
     }
+    private void OnAskChanged(bool previousValue, bool newValue)
+    {
+        if (newValue)
+        {
+            askSummary.Value = false;
+            if (GameManager.isServer)
+            {
+                StartCoroutine(ChatManager.Singleton.RequestSummary());
+            }
+        }
+    }
 
+    private void OnRecapChanged(FixedString4096Bytes previousValue, FixedString4096Bytes newValue)
+    {
+        ChatManager.Singleton.VisualizeSummary();
+    }
     //[ServerRpc(RequireOwnership = false)]
     //public void ChangeCharNameServerRpc(string name)
     //{
