@@ -223,11 +223,12 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GoToNextScene()
     {
+        Debug.Log("Next scene");
         chatManager.Deactivate();
         yield return new WaitForSeconds(5);
         if (isServer)
         {
-            ns.askSummary.Value = true;
+            ns.AskSummaryServerRpc();
         }
         else
         {

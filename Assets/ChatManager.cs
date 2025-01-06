@@ -131,7 +131,7 @@ public class ChatManager : NetworkBehaviour
     {
         chatSection.SetActive(false);
         summarySection.SetActive(true);
-        ns.askSummary.Value = true;
+        ns.AskSummaryServerRpc();
         //if (GameManager.isServer)
         //{
         //    StartCoroutine(RequestSummary());

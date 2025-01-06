@@ -67,11 +67,18 @@ public class NetSync : NetworkBehaviour
 
     private void OnSceneChanged(bool previous, bool current)
     {
-        if (current)
+        if (current && GameManager.isServer)
         {
+            Debug.Log("Next scene requested");
             next_scene.Value = false;
-            StartCoroutine(GameManager.Singleton.GoToNextScene());
+            ChangeSceneClientRpc();
         }
+    }
+
+    [ClientRpc]
+    public void ChangeSceneClientRpc()
+    {
+        StartCoroutine(GameManager.Singleton.GoToNextScene());
     }
 
     //private void NetworkManager_OnClientConnectedCallback(ulong obj)
@@ -89,6 +96,11 @@ public class NetSync : NetworkBehaviour
     public void ChangeCharNumServerRpc(int i)
     {
         cli_char.Value = i;
+    }
+    [ServerRpc(RequireOwnership = false)]
+    public void AskSummaryServerRpc()
+    {
+        askSummary.Value = true;
     }
     private void OnAskChanged(bool previousValue, bool newValue)
     {
