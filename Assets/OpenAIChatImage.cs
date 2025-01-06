@@ -93,7 +93,7 @@ public class OpenAIChatImage : MonoBehaviour
                 // cambiare variabile network cambio scena
                 
                 response = parsedResponse.response;
-                ns.SetNextSceneServerRpc(parsedResponse.next_scene);
+                ns.next_scene.Value = parsedResponse.next_scene;
             }
             catch (System.Exception ex)
             {
@@ -272,7 +272,7 @@ public class OpenAIChatImage : MonoBehaviour
             Debug.LogError("Error: " + request.error);
             Debug.Log($"Response Code: {request.responseCode}");
             Debug.Log($"Response Text: {request.downloadHandler.text}");
-            yield return RequestImage();
+            //yield return RequestImage();
         }
         else
         {

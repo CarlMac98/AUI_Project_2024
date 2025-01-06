@@ -11,6 +11,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Singleton;
     //private vars
     public static bool isServer;
     public static bool imageGenerated = false;
@@ -41,7 +42,10 @@ public class GameManager : MonoBehaviour
     private bool storyCreated;
     private bool reset = false;
 
-
+    private void Awake()
+    {
+        GameManager.Singleton = this;
+    }
     void Start()
     {
         storyCreated = false;
@@ -69,11 +73,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (ns.next_scene.Value)
-        {
-            ns.next_scene.Value = false;
-            StartCoroutine(GoToNextScene());           
-        }
+        //if (ns.next_scene.Value)
+        //{
+        //    ns.next_scene.Value = false;
+        //    StartCoroutine(GoToNextScene());           
+        //}
         if (imageGenerated)
         {
             Debug.Log("Image generated");
@@ -221,7 +225,14 @@ public class GameManager : MonoBehaviour
     {
         chatManager.Deactivate();
         yield return new WaitForSeconds(5);
-        yield return StartCoroutine(chatManager.RequestSummary());
+        if (isServer)
+        {
+            ns.askSummary.Value = true;
+        }
+        else
+        {
+            yield return new WaitForSeconds(5);
+        }
         chatManager.NextSceneReset();
         GoBack();
 
@@ -233,7 +244,7 @@ public class GameManager : MonoBehaviour
         //yield return StartCoroutine(background.ProcessImageRequest());
 
         //update riassuntozzo
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         GoAhead();
     }
 

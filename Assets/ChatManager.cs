@@ -124,7 +124,7 @@ public class ChatManager : NetworkBehaviour
     public IEnumerator CreateStory(int st)
     {
         yield return StartCoroutine(chatSystem.HandleCreateStory(st));
-        VisualizeSummary();
+        //VisualizeSummary();
     }
 
     public void Summary()
@@ -156,7 +156,7 @@ public class ChatManager : NetworkBehaviour
     }
     public IEnumerator RequestSummary() { 
         yield return chatSystem.SendRequestSummmary();
-        VisualizeSummary();
+        //VisualizeSummary();
     }
     private IEnumerator InitialMessage()
     {

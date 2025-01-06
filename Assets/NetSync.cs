@@ -62,12 +62,16 @@ public class NetSync : NetworkBehaviour
         cli_char.OnValueChanged += OnSomeValueChanged;
         askSummary.OnValueChanged += OnAskChanged;
         recap.OnValueChanged += OnRecapChanged;
+        next_scene.OnValueChanged += OnSceneChanged;
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void SetNextSceneServerRpc(bool next)
+    private void OnSceneChanged(bool previous, bool current)
     {
-        next_scene.Value = next;
+        if (current)
+        {
+            next_scene.Value = false;
+            StartCoroutine(GameManager.Singleton.GoToNextScene());
+        }
     }
 
     //private void NetworkManager_OnClientConnectedCallback(ulong obj)

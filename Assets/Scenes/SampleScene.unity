@@ -3190,17 +3190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec dolor
-    eu mi consectetur lacinia a eu dui. Nam porta ac nulla quis imperdiet. Donec
-    pharetra luctus laoreet. Nam erat orci, elementum vel felis id, vestibulum tincidunt
-    velit. Aenean rhoncus mi id molestie tempus. Morbi iaculis leo nec elit accumsan
-    pretium a ac orci. Vivamus ut consectetur sem. Mauris sed nibh pulvinar, fermentum
-    purus nec, lacinia erat. Donec bibendum porta dignissim.\r\n\r\nPraesent sollicitudin
-    porta posuere. Nullam vel orci luctus, sagittis diam vel, mattis nibh. Mauris
-    sit amet erat elit. Donec dignissim molestie magna, at sollicitudin nunc feugiat
-    ac. Nulla scelerisque ante cursus libero fermentum auctor. Donec condimentum
-    felis sed rhoncus feugiat. Ut eleifend efficitur fringilla. Integer elementum
-    eros metus. Cras consequat eros vitae venenatis finibus.\r\r\n\r"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7bd13796f5d486345b11bae04657c2c8, type: 2}
   m_sharedMaterial: {fileID: -6747251339232470002, guid: 7bd13796f5d486345b11bae04657c2c8, type: 2}
@@ -12589,6 +12579,8 @@ MonoBehaviour:
   cli_char:
     m_InternalValue: 0
   next_scene:
+    m_InternalValue: 0
+  askSummary:
     m_InternalValue: 0
   recap:
     m_InternalValue:
