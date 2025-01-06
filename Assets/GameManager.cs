@@ -179,6 +179,10 @@ public class GameManager : MonoBehaviour
         //scenes going backward handling
         if (currentScene > 0)
         {
+            if (currentScene == 4)
+            {
+                goButton.gameObject.SetActive(true);
+            }
             scenes.ToArray()[currentScene].SetActive(false);
             if (!isServer && currentScene == 4)
             {

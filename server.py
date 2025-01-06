@@ -86,8 +86,8 @@ def int_intro(interactions):
 def int_intermedia(interactions):
     if interactions == 1:
         return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions >= 4:
-        return f"{JSON["fase_intermedia"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'. Non fare scattare il content filter mantieni la risposta per bambini"
+    elif interactions >= 2:
+        return f"{JSON["fase_intermedia"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'."
 
 
 def int_concl(interactions):
@@ -157,7 +157,7 @@ def handle_story_creation():
 
 
 
-    n_story = 0
+    n_story = 1
 
 
 
@@ -165,7 +165,7 @@ def handle_story_creation():
         with open(f'storia_{n_story}.json', 'r') as file:
         #with open("C:/Users/Utente/Desktop/Karl/Uni/Poli/AUI/Unity/AUI_Project_2024/storia.json", 'r') as file:
             JSON = json.load(file)
-        intro = JSON["inizio"]["introduzione_capitolo"] + f" Il personaggio che guida i protagonisti sarà {JSON["inizio"]["personaggio_unico"]["nome"]}, {JSON["inizio"]["personaggio_unico"]["descrizione"]} I protagonisti si trovano in {JSON["inizio"]["descrizione_scena"].casefold()}"
+        intro = JSON["inizio"]["introduzione_capitolo"] + f" Il personaggio che guida i protagonisti sarà {JSON["inizio"]["personaggio_unico"]["nome"]}, {JSON["inizio"]["personaggio_unico"]["descrizione"].casefold()} I protagonisti si trovano in {JSON["inizio"]["descrizione_scena"].casefold()}"
     except Exception as e:
         print(f"Error loading JSON: {e}")
         return jsonify({"error": f"Server error: {e}"}), 400

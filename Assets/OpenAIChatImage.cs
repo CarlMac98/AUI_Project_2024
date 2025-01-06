@@ -272,6 +272,7 @@ public class OpenAIChatImage : MonoBehaviour
             Debug.LogError("Error: " + request.error);
             Debug.Log($"Response Code: {request.responseCode}");
             Debug.Log($"Response Text: {request.downloadHandler.text}");
+            yield return StartCoroutine(RequestImage());
         }
         else
         {
@@ -279,7 +280,9 @@ public class OpenAIChatImage : MonoBehaviour
             GameObject imageComponent = GameObject.Find("Bckg");
             RawImage backgroundImage = imageComponent.GetComponent<RawImage>();
             string directory_image = request.downloadHandler.text;
+            yield return new WaitForSeconds(0.5f);
             Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(directory_image);
+            yield return new WaitForSeconds(0.5f);
             backgroundImage.texture = newTexture;
             GameManager.imageGenerated = true;
         }
