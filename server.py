@@ -157,7 +157,7 @@ def handle_story_creation():
 
 
 
-    n_story = 1
+    n_story = 0
 
 
 

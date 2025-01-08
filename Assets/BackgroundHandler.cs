@@ -41,7 +41,10 @@ public class BackgroundHandler : MonoBehaviour
 
     public void HandleImageRequest()
     {
-        StartCoroutine(ProcessImageRequest());
+        if (GameManager.isServer)
+        {
+            StartCoroutine(ProcessImageRequest());
+        }
     }
     public IEnumerator ProcessImageRequest()
     {

@@ -229,6 +229,7 @@ public class GameManager : MonoBehaviour
         if (isServer)
         {
             ns.AskSummaryServerRpc();
+            yield return new WaitForSeconds(5);
         }
         else
         {
