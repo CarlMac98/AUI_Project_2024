@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="DataFile" id="{bce8ed04-95a1-441a-85e4-2fc07922ab1b}">
+		<property name="assetPath">
+			<value>CelloPlucked_0/23.ogg.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f1ead7b4-4ee1-4805-b6aa-b60951e1fb8b}</destination>
+		</relationship>
+	</object>
+</objects>

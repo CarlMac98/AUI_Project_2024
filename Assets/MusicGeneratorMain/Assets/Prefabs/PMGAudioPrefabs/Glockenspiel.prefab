@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &537402364300123658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5452091331009950635}
+  - component: {fileID: 8460809763589563662}
+  m_Layer: 0
+  m_Name: Glockenspiel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5452091331009950635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537402364300123658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8460809763589563662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537402364300123658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c4d2e1a34d589d0a62aedef6723396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mInstrumentVariants:
+  - mNotes:
+    - {fileID: 8300000, guid: 31857786df9a14f599e0e49fa4ddb4aa, type: 3}
+    - {fileID: 8300000, guid: 5d070f5bce690d7dc8af38cbb74b686e, type: 3}
+    - {fileID: 8300000, guid: 81851c7bd00c5e3b1859a5855803e2aa, type: 3}
+    - {fileID: 8300000, guid: 898b3b6f09b4df82387c40c015595a3f, type: 3}
+    - {fileID: 8300000, guid: 5c489b8998dfada5e851cc07b590c1fa, type: 3}
+    - {fileID: 8300000, guid: 1df27dbf793bc6671bcb816687731092, type: 3}
+    - {fileID: 8300000, guid: e2c3aeb6fcac9087b88035bde2e59cbf, type: 3}
+    - {fileID: 8300000, guid: 53608f1c773f197fe98a7c4b688ae450, type: 3}
+    - {fileID: 8300000, guid: 4bfc684081e84fc708e5af5f162d0858, type: 3}
+    - {fileID: 8300000, guid: 0dfbe28796ff27a28b205c3a74a30975, type: 3}
+    - {fileID: 8300000, guid: a5fdd4a5dcae977e896e02c69dba4bab, type: 3}
+    - {fileID: 8300000, guid: ad4073e8358b036abaa9b4dc8ba0eb2d, type: 3}
+    - {fileID: 8300000, guid: 1e5d994e10b1847c18f57465b347e847, type: 3}
+    - {fileID: 8300000, guid: 691929e56591589d0bee255bd8b7a72b, type: 3}
+    - {fileID: 8300000, guid: 5725ea87f9bb01983a3e51baf9342dac, type: 3}
+    - {fileID: 8300000, guid: a4d95e0ca8a052cc696ef28c7ba89b09, type: 3}
+    - {fileID: 8300000, guid: 72a5a5c7c7e7fc895a0236f2ccbf3d37, type: 3}
+    - {fileID: 8300000, guid: 3fc16fddfa5a92e378cc9780f9b5894e, type: 3}
+    - {fileID: 8300000, guid: b72d4e9853a139af49eea4c31ee082a1, type: 3}
+    - {fileID: 8300000, guid: 6a606c0d4ad82f38c8452002b5914f3f, type: 3}
+    - {fileID: 8300000, guid: 5b2c7e310c2ff6405b66df6307f90956, type: 3}
+    - {fileID: 8300000, guid: d1b0f4846290dc334ad0cdee014665f0, type: 3}
+    - {fileID: 8300000, guid: 401917f35fb2ea469abb11a6f542bd6d, type: 3}
+    - {fileID: 8300000, guid: 136719565f8057071ab3c57998c0aa89, type: 3}
+    - {fileID: 8300000, guid: 351c4667acd5e8ea988fb78db096d701, type: 3}
+    - {fileID: 8300000, guid: e0c534041c93ffc97a7254b95703b806, type: 3}
+    - {fileID: 8300000, guid: 643b27a38f4b62f54acd8ede47159d4d, type: 3}
+    - {fileID: 8300000, guid: a202e9b75dad57113ad27dabcf99b94a, type: 3}
+    - {fileID: 8300000, guid: 5326e8e2346b29197af2f2297a0130ae, type: 3}
+    - {fileID: 8300000, guid: 04cb2971713faea869d8496099f35edd, type: 3}
+    - {fileID: 8300000, guid: 9d8e71f576ad8b28b9d00e029a7ed04d, type: 3}
+    - {fileID: 8300000, guid: 1dc8cb433c303907f965d305ed3c6bbe, type: 3}
+    - {fileID: 8300000, guid: d700cbb32d199d3d89ea8e968083d143, type: 3}
+    - {fileID: 8300000, guid: e19697fe2222130f29cc38cd27273810, type: 3}
+    - {fileID: 8300000, guid: 5cad695276ccfcc50bc7aee9d7d90e48, type: 3}
+    - {fileID: 8300000, guid: 6df333713a56db538949b78ffd5f0f87, type: 3}

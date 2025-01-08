@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9b3557dcaec9c2ad4980de06d2d78b2d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ViolinShort.prefab
+  uploadId: 506623

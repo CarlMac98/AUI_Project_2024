@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3357f3ad7a1134216a26a99d8bb8a1c2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/MeasureEditorHintNote.prefab
+  uploadId: 506623

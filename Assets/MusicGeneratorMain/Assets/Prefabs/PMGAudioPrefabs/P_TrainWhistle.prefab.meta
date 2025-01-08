@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5dbce1a72c7103927b0ca904524c7be1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_TrainWhistle.prefab
+  uploadId: 506623

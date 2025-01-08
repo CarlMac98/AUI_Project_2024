@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{cd113b1c-8632-490c-b5a5-f86392d4fa23}">
+		<property name="assetPath">
+			<value>CelloPlucked_0/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f1ead7b4-4ee1-4805-b6aa-b60951e1fb8b}</destination>
+		</relationship>
+	</object>
+</objects>

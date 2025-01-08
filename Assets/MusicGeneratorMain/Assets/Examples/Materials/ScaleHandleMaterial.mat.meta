@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c2f01da1e3dd5ba2a9c980cbaff34f1d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Materials/ScaleHandleMaterial.mat
+  uploadId: 506623

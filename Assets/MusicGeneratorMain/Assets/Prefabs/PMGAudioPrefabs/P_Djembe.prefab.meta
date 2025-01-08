@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ed72aee7031ae7d4da14dba50a800d4f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Djembe.prefab
+  uploadId: 506623

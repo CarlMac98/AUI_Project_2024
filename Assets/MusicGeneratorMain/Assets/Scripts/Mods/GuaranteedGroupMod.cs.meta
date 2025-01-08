@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 290bce7ed2314f988bff64d23984bc7a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scripts/Mods/GuaranteedGroupMod.cs
+  uploadId: 506623

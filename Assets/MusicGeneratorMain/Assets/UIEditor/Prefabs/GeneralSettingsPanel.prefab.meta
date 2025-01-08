@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6821c69a82f8d1657805a1b714d0082d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/GeneralSettingsPanel.prefab
+  uploadId: 506623

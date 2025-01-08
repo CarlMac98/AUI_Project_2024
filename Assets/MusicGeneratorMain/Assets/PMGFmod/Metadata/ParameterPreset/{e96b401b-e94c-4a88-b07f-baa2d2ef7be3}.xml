@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{e96b401b-e94c-4a88-b07f-baa2d2ef7be3}">
+		<property name="name">
+			<value>MasterChorusMix</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f3d1131a-49ee-4bbc-9ff9-741f05d7dfac}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f3d1131a-49ee-4bbc-9ff9-741f05d7dfac}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

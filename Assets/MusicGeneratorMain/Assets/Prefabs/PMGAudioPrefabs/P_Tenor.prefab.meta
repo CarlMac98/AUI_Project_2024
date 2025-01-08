@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a0d4d327bef987928bc61ed33768bb17
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Tenor.prefab
+  uploadId: 506623

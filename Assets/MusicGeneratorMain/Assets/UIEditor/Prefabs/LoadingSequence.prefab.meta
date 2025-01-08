@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1e8f1f2d2478fb1989df77b2409591a5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/LoadingSequence.prefab
+  uploadId: 506623

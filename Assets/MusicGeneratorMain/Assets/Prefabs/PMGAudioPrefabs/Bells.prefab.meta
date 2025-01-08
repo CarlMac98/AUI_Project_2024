@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 21121ba7d7f0e8650ae8c6f3b4f53b35
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/Bells.prefab
+  uploadId: 506623

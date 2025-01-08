@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8521b83c486c1f4e39bd6272fc3f04b3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Laser.prefab
+  uploadId: 506623

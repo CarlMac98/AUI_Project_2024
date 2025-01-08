@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 980d368ca42c48d4d9b65f3f23741296
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGFmod/Metadata/ParameterPreset/{e9670a7b-b0e0-428a-96da-e54659066a80}.xml
+  uploadId: 506623

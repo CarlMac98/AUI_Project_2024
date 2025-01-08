@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{6fd19cf4-76a6-4509-b7f9-d1ceab924f05}">
+		<property name="name">
+			<value>DelayDry_6</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{bf7092e8-48ef-4bc9-ba4b-95adb6fcd436}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{bf7092e8-48ef-4bc9-ba4b-95adb6fcd436}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ca7faf48f7b09ae40ac91e07bbc7e6e8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Data/Box Volume Profile.asset
+  uploadId: 506623

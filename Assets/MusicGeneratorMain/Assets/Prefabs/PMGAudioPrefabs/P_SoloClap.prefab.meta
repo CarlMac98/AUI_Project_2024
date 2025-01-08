@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d7dbf3f6c06c389c7be73ca44654d39d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SoloClap.prefab
+  uploadId: 506623

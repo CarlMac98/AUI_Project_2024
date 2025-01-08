@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{d16cef71-ab13-489e-a514-9a0e2f1982e7}">
+		<property name="name">
+			<value>ReverbLowFreq_2</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0adfdc08-a6a4-458e-9a19-920e04ee2b34}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0adfdc08-a6a4-458e-9a19-920e04ee2b34}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

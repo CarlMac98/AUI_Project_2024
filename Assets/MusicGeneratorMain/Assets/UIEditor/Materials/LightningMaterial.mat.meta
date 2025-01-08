@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 55b737d0a1dfeedfc86cd3ec6ef58920
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/LightningMaterial.mat
+  uploadId: 506623

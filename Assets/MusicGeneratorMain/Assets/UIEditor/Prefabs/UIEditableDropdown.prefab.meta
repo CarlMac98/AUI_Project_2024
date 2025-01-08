@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6603d76f326d11baca8813f86396f18e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UIEditableDropdown.prefab
+  uploadId: 506623

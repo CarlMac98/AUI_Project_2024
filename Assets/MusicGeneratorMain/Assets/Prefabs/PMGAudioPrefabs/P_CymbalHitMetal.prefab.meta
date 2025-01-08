@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 43a57547ca93a8ba284fc5531b15bab9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_CymbalHitMetal.prefab
+  uploadId: 506623

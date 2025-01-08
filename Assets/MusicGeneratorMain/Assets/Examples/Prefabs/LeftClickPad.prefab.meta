@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a86c4d936133835bbb05e1140c1162c8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Prefabs/LeftClickPad.prefab
+  uploadId: 506623

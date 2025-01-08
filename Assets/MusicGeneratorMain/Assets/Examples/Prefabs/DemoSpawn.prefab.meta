@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b07b83a54f3613ef5a4b192ccdfe868f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Prefabs/DemoSpawn.prefab
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8e904180143c3ad1d8cf995ecd1e29dc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ContrabassShort.prefab
+  uploadId: 506623

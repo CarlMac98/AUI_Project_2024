@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 64b29221dd6c897d59b0affd007c244c
+labels:
+- FMOD
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGFmod/FMODBanks/InstrumentGroup3.bytes
+  uploadId: 506623

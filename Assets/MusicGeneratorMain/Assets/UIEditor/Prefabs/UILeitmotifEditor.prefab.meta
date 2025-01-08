@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d08c2ff95eacf41b9a878fbbbdee65e2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UILeitmotifEditor.prefab
+  uploadId: 506623

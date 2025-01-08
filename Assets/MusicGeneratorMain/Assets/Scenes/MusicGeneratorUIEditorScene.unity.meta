@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 876852d0d22ba4543a4438d2522adfd2
+timeCreated: 1480390737
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scenes/MusicGeneratorUIEditorScene.unity
+  uploadId: 506623

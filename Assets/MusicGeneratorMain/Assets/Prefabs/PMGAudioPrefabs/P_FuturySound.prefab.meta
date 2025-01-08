@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 37f00268e771324b19438cfb59b7695a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_FuturySound.prefab
+  uploadId: 506623

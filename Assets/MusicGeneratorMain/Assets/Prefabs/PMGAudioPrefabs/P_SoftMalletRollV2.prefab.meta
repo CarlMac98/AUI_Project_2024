@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 42e59b82ca3ef98d59a054e375798d79
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SoftMalletRollV2.prefab
+  uploadId: 506623

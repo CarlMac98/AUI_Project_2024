@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 44463e47aea00813cb69c7c28ae9636e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ClarinetShortMix.prefab
+  uploadId: 506623

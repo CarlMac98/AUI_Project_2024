@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{a722a8f1-166e-4e26-91ad-cd771a90d405}">
+		<property name="name">
+			<value>ReverbHighCut_9</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5026973a-7bd6-4108-9e20-ecba4c728a95}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5026973a-7bd6-4108-9e20-ecba4c728a95}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

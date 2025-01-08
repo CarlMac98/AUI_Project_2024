@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3baaa6d6e940340d2b6eed101d83e5d8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/UIKeysMaterial 1.mat
+  uploadId: 506623

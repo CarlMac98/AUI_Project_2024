@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{0d9b2a4a-2108-49f0-9c2e-04a0c53e69a4}">
+		<property name="name">
+			<value>ReverbDryMix_6</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{411f7157-3ae8-44b2-b413-d791f001213b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{411f7157-3ae8-44b2-b413-d791f001213b}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

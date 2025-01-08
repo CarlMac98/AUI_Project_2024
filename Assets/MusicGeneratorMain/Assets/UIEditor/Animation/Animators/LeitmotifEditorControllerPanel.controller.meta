@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e2ababa33a00ba271aea975bbaa1f3d6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/Animators/LeitmotifEditorControllerPanel.controller
+  uploadId: 506623

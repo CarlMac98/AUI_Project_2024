@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e56d4b0ff70eaa44685d5b08c674e054
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/DoubleBassLong.prefab
+  uploadId: 506623

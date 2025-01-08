@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5cc8241afc6aabe4d996be244039acb9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/Animators/InstrumentScrollView.controller
+  uploadId: 506623

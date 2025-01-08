@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 071f7ca3e13b61b948c1365a1a2e9666
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/BackgroundModal.mat
+  uploadId: 506623

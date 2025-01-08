@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 773a8d3b0502bfd0481abb2c477c4b05
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/GlobalEffects.prefab
+  uploadId: 506623

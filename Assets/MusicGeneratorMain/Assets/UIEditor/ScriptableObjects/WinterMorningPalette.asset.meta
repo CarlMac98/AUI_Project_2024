@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 24f7bbd9f1fe8472588d2b1c4688e548
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/ScriptableObjects/WinterMorningPalette.asset
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a7d29d93ade0ee312bd6875217dbbeff
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_TamTam.prefab
+  uploadId: 506623

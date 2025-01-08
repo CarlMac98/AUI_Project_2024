@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6106604301131925523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2341724818931267604}
+  - component: {fileID: 8515376821078457116}
+  m_Layer: 0
+  m_Name: P_Shake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2341724818931267604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106604301131925523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8515376821078457116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106604301131925523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c4d2e1a34d589d0a62aedef6723396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mInstrumentVariants:
+  - mNotes:
+    - {fileID: 8300000, guid: bf89c8019cd7bd3b1b433f6e05a0d6aa, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 6a4125ed09f0f06bc91f429c2ed59db0, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: b1f806548ab7ddb8e97df9562c0a864a, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 30bf135e63cd15585aacbee1ac7146ff, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 6c207e5902ccc5e9ca584aed53301a10, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 5f0cdfca68428b4d8945dce2fd24c772, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: da4d4c567805d407283a0643b657fc1f, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 346bde2b1f10e38a78bd3799fa18d931, type: 3}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{734d25a1-cc5d-43f7-bd86-3e39759aed1e}">
+		<property name="name">
+			<value>ReverbHFDecay_16</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6c5a7071-936c-4d27-aef5-09e7e9931c95}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6c5a7071-936c-4d27-aef5-09e7e9931c95}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

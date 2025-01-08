@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{18c85d1c-fc37-43ac-8d01-d06cceece877}">
+		<property name="name">
+			<value>MasterGain</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{92428c00-8c0c-4136-9722-10daa7515ad2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{92428c00-8c0c-4136-9722-10daa7515ad2}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

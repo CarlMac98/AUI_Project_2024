@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3668da0cd57b61563b02bda842bc97bf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/FluteMid.prefab
+  uploadId: 506623

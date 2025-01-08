@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 27bfcf9fc46420c4fa539bafa5f34efe
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_Baroque.txt
+  uploadId: 506623

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 89e80120b857546f79c0a58dc73cefa1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/ScriptableObjects/LightPalette.asset
+  uploadId: 506623

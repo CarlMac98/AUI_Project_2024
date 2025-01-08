@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d40546220a884e73ea0a9f62e3b9a427
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/ShowPercussionEditor.anim
+  uploadId: 506623

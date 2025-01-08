@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 142de442b38be4bdaa3baadbf394aa56
+timeCreated: 1479967455
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scripts/ChordProgressions.cs
+  uploadId: 506623

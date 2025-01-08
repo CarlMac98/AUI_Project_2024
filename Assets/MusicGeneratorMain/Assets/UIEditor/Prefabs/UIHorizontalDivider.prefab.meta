@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3afd58ad23bee48dab396b187b06d4a0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UIHorizontalDivider.prefab
+  uploadId: 506623

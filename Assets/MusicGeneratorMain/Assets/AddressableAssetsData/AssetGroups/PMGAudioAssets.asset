@@ -1,0 +1,897 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PMGAudioAssets
+  m_EditorClassIdentifier: 
+  m_GroupName: PMGAudioAssets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a3db35b7cecb595aea0107f92baa995e
+  m_SerializeEntries:
+  - m_GUID: 023178b35ac5730a59dd2773f1b3a571
+    m_Address: ClarinetLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 037c414f6b0ee13628ecaedca7796d93
+    m_Address: OboeMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 03f62b004a258df11976f2bcdb6d8e9f
+    m_Address: BassoonShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0547314fe7ea113a48af2659d0f89498
+    m_Address: Chiptune2Long
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 05861ce065ad9eb379f23a60ff082517
+    m_Address: ViolaMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 06557177b16904c01873c701b52f89a6
+    m_Address: ViolinShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 07ad25660a85a3d858c8f8a18647449a
+    m_Address: Xylophone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0938fdf09152f87d490c1547c6b65125
+    m_Address: P_CymbalSustainV1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 095ec450bdbc40a3b99e8fc86ecc9e56
+    m_Address: PianoLowLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0aa36c4f14a621f5dadda917cfcc0ec4
+    m_Address: OrganQuietMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0c2560b60d98e25aa803b49bdda3e940
+    m_Address: TromboneShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0ec06458cbc5952ef9883aab05262ee2
+    m_Address: P_Woodblock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0f702f0d09348a8639a93284efcc45f9
+    m_Address: BassoonShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 10b7ea17fd1b5a7fab1c79eb957845fc
+    m_Address: Glockenspiel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1441f8b3e99070d6ca245ff0ba5541f5
+    m_Address: PianoHighShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 14461e2586dd06c3e8f5611bf73bf125
+    m_Address: P_AgogoBells
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 15d061bbd7a05a96596dba5960cc7ce1
+    m_Address: BassoonMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 16b2a3194735e9c86a63b401aa7cd7be
+    m_Address: OboeShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 19336f806f1393d4bba207d4ee57e237
+    m_Address: FrenchHornMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1e26c47c9c88ae7298ddb0bc56a1df8c
+    m_Address: FrenchHornShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 21121ba7d7f0e8650ae8c6f3b4f53b35
+    m_Address: Bells
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 215eb6e2c4e7f354783444c6f75cd7ff
+    m_Address: ViolaLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2171dd74bcbbb7c1ebe8a012199f7e63
+    m_Address: P_CymbalScrapeV1_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 228f2ada226f6f8519ead24a4964cddf
+    m_Address: FrenchHornShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 23717c39c930375fcb04bdb473d4ee44
+    m_Address: ContrabassShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 24eb0bef34474fc258ea66181c698ab1
+    m_Address: PianoLowShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 26afe6333308a76469caed7256dbdbbb
+    m_Address: P_CymbalScrapeV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 26cd4874b9ad8d3899b12db843012ff7
+    m_Address: ClarinetMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 27892cbed6e04896a833dd38777f6b6c
+    m_Address: BassoonShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 27c2557705ceb4bf6bf955f11a394a0e
+    m_Address: P_Synth_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2cd466c904566948e90d788e584302eb
+    m_Address: P_SnareHitQuiet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2d66933238076f5e9984a4523646fd7b
+    m_Address: TrumpetMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2e3d42483a047ea21b1d82d3f2b1e66d
+    m_Address: P_Tamborine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 30b68912fb6d21f5d965a2db3e6a4e50
+    m_Address: P_SynthKick
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31008f924884895739c421ff34870105
+    m_Address: Chiptune2Short
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 347afea027aadfdc1ab9faa1c73c7b7d
+    m_Address: P_SoftMalletRollV5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3668da0cd57b61563b02bda842bc97bf
+    m_Address: FluteMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 37b9c51f726a8e1f5ad99765779b2f86
+    m_Address: CelloMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 37f00268e771324b19438cfb59b7695a
+    m_Address: P_FuturySound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b35583555aafeccdba3fdc20b4156c2
+    m_Address: P_SpringCoil_V2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3d7da7e9298254c9a94edc08cdcff863
+    m_Address: P_Door
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3e4a45da7c8ff0a37af8345ead15c903
+    m_Address: ClarinetShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42e59b82ca3ef98d59a054e375798d79
+    m_Address: P_SoftMalletRollV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 43a57547ca93a8ba284fc5531b15bab9
+    m_Address: P_CymbalHitMetal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 443a04274178694d1b0332fae6e0a7bc
+    m_Address: P_CowbellLoud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 44463e47aea00813cb69c7c28ae9636e
+    m_Address: ClarinetShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 452e20e4a9ed89fa8b4bf827ce46d798
+    m_Address: ContrabassMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 45790572ce1dd72f1a163b9f0f9024b2
+    m_Address: P_SoftMalletRollV3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 45f75608cb119aba4b50b83797585269
+    m_Address: ViolaShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47e2bb0df62d7c9429f80dea4469ddf5
+    m_Address: P_BDDrum
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 48d969fef1ec201f3aab30435d3ac2cc
+    m_Address: P_CymbalHistickV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 492445d0c8ad796e4909100db75baa60
+    m_Address: P_TimpaniV1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a6d8befbd75aa443a90985d72105d45
+    m_Address: P_Synth_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4c1be8dc00d6e3e5290423a5bce4db4d
+    m_Address: FluteLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4eb854ce1b4fb39ff848a11b6cc6fce9
+    m_Address: ViolinShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 50281d7d6612e7719b41ec7269069a0c
+    m_Address: P_AngrySciFi
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 51ddd56a3509a3d6797bb9d6cd4b75d8
+    m_Address: P_Castanets
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5428b1f5037582366b866930e25b4b0c
+    m_Address: P_Wave
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 545c7d94bbd7d0f6f93d8238bdbf8854
+    m_Address: P_CowbellQuiet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5ba43b6d99ac156b897082d54b1eae7a
+    m_Address: P_BrakeDrum
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5bb37e696ccf8545db9964c58aa01205
+    m_Address: FluteShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5ce59e3506261e8508597f70610bbc38
+    m_Address: P_Cymbal_Cresc
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5dbce1a72c7103927b0ca904524c7be1
+    m_Address: P_TrainWhistle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 607431755a4c8dfce8ee11e6ebe0da45
+    m_Address: PiccoloLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6733e57c63e2de9c692a025f8cedcf3f
+    m_Address: Harp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6a61c64b832bbbb76ba820b28e3e2b12
+    m_Address: P_Shake_V2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6bf9db803cdf31083aa464a11b3d85b1
+    m_Address: P_Wiggle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c01eb890e87f53e1a840e60e49a02a8
+    m_Address: ViolaPlucked
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d083875f2a1379168d6e91562625f2a
+    m_Address: PianoHighLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d7f164959fda2948b6cd6f350dc401a
+    m_Address: ModUIObject
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6e769c79b689ee2f69233354d4b0dde4
+    m_Address: CelloPlucked
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 70bc5713cd16c1cf5b72993870c5652a
+    m_Address: P_Synth_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 71be5f9f0bc4ec234b71c177b21d6f39
+    m_Address: P_SnareHitLoud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 71eaef1d7f6381e899e91d47cebc5d42
+    m_Address: TubaShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 724ab633d0fe8deeabc9640c86223f32
+    m_Address: P_SynthBoop_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7274209f243eddd49b1c2e5294484e1a
+    m_Address: P_Maraca
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 73d6b3910e213eabab917972be8560f5
+    m_Address: TromboneMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 745d75081225fa9e5aeaf922deedf981
+    m_Address: P_Wompwomp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 74867bfe88dc7dd189c4454912c9552b
+    m_Address: P_Cabasa
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 75e0578c73bd6a894ab14efc5917832f
+    m_Address: P_Ratchet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 76dcd96eb9560024f864af719ff54806
+    m_Address: TrumpetShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 76ed25f2d6164f564a98aaeef5847bd8
+    m_Address: P_Beep
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7813ca59f03d7757b8c4730b117c0c94
+    m_Address: P_SynthBoop_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 78781b2c3fb819fabb0e52c44433e3e3
+    m_Address: P_SpringCoil
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7a4ae8d4184e5def4be1a7277908d4d0
+    m_Address: ChurchBells
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7bf379fe475c5142c85eeb8393030425
+    m_Address: P_Flexatone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f7b0122facb3cf27af5c1fb0188e67a
+    m_Address: P_Synth_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 811bc32dfe89d3b0794a2484e877e6e6
+    m_Address: OrganLoudLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 813f70544aa74d05f8c258ad989ff315
+    m_Address: P_Bongo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 81add55f9f91d7967ae15edd7ccd1e77
+    m_Address: OrganQuietShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 849cea1c9c36b96359873029a42e0abf
+    m_Address: P_CrashHit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 84e994500728a8fb8836815a25ba8593
+    m_Address: FluteShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8521b83c486c1f4e39bd6272fc3f04b3
+    m_Address: P_Laser
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 85e83e559845c3e9f88aebc1d94e3f9b
+    m_Address: CelloShortMix_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ae797bc1e8c356d8bd3d05bd7644a5f
+    m_Address: P_CymbalRapidScrape
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ce6f5ccc983821128fb6755b28db474
+    m_Address: Chiptune3Short
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8e904180143c3ad1d8cf995ecd1e29dc
+    m_Address: ContrabassShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ff17662d6da6512db29ada23eeb6fd5
+    m_Address: P_SnareTapLoud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9008abe13838700079dfb9999436641a
+    m_Address: P_BassDrumCrescendo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9038f97223bed092286347719eecbbac
+    m_Address: ChiptuneLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 90edde633dd26edd8a5025dab75471f0
+    m_Address: ViolaShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 91efcd085ad7ff142891a0d24c9562a5
+    m_Address: ViolinLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 928503b52cf6aa3dd89386720e2e1295
+    m_Address: P_Triangle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9388ccf73b9e75487bdf3d32d1736016
+    m_Address: P_BassDrumRoll
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 93ff8f94e72a92a4da9dfe45db5fff32
+    m_Address: P_Sleighbells
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 967ccf1f0b17613719e9c9dec9774b87
+    m_Address: P_WhistleDown
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 97dcf5f264e2f2c28b2b114630eb5a15
+    m_Address: P_QuintoLoud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 99625313aad0906dbb759e185cb58050
+    m_Address: ViolinMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9976db13ffa5c721a90dd011a1ad558d
+    m_Address: PiccoloMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 997845bd596a8d3cab138ba2f11bcc38
+    m_Address: P_ClavesQuiet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9b3557dcaec9c2ad4980de06d2d78b2d
+    m_Address: ViolinShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9bafb711d7e17d127b9fdc3c1e083ed3
+    m_Address: CelloShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9da9379bf5ade8424b7e2677d562fcf6
+    m_Address: CelloShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9e16ecefcfbe7ba7e83999428bbed146
+    m_Address: P_TomTom
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9f6021e643e818831aa6a505c50c8808
+    m_Address: P_HardMallet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9ff1a169eee29ed1ab72bd674e84f072
+    m_Address: P_WhistleUp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a0d4d327bef987928bc61ed33768bb17
+    m_Address: P_Tenor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a1e13e1716a5ff2c6ba5a8481b2d14db
+    m_Address: P_SnareTapQuiet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a37ecadedf828d00689e8d07d5441bfb
+    m_Address: TubaLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a482480d6467581e8a17a8dedca5a5e6
+    m_Address: FrenchHornShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a69eac25f322f74429af2400c917b5f5
+    m_Address: P_Synth_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a6a1db6bdaf2bf2558b5b813e58ab3b7
+    m_Address: P_Wompwomp_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7d29d93ade0ee312bd6875217dbbeff
+    m_Address: P_TamTam
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7fbc53d81e68dadc9ea800af8686ad1
+    m_Address: CelloLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a8aea55fa4480ceee9e5ed2e85aaa9b0
+    m_Address: Chiptune3Long
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a8e1d595215abd1218ec17737f7a7137
+    m_Address: P_CymbalHistickV1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: abecc493f8a75b0058d86c5e1ab576ba
+    m_Address: P_TimpaniV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac5f2808560fd47b1b8bab16e1b57edc
+    m_Address: P_SoftMalletRollV4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac772775d0dd5d44284f4a5bb6a0e05b
+    m_Address: ContrabassLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b0a17b3c7a41bfded89cc51e039f0421
+    m_Address: P_Surdo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b120d51d6ee387b6cb2b176591ee900d
+    m_Address: TrumpetLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b26a55f2b542e79caa4e40348be60cd9
+    m_Address: P_CymbalSoftMallet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b3e55c43beba56cd5bf66c3927ea8650
+    m_Address: BassoonLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4c55ea7806fd8b1bad37c9a72bdcbad
+    m_Address: ContrabassPlucked
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4fc5b406c3f82cffb4232d19c2fcce2
+    m_Address: P_SynthWomp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b55851891c316f48ab661eba02a12e64
+    m_Address: ChiptuneShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b5caab5a934c0cda1bdea41bbb9698af
+    m_Address: ViolinLongV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb3129902b0a937c59eb0bb93951bf5b
+    m_Address: TubaShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: be185f9b3e1eec5b0914acf87d9c3684
+    m_Address: OboeShortV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bef82d8a6258bf8549098bd4d41c6f01
+    m_Address: TrumpetShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bf4dc091cb287ee20b50df282086043a
+    m_Address: P_QuintoQuiet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c1ac5696d60b59e88ba2ad64dd3e4686
+    m_Address: P_CymbalCrash
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c22bfbe478f96918fbce6f150596f06e
+    m_Address: P_CongaLoud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c2afa25eef14e5e368ab40940464b5f5
+    m_Address: ClarinetShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c64987227115428d7959f547c4d69fe5
+    m_Address: P_CymbalSustainV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c94959fca83e7579a9997fe1d9f6ebfd
+    m_Address: P_SnareHit2Quiet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c95f357d9570d63488e939f835a829ae
+    m_Address: PianoLowLongV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ca874128e2e24078f90e5428a7ea6395
+    m_Address: OrganLoudMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cf3127d818060c02ab74501a226863c6
+    m_Address: P_CymbalHitBell
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d2d3d0a4d53a90ebe8e480dc81deb8d7
+    m_Address: P_AnvilHit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d8159db49508715d8ad97e09c938229d
+    m_Address: PiccoloShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d841a1e60dd72b672b70e8acbc3eda88
+    m_Address: Marimba
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d856c56bb1eedc2968ba47ac49f0a50e
+    m_Address: TromboneLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dc122aeb7ac107fc49928a04ac7a4f09
+    m_Address: FrenchHornLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: df1663104586cf39aa966927e37eec43
+    m_Address: ViolaShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dfff87cf8b2694032a62460377e1aa94
+    m_Address: OrganQuietLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e60fe7a0365b1979c8482372b73f165e
+    m_Address: P_SnareHit2Loud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e639a60621bb201f6b2d9ae60d6d8770
+    m_Address: P_BassDrumMallet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e821d59d21a84e6b79c57104fedf7e10
+    m_Address: TromboneShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e97f26b7ba79a5627be39887635fc362
+    m_Address: P_SoftMalletRollV1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ea887d48370d324d9899fd7cd9033746
+    m_Address: P_Squeak
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eb735bafa9865f6658bda14446c84138
+    m_Address: P_CongaQuiet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eb7596f9b3caff7ecb6f7374b6279349
+    m_Address: TubaMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ebf9c4be065027eddacca454be44da05
+    m_Address: P_SynthBong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ed72aee7031ae7d4da14dba50a800d4f
+    m_Address: P_Djembe
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: edfce435cda5631969e5b4dcc0b80e50
+    m_Address: FluteShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ee175186294782d7fb9bd0175b2e388f
+    m_Address: OboeShortMix
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eefd20233d131c68189caab69a88290c
+    m_Address: PianoHighLongV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ef2508dbe301242f49ec4768ef84f321
+    m_Address: OrganLoudShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f09501cd9748e18ab94782f8001cd439
+    m_Address: P_BassDrum
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f23bd2c7e6b2d9430bcb2cdebdb0335f
+    m_Address: P_Guiro
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f4c59f2abd3cc01a78628dda8cd2f0e9
+    m_Address: PiccoloShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f4e4710ffb1a0aca48b7960812819573
+    m_Address: OboeLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f6a321a5993f853709561391ba171d18
+    m_Address: P_ClavesLoud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f894251d73fdfd94a9da7da75e61893b
+    m_Address: P_Shake
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fceb91724551e087fbaf6e23ffa6e96a
+    m_Address: P_Neutralized
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe845e57d0e8cbdb2b2231ccce7178f2
+    m_Address: P_Powerdown
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1dfd0c7e3c0a0f641955aaf938e25a01
+    m_Address: BassClarinetLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77a7bd2866f10294a8335c67400a208a
+    m_Address: BassClarinetLong 1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 58a89ea9171114d4f96504169bdce744
+    m_Address: BassClarinetLong 2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 835d997b76f01e442b0de6b52954a494
+    m_Address: BassClarinetMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f7eb65abfc7f8ae459ac3f3399d255a6
+    m_Address: BassClarinetShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 19f7c79c7ea048043a94ad162e16d9d0
+    m_Address: Guitar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2aecad2703fe0f14090478ab0c98bbe7
+    m_Address: ContrabassoonLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e29b0ae53589daa46b1da219270a4272
+    m_Address: ContrabassoonMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7ac2359edd51b1443ba057895a7c93b0
+    m_Address: ContrabassoonShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e56d4b0ff70eaa44685d5b08c674e054
+    m_Address: DoubleBassLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 73d1bdc022f4b3f4c9453642cdaede1a
+    m_Address: DoubleBassMid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e0058beae5fd60f4a955349b58b0ff77
+    m_Address: DoubleBassShort
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3cf4ecdef92f32540a4da67fa757047c
+    m_Address: Banjo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7edd06721304c1d43ad33cd3cc26ac98
+    m_Address: Mandolin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 06c5188d6c97611339e08c3443fcc6a5
+    m_Address: FemaleLong
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 715a3d0bfa23470849a90d6c15e5b6e8
+    m_Address: VocalUm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f825f600390f5921cb03b2c908c9c07f
+    m_Address: ElectricBass
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9812a02252829c7949bb1445933eee0e
+    m_Address: ElectricBassSynth
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 715bd2520c66088a1ad0591bea366fd6
+    m_Address: BezierControl.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8a6847f54e4b68521adc4c45e13bc4b9
+    m_Address: BongoV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a2abc33ec1807ac528b013814d355f23
+    m_Address: P_BongoMuted
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c03c4a97b2c5979a3b97a69abba69b30
+    m_Address: P_BongoV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 93af3881a1a9c8517930765f74c2a072
+    m_Address: P_BongoRoll
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: afe99cd7021246796a9e20bc3e57b86a
+    m_Address: P_BongoRoll_V2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b4635a13b7779299ae7b2d964494342
+    m_Address: P_BongoMuted_V2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a77dd1a92d63bb693bb923f31b29f6f0
+    m_Address: P_BongoV3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d9424f58bbe9b4ad4b9a7d22cd4ad8e0
+    m_Address: P_BDrum_Muted
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9150a8b1ce5dcc287b693b7a49c654d7
+    m_Address: P_BDrumV2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d3f684fd830a0d4e1ad6565ba6d8e249
+    m_Address: P_BDrumV3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e367da03fa137a93eb6e8e86b6dbc6dc
+    m_Address: P_Clap
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ee3bb316b18449f739fcc724de3db925
+    m_Address: P_LogDrumHi
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a9912253e6850445cb55afa755098cf7
+    m_Address: P_LogDrumLo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d7dbf3f6c06c389c7be73ca44654d39d
+    m_Address: P_SoloClap
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 55cf87ded80549bc7be9e10a5e7f4889
+    m_Address: P_TomHi_M
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 64630699241b25894b2406018fc921e7
+    m_Address: P_TomHi_S
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5a95291563d9993419f1141ca16fa8e7
+    m_Address: P_TomLo_M
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d28b8ae93163d4270bc36e7fa577c9ac
+    m_Address: P_TomLo_S
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f9218b02bbd3598f6b7061af55530f28
+    m_Address: P_SnareHitV3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a35255a99d872c699bdbec50d1c2bbdf
+    m_Address: P_SnareHitV4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 448c1e961a88355c9aac10bf1f0585af
+    m_Address: P_SnareRim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eb7cb53851ff3a7aabd3282dbb56377c
+    m_Address: P_SnareStick
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6fe7a383a6a777ac2ad28141b31c79fe, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d5d7653783ee5eff080b3e7513850d00, type: 2}
+    - {fileID: 11400000, guid: d54a8e75eb7df8bbbbc5648fa97b51bf, type: 2}

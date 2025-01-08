@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0aa36c4f14a621f5dadda917cfcc0ec4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/OrganQuietMid.prefab
+  uploadId: 506623

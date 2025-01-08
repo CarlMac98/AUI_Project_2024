@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 5e538239cb91d4a0f892cea0506b0ef8
+timeCreated: 1484959364
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Scripts/GlobalEffectsPanel.cs
+  uploadId: 506623

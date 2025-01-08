@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 81add55f9f91d7967ae15edd7ccd1e77
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/OrganQuietShort.prefab
+  uploadId: 506623

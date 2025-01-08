@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 434c796b62c9b412482cfaf8c3066378
+timeCreated: 1504554040
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/ShowLoadingSequence.anim
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f6a321a5993f853709561391ba171d18
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_ClavesLoud.prefab
+  uploadId: 506623

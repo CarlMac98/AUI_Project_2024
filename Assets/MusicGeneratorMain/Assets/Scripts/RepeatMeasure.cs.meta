@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 6c4deb1b1b1a14276b1b7166a4037ee2
+timeCreated: 1520307930
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scripts/RepeatMeasure.cs
+  uploadId: 506623

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 332488d6a67f9a63d8b8adf15e0db2d4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/HideInstrumentScrollView.anim
+  uploadId: 506623

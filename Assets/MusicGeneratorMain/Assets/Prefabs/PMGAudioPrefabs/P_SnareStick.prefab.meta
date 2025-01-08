@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb7cb53851ff3a7aabd3282dbb56377c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SnareStick.prefab
+  uploadId: 506623

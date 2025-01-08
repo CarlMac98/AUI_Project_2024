@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 19f7c79c7ea048043a94ad162e16d9d0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/Guitar.prefab
+  uploadId: 506623

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{e87cf73e-9a28-4347-b32c-6303938df40c}">
+		<property name="name">
+			<value>ReverbTime_1</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8758cf77-9bca-462a-b5cf-7e94b82ebe7e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8758cf77-9bca-462a-b5cf-7e94b82ebe7e}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

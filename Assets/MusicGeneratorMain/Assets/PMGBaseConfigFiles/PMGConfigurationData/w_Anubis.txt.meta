@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 786d0a57af68f5bebad0a6a771206ea5
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_Anubis.txt
+  uploadId: 506623

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 62950ebba337b7967a520f3f3e1c62c4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/HideLeitmotifEditorController.anim
+  uploadId: 506623

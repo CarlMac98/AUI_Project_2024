@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 46426a549f5d1bb2c93f5a875deff5eb
+timeCreated: 1482007868
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/UI_3.mat
+  uploadId: 506623

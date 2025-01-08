@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 93a1444bae4b6c6dfbdd487e6aaf20c9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Scripts/LeitmotifPercussionEditorInstrument.cs
+  uploadId: 506623

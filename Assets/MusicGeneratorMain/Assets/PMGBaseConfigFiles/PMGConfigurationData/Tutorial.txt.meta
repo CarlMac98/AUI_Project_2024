@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 505dd6274b799da32ad48ee38ace9371
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/Tutorial.txt
+  uploadId: 506623

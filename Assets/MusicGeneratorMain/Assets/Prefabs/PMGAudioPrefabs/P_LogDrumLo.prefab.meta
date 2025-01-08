@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a9912253e6850445cb55afa755098cf7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_LogDrumLo.prefab
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9420c6283509229a89d0941bdd1d1a1b
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_Havana.txt
+  uploadId: 506623

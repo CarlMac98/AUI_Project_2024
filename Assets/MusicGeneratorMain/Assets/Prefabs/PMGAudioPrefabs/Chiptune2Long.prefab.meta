@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0547314fe7ea113a48af2659d0f89498
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/Chiptune2Long.prefab
+  uploadId: 506623

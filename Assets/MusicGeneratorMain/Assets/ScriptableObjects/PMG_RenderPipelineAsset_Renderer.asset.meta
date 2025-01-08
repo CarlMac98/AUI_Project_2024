@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 15636e20e13dc9ba5bd1ded3ff80f204
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/ScriptableObjects/PMG_RenderPipelineAsset_Renderer.asset
+  uploadId: 506623

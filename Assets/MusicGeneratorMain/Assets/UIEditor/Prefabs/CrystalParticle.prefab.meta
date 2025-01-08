@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 241059c71eb68c8ce84048c289a8e65f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/CrystalParticle.prefab
+  uploadId: 506623

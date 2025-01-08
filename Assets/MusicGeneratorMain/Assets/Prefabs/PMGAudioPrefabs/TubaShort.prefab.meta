@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 71eaef1d7f6381e899e91d47cebc5d42
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/TubaShort.prefab
+  uploadId: 506623

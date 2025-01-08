@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 73d1bdc022f4b3f4c9453642cdaede1a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/DoubleBassMid.prefab
+  uploadId: 506623

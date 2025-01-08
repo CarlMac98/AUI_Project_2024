@@ -1,0 +1,60 @@
+{
+    "Instruments": [
+        {
+            "FromInstrument": 0,
+            "ToInstrument": 1
+        },
+        {
+            "FromInstrument": 1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": 4
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        },
+        {
+            "FromInstrument": -1,
+            "ToInstrument": -1
+        }
+    ]
+}

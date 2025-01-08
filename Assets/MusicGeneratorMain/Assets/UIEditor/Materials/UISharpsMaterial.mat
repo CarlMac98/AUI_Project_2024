@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9009310291189249438
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UISharpsMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 9a599d72f2cc803ccbc8dcb9ea201347, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _A:
+        m_Texture: {fileID: 2800000, guid: e5eb6cd740243311181f76d7900971f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ASharp:
+        m_Texture: {fileID: 2800000, guid: 1e75cb49e39237927955266887d25195, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _B:
+        m_Texture: {fileID: 2800000, guid: e5eb6cd740243311181f76d7900971f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _C:
+        m_Texture: {fileID: 2800000, guid: 3973e22f88a2dc50aa9d7f2d8bc97def, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CSharp:
+        m_Texture: {fileID: 2800000, guid: 4ea706f2fec9aef98a8a4bb0b0a3a3bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _D:
+        m_Texture: {fileID: 2800000, guid: e5eb6cd740243311181f76d7900971f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DSharp:
+        m_Texture: {fileID: 2800000, guid: 2d8c1a7dd2b376c11a32a32bf8dbaf89, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _E:
+        m_Texture: {fileID: 2800000, guid: e5eb6cd740243311181f76d7900971f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _F:
+        m_Texture: {fileID: 2800000, guid: e5eb6cd740243311181f76d7900971f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FSharp:
+        m_Texture: {fileID: 2800000, guid: a1114c14c54ff546d94fb1704f7204a4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _G:
+        m_Texture: {fileID: 2800000, guid: e5eb6cd740243311181f76d7900971f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GSharp:
+        m_Texture: {fileID: 2800000, guid: 763ad6b224f4b00b28cfa686c790e532, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: be0ee656b52c5ff8b85b040b6df56836, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors:
+    - _AColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _ASharpColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _CColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _CSharpColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _DSharpColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _FColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _FSharpColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _GSharpColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

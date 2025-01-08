@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a7fbc53d81e68dadc9ea800af8686ad1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/CelloLong.prefab
+  uploadId: 506623

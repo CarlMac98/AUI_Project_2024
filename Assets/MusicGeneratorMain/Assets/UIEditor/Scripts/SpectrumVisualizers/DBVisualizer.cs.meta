@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ce9607cee5def613dab12d7641f0430d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Scripts/SpectrumVisualizers/DBVisualizer.cs
+  uploadId: 506623

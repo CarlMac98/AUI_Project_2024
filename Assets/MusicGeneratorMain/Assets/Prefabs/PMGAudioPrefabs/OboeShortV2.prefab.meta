@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: be185f9b3e1eec5b0914acf87d9c3684
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/OboeShortV2.prefab
+  uploadId: 506623

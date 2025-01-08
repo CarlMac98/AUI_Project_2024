@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3a0741fda10594f509af54e2f7f02a28
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/ScriptableObjects/Keybinds.asset
+  uploadId: 506623

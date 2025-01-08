@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f72af94e13f85ad39963e16662cc1820
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Materials/AuroraMaterial.mat
+  uploadId: 506623

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{23c62802-d45d-47e9-b429-e83736a78d7a}">
+		<property name="name">
+			<value>ChorusRate_5</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ad356e12-1208-4966-90ca-08b5aaac4fec}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ad356e12-1208-4966-90ca-08b5aaac4fec}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

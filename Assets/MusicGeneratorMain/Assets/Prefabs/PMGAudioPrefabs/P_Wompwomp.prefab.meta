@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 745d75081225fa9e5aeaf922deedf981
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Wompwomp.prefab
+  uploadId: 506623

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 01e1bc95bbb238c469b87efd1c16ed6d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Scripts/MasterFXPanelUI.cs
+  uploadId: 506623

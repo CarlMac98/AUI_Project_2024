@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9a3362b246cc3612b99e0879fc1b3b4b
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/OO_ShoppingForSimulations.txt
+  uploadId: 506623

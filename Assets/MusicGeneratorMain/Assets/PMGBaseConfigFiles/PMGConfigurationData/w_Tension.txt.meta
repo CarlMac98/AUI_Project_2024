@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3c8ba0f30bd7492138a080a0ebad0992
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_Tension.txt
+  uploadId: 506623

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e6961b6c322b13cb6899b0929b2bb65c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/BezierDestroyParticle.mat
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7a4ae8d4184e5def4be1a7277908d4d0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ChurchBells.prefab
+  uploadId: 506623

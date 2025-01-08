@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5bec03ff741a05d189fa9261d38025b7
+timeCreated: 1482007868
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/UIDropdown.mat
+  uploadId: 506623

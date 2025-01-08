@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ca9d9a9b20c177f5483cd8320bfe392d
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/LegendOfWind.txt
+  uploadId: 506623

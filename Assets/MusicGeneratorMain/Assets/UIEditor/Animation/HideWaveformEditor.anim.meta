@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 120eb5149e140cb7fac31eb15d758051
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/HideWaveformEditor.anim
+  uploadId: 506623

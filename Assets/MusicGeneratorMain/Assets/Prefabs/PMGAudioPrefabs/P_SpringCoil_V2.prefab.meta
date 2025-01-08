@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3b35583555aafeccdba3fdc20b4156c2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SpringCoil_V2.prefab
+  uploadId: 506623

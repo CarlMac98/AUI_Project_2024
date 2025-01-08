@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 51ddd56a3509a3d6797bb9d6cd4b75d8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Castanets.prefab
+  uploadId: 506623

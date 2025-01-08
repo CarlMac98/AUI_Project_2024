@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 448c1e961a88355c9aac10bf1f0585af
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SnareRim.prefab
+  uploadId: 506623

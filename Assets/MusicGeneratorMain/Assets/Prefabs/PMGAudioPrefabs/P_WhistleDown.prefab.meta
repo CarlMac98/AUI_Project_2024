@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 967ccf1f0b17613719e9c9dec9774b87
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_WhistleDown.prefab
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b45a48d8cfaca40b1b20d3067355690f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/SillyMarch.txt
+  uploadId: 506623

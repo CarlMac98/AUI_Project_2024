@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 287a410a4f3511b7ab33e014d1a69757
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UIEmbeddedSlider.prefab
+  uploadId: 506623

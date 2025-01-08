@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7a4ee6b943680d985824f504d4a23190
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_GhostRanch.txt
+  uploadId: 506623

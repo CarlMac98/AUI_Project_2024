@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bb3f38e303f8ef2d28657078cc2d232a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/CurrentProgStepBackground.prefab
+  uploadId: 506623

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1cf4b3eb9cb7a6c3e9f214a60ca83936
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Materials/Shader Graphs_Fresnel
+    2.mat
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 03f62b004a258df11976f2bcdb6d8e9f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/BassoonShort.prefab
+  uploadId: 506623

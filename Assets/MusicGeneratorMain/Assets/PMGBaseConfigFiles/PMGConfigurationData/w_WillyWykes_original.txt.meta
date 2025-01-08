@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7477d51e7b47e52e987c53913657c8e1
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_WillyWykes_original.txt
+  uploadId: 506623

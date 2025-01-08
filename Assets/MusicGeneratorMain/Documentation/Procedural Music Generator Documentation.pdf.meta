@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: efefff0977fa62eed8aec4dd68d4137c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Documentation/Procedural Music Generator Documentation.pdf
+  uploadId: 506623

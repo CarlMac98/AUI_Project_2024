@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 14461e2586dd06c3e8f5611bf73bf125
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_AgogoBells.prefab
+  uploadId: 506623

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{c9fe30b3-5df4-4481-9320-2726234f8ef4}">
+		<property name="name">
+			<value>Distortion_17</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{794c760a-b971-459a-992f-8439ee6d7dd6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{794c760a-b971-459a-992f-8439ee6d7dd6}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

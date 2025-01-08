@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dec983a03b2e32fd89ce8558dc3cb453
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/Sneaky.txt
+  uploadId: 506623

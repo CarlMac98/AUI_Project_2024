@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{5f0d45fd-c499-44c4-ba4a-f6657ba4d571}">
+		<property name="name">
+			<value>ReverbHFReference_8</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a844d800-fb10-4f5e-b16d-55f9f94ec48c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a844d800-fb10-4f5e-b16d-55f9f94ec48c}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

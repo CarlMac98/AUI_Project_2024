@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 29672e38325c58c38935edb36a558ab0
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_ElectroGrind.txt
+  uploadId: 506623

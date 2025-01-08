@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b4c55ea7806fd8b1bad37c9a72bdcbad
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ContrabassPlucked.prefab
+  uploadId: 506623

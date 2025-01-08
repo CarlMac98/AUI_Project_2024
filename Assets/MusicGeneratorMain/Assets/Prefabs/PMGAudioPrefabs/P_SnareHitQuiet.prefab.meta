@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2cd466c904566948e90d788e584302eb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SnareHitQuiet.prefab
+  uploadId: 506623

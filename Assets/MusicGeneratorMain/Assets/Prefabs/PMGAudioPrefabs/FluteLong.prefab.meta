@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c1be8dc00d6e3e5290423a5bce4db4d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/FluteLong.prefab
+  uploadId: 506623

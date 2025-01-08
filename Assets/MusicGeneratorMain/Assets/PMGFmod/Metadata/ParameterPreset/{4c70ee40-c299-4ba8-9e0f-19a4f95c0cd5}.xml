@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{4c70ee40-c299-4ba8-9e0f-19a4f95c0cd5}">
+		<property name="name">
+			<value>Fader_17</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b2858d43-ec50-4220-b36c-f78ab4fd0b3c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b2858d43-ec50-4220-b36c-f78ab4fd0b3c}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

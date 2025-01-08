@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{8b49b183-d99f-4639-8393-68fe48045ba6}">
+		<property name="assetPath">
+			<value>CelloPlucked_0/18.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2277551020408164</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f1ead7b4-4ee1-4805-b6aa-b60951e1fb8b}</destination>
+		</relationship>
+	</object>
+</objects>

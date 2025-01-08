@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fe9dc12267e5dfb0a811127162300c1f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/ParticleMaterials/DefaultFallingNoteTrail.mat
+  uploadId: 506623

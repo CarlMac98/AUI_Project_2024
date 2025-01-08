@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{8e426ea2-d9f6-4010-aafb-1e60dc4f9535}">
+		<property name="name">
+			<value>ReverbDensity_1</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{416d27c8-50ee-4bc0-8e82-26bd134e32c3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{416d27c8-50ee-4bc0-8e82-26bd134e32c3}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

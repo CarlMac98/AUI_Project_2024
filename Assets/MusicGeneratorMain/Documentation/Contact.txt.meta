@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: baa0c89db834d480aabb3eb255faa4b4
+timeCreated: 1505114324
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Documentation/Contact.txt
+  uploadId: 506623

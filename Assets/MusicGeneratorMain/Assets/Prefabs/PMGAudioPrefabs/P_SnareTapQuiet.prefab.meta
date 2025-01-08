@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a1e13e1716a5ff2c6ba5a8481b2d14db
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SnareTapQuiet.prefab
+  uploadId: 506623

@@ -1,0 +1,44 @@
+{
+    "Groups": [
+        {
+            "GroupIndex": 0,
+            "GroupState": 1,
+            "OtherGroups": [
+                0,
+                2,
+                2,
+                2
+            ]
+        },
+        {
+            "GroupIndex": 1,
+            "GroupState": 1,
+            "OtherGroups": [
+                2,
+                0,
+                2,
+                2
+            ]
+        },
+        {
+            "GroupIndex": 2,
+            "GroupState": 1,
+            "OtherGroups": [
+                1,
+                2,
+                0,
+                2
+            ]
+        },
+        {
+            "GroupIndex": 3,
+            "GroupState": 1,
+            "OtherGroups": [
+                2,
+                1,
+                2,
+                0
+            ]
+        }
+    ]
+}

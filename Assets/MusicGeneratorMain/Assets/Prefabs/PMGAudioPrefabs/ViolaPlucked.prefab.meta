@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6c01eb890e87f53e1a840e60e49a02a8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ViolaPlucked.prefab
+  uploadId: 506623

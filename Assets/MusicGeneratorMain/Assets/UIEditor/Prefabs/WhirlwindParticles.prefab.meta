@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f6579e34a006249a8ac260f7d0e1017a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/WhirlwindParticles.prefab
+  uploadId: 506623

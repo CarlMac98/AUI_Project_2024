@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9da9379bf5ade8424b7e2677d562fcf6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/CelloShortV2.prefab
+  uploadId: 506623

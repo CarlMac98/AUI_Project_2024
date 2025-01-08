@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6300617fe31b51644bc4e66fa949bc60
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/ConfigurationModData/TEST_DuplicateInstrumentMod.txt
+  uploadId: 506623

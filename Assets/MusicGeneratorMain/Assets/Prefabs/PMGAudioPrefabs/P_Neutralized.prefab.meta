@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fceb91724551e087fbaf6e23ffa6e96a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Neutralized.prefab
+  uploadId: 506623

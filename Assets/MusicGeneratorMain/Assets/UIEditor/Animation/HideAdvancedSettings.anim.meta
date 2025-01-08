@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 82f4026b6661b6054acdbf3e49fc79ef
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/HideAdvancedSettings.anim
+  uploadId: 506623

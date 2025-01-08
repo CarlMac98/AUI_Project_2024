@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f23bd2c7e6b2d9430bcb2cdebdb0335f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Guiro.prefab
+  uploadId: 506623

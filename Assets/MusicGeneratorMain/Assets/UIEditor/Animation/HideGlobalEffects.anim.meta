@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b0e72e593bb9f848b5f983b78bbff70
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/HideGlobalEffects.anim
+  uploadId: 506623

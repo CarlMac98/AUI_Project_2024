@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f894251d73fdfd94a9da7da75e61893b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Shake.prefab
+  uploadId: 506623

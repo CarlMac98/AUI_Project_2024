@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cf3c5c97054dead6faf66e28cd9e74aa
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/Moonlight.txt
+  uploadId: 506623

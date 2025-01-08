@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c136e67a0386e30b98a891eac9c9e1bd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/2D Renderer Data.asset
+  uploadId: 506623

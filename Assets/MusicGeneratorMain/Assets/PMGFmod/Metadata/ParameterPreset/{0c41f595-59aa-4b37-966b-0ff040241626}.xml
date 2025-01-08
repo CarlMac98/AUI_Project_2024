@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{0c41f595-59aa-4b37-966b-0ff040241626}">
+		<property name="name">
+			<value>ChorusDepth_0</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{cf7c755f-76aa-4aa7-b898-a55483da5cc8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{cf7c755f-76aa-4aa7-b898-a55483da5cc8}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

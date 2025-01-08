@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{990555fe-20db-4bd4-853c-1f782717b571}">
+		<property name="name">
+			<value>DelayFeedback_16</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b8fe4b16-9213-4bbc-85ac-8b14053d969a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b8fe4b16-9213-4bbc-85ac-8b14053d969a}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

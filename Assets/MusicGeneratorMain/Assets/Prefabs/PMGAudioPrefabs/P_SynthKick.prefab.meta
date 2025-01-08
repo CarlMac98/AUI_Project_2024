@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 30b68912fb6d21f5d965a2db3e6a4e50
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SynthKick.prefab
+  uploadId: 506623

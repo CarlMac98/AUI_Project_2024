@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7edd06721304c1d43ad33cd3cc26ac98
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/Mandolin.prefab
+  uploadId: 506623

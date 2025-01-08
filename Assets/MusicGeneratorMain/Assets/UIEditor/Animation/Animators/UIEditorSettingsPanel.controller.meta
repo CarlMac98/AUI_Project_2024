@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5b1251ded49eee649811bb3fe424e76d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/Animators/UIEditorSettingsPanel.controller
+  uploadId: 506623

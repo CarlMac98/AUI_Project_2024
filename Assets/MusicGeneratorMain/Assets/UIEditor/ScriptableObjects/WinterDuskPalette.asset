@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8c86c6087b2aaf388d9cfbc7ff4f41, type: 3}
+  m_Name: WinterDuskPalette
+  m_EditorClassIdentifier: 
+  mPaletteName: Winter Dusk
+  mColorFields:
+  - mColor: {r: 0.03203988, g: 0.044478882, b: 0.084905684, a: 1}
+    mType: 0
+  - mColor: {r: 0.19708973, g: 0.20406078, b: 0.4056604, a: 1}
+    mType: 1
+  - mColor: {r: 0.47518936, g: 0.30588236, b: 0.49019608, a: 1}
+    mType: 2
+  - mColor: {r: 0.49019608, g: 0.65882355, b: 1, a: 1}
+    mType: 3
+  - mColor: {r: 0.13714844, g: 0.15641838, b: 0.21698111, a: 1}
+    mType: 4
+  - mColor: {r: 0.08392666, g: 0.112438284, b: 0.21698111, a: 1}
+    mType: 5
+  - mColor: {r: 0.84313726, g: 0.8, b: 0.8745098, a: 1}
+    mType: 6
+  - mColor: {r: 0.19607843, g: 0.22352941, b: 0.30980393, a: 1}
+    mType: 7
+  - mColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
+    mType: 8

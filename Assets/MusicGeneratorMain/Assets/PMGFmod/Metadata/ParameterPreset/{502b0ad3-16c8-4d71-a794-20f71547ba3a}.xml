@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{502b0ad3-16c8-4d71-a794-20f71547ba3a}">
+		<property name="name">
+			<value>Panner_4</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{be9ece36-771e-4545-8308-e31beae4ccaa}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{be9ece36-771e-4545-8308-e31beae4ccaa}">
+		<property name="minimum">
+			<value>-1</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>-1</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

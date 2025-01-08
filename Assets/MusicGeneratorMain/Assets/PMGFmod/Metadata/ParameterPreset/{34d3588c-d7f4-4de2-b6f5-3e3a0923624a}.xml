@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{34d3588c-d7f4-4de2-b6f5-3e3a0923624a}">
+		<property name="name">
+			<value>ChorusMix_3</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{018c7b70-366f-450e-ad15-00403f7da9b1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{018c7b70-366f-450e-ad15-00403f7da9b1}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

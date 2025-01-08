@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 29b1aca105c9ab3b8a9e455ba7a811b2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/ShowWaveformEditor.anim
+  uploadId: 506623

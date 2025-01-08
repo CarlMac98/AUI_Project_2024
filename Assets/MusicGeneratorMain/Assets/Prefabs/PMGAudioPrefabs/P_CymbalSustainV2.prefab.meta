@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c64987227115428d7959f547c4d69fe5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_CymbalSustainV2.prefab
+  uploadId: 506623

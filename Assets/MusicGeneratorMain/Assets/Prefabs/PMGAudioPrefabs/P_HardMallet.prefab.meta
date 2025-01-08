@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9f6021e643e818831aa6a505c50c8808
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_HardMallet.prefab
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a35255a99d872c699bdbec50d1c2bbdf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SnareHitV4.prefab
+  uploadId: 506623

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: bc3536b4c95a84f4d9ffe3a5e251e65b
+timeCreated: 1520187124
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scripts/NoteGenerator.cs
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d4d75a3361342f6509e3d5fb87ffcf0b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UIKeyboard.prefab
+  uploadId: 506623

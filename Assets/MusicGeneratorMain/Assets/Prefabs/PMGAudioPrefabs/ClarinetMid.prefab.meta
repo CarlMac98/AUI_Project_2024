@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 26cd4874b9ad8d3899b12db843012ff7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ClarinetMid.prefab
+  uploadId: 506623

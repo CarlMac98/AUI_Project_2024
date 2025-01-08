@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c494e6c8425f195ed892f1db8a4b2a57
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/AddressableAssetsData/AssetGroups/ConfigurationData.asset
+  uploadId: 506623

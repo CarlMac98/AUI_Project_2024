@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 75ec597345cb99cfcada44d7852210be
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/ConfigurationModData/UpToNoGood_DuplicateInstrumentMod.txt
+  uploadId: 506623

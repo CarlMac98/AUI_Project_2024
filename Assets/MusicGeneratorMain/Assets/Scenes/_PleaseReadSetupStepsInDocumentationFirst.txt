@@ -1,0 +1,1 @@
+Please read the setup steps in the project documentation (MusicGenerator/Documentation/Procedural Music Generator Documentation) before running these scenes, thanks!

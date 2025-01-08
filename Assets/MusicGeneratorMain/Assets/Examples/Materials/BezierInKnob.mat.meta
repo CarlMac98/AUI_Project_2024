@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 43238c955ababa5e8be90a4bcabce851
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Materials/BezierInKnob.mat
+  uploadId: 506623

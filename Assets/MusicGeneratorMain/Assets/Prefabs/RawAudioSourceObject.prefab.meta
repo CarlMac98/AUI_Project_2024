@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 51fedf476f857eca8970494c5b432a48
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/RawAudioSourceObject.prefab
+  uploadId: 506623

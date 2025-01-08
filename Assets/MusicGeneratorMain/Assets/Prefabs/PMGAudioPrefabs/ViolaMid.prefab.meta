@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 05861ce065ad9eb379f23a60ff082517
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ViolaMid.prefab
+  uploadId: 506623

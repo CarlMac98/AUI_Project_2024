@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 715a3d0bfa23470849a90d6c15e5b6e8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/VocalUm.prefab
+  uploadId: 506623

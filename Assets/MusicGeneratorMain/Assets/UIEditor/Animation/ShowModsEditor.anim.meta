@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2cbb0a385470160f48696173ae3d9fdb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/ShowModsEditor.anim
+  uploadId: 506623

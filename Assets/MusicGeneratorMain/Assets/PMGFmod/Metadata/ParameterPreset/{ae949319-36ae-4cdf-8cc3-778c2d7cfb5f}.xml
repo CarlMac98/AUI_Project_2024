@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{ae949319-36ae-4cdf-8cc3-778c2d7cfb5f}">
+		<property name="name">
+			<value>Gain_14</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{627e569e-dcd3-4c4f-a50f-bd88ead9cea8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{627e569e-dcd3-4c4f-a50f-bd88ead9cea8}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

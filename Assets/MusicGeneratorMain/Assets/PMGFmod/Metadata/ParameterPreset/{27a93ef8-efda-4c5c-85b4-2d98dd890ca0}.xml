@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{27a93ef8-efda-4c5c-85b4-2d98dd890ca0}">
+		<property name="name">
+			<value>EQLow_16</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{370874d4-7337-4fae-9171-9ded5e2d1dae}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{370874d4-7337-4fae-9171-9ded5e2d1dae}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

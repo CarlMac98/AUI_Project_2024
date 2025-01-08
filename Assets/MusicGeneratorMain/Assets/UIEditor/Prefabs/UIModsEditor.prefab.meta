@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 206fbee7bb8f85850b9e79f8e57126c0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UIModsEditor.prefab
+  uploadId: 506623

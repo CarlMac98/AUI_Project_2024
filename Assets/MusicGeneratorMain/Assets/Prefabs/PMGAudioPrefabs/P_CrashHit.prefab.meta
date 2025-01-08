@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 849cea1c9c36b96359873029a42e0abf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_CrashHit.prefab
+  uploadId: 506623

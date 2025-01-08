@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c95f357d9570d63488e939f835a829ae
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/PianoLowLongV2.prefab
+  uploadId: 506623

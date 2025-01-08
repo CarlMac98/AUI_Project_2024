@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d980ec192e946639ebbaaefdf7edbc49
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scenes/PMGExampleScene2.unity
+  uploadId: 506623

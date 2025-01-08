@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{1c0bc74a-7575-4638-b8c4-5e43149de051}">
+		<property name="name">
+			<value>ReverbLateDelay_7</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a3a5d2a8-74a9-4d56-904d-652a8e3e7caa}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a3a5d2a8-74a9-4d56-904d-652a8e3e7caa}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

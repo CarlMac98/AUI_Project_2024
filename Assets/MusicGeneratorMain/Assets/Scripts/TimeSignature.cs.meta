@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: e3c4d54b5796b479fb12d84d5d7b8148
+timeCreated: 1520305039
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scripts/TimeSignature.cs
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e34670eaff18aebaf956fd1b1cc690f6
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/UpToNoGood.txt
+  uploadId: 506623

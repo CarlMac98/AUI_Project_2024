@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ba0b3e5d9d8f86f81bc1b2685ad5f702
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_Wistful.txt
+  uploadId: 506623

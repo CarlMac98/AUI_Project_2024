@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 771b9e7067bbae4749cf96ea5c149bd0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UIColorScrollElement.prefab
+  uploadId: 506623

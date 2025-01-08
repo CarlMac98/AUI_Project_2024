@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1e26c47c9c88ae7298ddb0bc56a1df8c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/FrenchHornShort.prefab
+  uploadId: 506623

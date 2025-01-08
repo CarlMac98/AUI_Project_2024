@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ba06881094e3af9eb917e49b8407eeb3
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/InstrumentClips/Default.txt
+  uploadId: 506623

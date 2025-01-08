@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6e769c79b689ee2f69233354d4b0dde4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/CelloPlucked.prefab
+  uploadId: 506623

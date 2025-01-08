@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f4c59f2abd3cc01a78628dda8cd2f0e9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/PiccoloShort.prefab
+  uploadId: 506623

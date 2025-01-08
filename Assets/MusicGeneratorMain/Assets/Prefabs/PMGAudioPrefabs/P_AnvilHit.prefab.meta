@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d2d3d0a4d53a90ebe8e480dc81deb8d7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_AnvilHit.prefab
+  uploadId: 506623

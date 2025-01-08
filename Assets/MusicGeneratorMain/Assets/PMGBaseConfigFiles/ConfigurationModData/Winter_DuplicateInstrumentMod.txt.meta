@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 91eaf727e17c533499b244b1bc9d5b9f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/ConfigurationModData/Winter_DuplicateInstrumentMod.txt
+  uploadId: 506623

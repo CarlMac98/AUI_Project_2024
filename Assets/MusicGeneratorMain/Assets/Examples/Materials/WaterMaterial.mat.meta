@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7638db31306c6e0ff9fa9be85a1eb28a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Materials/WaterMaterial.mat
+  uploadId: 506623

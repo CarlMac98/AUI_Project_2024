@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{354e896a-5320-4a74-9f1c-8b516fadd205}">
+		<property name="name">
+			<value>DelayWet_8</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d894a74f-198a-4985-aee9-db10041187c6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d894a74f-198a-4985-aee9-db10041187c6}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

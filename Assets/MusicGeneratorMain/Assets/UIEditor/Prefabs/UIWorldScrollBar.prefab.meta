@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ffbee229b2aff89bc81eba785841cfed
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/UIWorldScrollBar.prefab
+  uploadId: 506623

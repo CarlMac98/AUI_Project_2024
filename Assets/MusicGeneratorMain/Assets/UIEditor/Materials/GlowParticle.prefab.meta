@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c660d2d31f9d9bf98e577143b5c796e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/GlowParticle.prefab
+  uploadId: 506623

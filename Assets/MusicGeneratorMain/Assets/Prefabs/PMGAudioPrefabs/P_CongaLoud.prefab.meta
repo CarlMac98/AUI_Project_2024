@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c22bfbe478f96918fbce6f150596f06e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_CongaLoud.prefab
+  uploadId: 506623

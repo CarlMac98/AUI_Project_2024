@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e29b0ae53589daa46b1da219270a4272
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/ContrabassoonMid.prefab
+  uploadId: 506623

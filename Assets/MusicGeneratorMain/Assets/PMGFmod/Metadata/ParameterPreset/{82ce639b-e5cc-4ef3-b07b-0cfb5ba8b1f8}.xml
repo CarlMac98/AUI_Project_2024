@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{82ce639b-e5cc-4ef3-b07b-0cfb5ba8b1f8}">
+		<property name="name">
+			<value>ReverbEarlyLateMix_1</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{916777b0-5501-46f5-adae-cbcef75aaadd}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{916777b0-5501-46f5-adae-cbcef75aaadd}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

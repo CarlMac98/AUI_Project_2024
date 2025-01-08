@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6dae2164fd6441ee3b986a2d5657ff87
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/ConfigurationModData/SillyMarch_DuplicateInstrumentMod.txt
+  uploadId: 506623

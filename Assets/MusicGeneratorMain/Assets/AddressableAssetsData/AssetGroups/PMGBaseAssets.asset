@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PMGBaseAssets
+  m_EditorClassIdentifier: 
+  m_GroupName: PMGBaseAssets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2b7aced7d9d70ac6f922af973474c7d3
+  m_SerializeEntries:
+  - m_GUID: 926d43f209cfd4c859ee8879214d25a5
+    m_Address: GeneratorMixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 97e3a737fd8e1eb6fad729590a3fe139
+    m_Address: ProceduralMusicGenerator
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6fe7a383a6a777ac2ad28141b31c79fe, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 994b2bd36e1280df497150c18194a24f, type: 2}
+    - {fileID: 11400000, guid: d3a3f073e3ad246c8b3167e01afc0398, type: 2}

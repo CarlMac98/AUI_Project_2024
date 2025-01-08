@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 926d43f209cfd4c859ee8879214d25a5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/GeneratorMixer.mixer
+  uploadId: 506623

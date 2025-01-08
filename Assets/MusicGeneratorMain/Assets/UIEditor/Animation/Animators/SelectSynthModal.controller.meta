@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60324dcad04b2fa0685b6bd510e84a41
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/Animators/SelectSynthModal.controller
+  uploadId: 506623

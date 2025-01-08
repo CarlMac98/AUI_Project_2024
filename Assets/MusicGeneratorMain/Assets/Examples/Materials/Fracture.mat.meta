@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 48caccfe99be5ceaf989db659c08e231
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Examples/Materials/Fracture.mat
+  uploadId: 506623

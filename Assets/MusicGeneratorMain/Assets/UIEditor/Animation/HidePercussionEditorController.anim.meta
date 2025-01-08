@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9b62a114f4abf02e82efffc7a4a8083
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Animation/HidePercussionEditorController.anim
+  uploadId: 506623

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c1603f9f1682a2139a06a80afffc3c5
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/ConfigurationModData/LegendOfWind_DuplicateInstrumentMod.txt
+  uploadId: 506623

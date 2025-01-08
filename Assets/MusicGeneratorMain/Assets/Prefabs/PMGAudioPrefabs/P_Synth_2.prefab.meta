@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7f7b0122facb3cf27af5c1fb0188e67a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_Synth_2.prefab
+  uploadId: 506623

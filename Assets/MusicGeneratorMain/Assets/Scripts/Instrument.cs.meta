@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a4d41f81b45b040479a5b4bc4ad29e5e
+timeCreated: 1479791419
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scripts/Instrument.cs
+  uploadId: 506623

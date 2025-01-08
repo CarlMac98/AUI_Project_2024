@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a8be95d36391abe28a7ffd26f5413472
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/ParticleMaterials/FireBall.mat
+  uploadId: 506623

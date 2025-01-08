@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 376762c12d2ca6522aada6db5e2669e5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/FX/New Post-processing Profile.asset
+  uploadId: 506623

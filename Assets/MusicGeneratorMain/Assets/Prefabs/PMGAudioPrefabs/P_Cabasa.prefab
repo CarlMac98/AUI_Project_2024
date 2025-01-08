@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6740923652641434857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7055068863858489954}
+  - component: {fileID: 2383360154047629889}
+  m_Layer: 0
+  m_Name: P_Cabasa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7055068863858489954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740923652641434857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2383360154047629889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740923652641434857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c4d2e1a34d589d0a62aedef6723396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mInstrumentVariants:
+  - mNotes:
+    - {fileID: 8300000, guid: 6c387a429b5a95238960f37eef453265, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: f44528e4b444901b4bd9f1eade8a7d2e, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 4d8bbaeb6589b7540b95dd7166b02184, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 8a77c9ba5a3fcb23b9c315fcc2750c71, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: b4349af50c2bd5a84b2feacca75a2c9d, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 216146ccce678cba3b80a4015369f6cd, type: 3}

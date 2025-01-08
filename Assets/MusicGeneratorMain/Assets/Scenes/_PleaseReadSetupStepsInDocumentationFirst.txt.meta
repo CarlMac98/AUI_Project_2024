@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e99b8a263693873769a6375f255d601f
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Scenes/_PleaseReadSetupStepsInDocumentationFirst.txt
+  uploadId: 506623

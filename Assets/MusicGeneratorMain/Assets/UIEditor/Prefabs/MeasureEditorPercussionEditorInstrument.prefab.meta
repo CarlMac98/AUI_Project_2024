@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 875679defe571e71382a18da2fba4784
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/MeasureEditorPercussionEditorInstrument.prefab
+  uploadId: 506623

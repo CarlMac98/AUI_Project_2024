@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fbe6dd1fee663bfaabc229c9d1ec2425
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/PMGConfigurationData/w_BoleroTango.txt
+  uploadId: 506623

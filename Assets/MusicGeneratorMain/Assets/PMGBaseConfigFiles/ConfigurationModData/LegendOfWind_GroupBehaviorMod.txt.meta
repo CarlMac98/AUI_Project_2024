@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b1efdcbcee6d0f6af988556c2f9ab7ac
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles/ConfigurationModData/LegendOfWind_GroupBehaviorMod.txt
+  uploadId: 506623

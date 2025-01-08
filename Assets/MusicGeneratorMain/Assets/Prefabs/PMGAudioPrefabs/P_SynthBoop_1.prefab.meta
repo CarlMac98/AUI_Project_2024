@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7813ca59f03d7757b8c4730b117c0c94
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_SynthBoop_1.prefab
+  uploadId: 506623

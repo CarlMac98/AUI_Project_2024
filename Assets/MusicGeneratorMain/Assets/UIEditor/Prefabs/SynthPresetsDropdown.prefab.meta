@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9a25577518a85c10390a9eed4bf6afea
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/SynthPresetsDropdown.prefab
+  uploadId: 506623

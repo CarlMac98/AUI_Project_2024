@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8ae797bc1e8c356d8bd3d05bd7644a5f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_CymbalRapidScrape.prefab
+  uploadId: 506623

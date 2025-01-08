@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6094001573920432591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3095471832635521159}
+  - component: {fileID: 8165522223278876751}
+  m_Layer: 0
+  m_Name: P_CymbalCrash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3095471832635521159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094001573920432591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8165522223278876751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094001573920432591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c4d2e1a34d589d0a62aedef6723396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mInstrumentVariants:
+  - mNotes:
+    - {fileID: 8300000, guid: 894dbbc6ebeccaf05b33e1edfd8cb75f, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: cfdd6d74682366e24ad28c102f02eda2, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 861261bde8acbf4c8be7a1489f7081f5, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 3107f653a836adf27b336687dc4ded7e, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: dcfcf79ab5f25455f8755fc10609c9d0, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 9b73aca5c44f9862db6967093cb00897, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 5bc8cf2723d3ebb16878d5f3d3d4af64, type: 3}
+  - mNotes:
+    - {fileID: 8300000, guid: 378f5f0d2f8184a3a8dcef9eda6e9fd7, type: 3}

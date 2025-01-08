@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c2bc50efe7dc67b7bf3c73019b4b601
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/IntScroller.prefab
+  uploadId: 506623

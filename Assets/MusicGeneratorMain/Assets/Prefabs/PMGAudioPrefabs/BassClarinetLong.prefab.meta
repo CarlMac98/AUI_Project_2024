@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1dfd0c7e3c0a0f641955aaf938e25a01
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/BassClarinetLong.prefab
+  uploadId: 506623

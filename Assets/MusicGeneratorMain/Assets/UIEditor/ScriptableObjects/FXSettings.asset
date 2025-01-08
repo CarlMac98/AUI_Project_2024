@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99dc05b551fb2b97bfdf3ecd8097771, type: 3}
+  m_Name: FXSettings
+  m_EditorClassIdentifier: 
+  UIStyle: 1
+  UIKeysParticleStyle: 0
+  VisualizerEmissiveIntensity: 1
+  ColorPaletteIndex: 0
+  UseFallingNoteParticles: 1
+  UseKeyboardParticles: 1
+  UseKeyboardLights: 1
+  UseLogo: 1
+  UseFallingNotePulse: 1
+  FallingNoteEmissionIntensityFloor: 0
+  FallingNoteSpinValue: {x: 1, y: 0.3, z: -0.4}
+  FallingNoteSpeed: 11
+  BloomIsEnabled: 1
+  NoteSpinMultiplier: 1

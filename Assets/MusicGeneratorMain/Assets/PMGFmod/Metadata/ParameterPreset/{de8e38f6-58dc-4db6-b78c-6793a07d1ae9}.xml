@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{de8e38f6-58dc-4db6-b78c-6793a07d1ae9}">
+		<property name="name">
+			<value>FlangerMix_12</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{521fe7cd-054c-4090-b1fe-c04333c2600c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{521fe7cd-054c-4090-b1fe-c04333c2600c}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

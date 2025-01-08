@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 30641bef2cd918ac5bddbe441399ce82
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/BezierSpawn.mat
+  uploadId: 506623

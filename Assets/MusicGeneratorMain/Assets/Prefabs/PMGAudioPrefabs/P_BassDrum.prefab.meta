@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f09501cd9748e18ab94782f8001cd439
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_BassDrum.prefab
+  uploadId: 506623

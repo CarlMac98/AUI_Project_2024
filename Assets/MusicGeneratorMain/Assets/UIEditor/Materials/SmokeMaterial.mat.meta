@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ac3abb6d9de837fadb15f8a33b1c516d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Materials/SmokeMaterial.mat
+  uploadId: 506623

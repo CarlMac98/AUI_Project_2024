@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 715bd2520c66088a1ad0591bea366fd6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/UIEditor/Prefabs/BezierControl.prefab
+  uploadId: 506623

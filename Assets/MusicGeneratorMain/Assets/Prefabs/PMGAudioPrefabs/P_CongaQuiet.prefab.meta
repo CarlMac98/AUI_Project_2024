@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb735bafa9865f6658bda14446c84138
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 192532
+  packageName: Procedural Music Generator
+  packageVersion: 2.0.0
+  assetPath: Assets/MusicGeneratorMain/Assets/Prefabs/PMGAudioPrefabs/P_CongaQuiet.prefab
+  uploadId: 506623

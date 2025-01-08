@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{0c1a5024-0822-4554-8c89-3d93fc52f39c}">
+		<property name="name">
+			<value>ReverbLowGain_15</value>
+		</property>
+		<relationship name="folder">
+			<destination>{560730e1-b882-47d8-9628-071b96244d64}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{02fc3b84-3b3f-4dec-958b-42f44088a238}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{02fc3b84-3b3f-4dec-958b-42f44088a238}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
