@@ -253,13 +253,19 @@ def handle_request_chat():
 
     counter = (counter + 1) % 2
     next_scene = False
+    scala = 0
     if "scena successiva" in response.lower():
         next_scene = True
         if section == "inizio":
             section = "fase_intermedia"
             percorso = determina_percorso(response)
+            if percorso == "percorso_1":
+                scala = 1
+            elif percorso == "percorso_2":
+                scala = 2
         elif section == "fase_intermedia":
             section = "conclusione"
+            scala = 3
         else:
             section = "inizio"
         interactions = 0
@@ -267,7 +273,7 @@ def handle_request_chat():
     #    response = "Non ho capito, potete ripetere quello che volete raccontare? " + response
 
     # Return the response back to Unity
-    return jsonify({"response": response, "next_scene": next_scene }), 200
+    return jsonify({"response": response, "next_scene": next_scene, "scala": scala }), 200
 
 @app.route('/api/image', methods=['POST'])
 def handle_request_image():

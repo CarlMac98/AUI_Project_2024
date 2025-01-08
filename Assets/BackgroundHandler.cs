@@ -45,6 +45,7 @@ public class BackgroundHandler : MonoBehaviour
     }
     public IEnumerator ProcessImageRequest()
     {
+        yield return new WaitForSeconds(0.5f);
         yield return imageSystem.RequestToAzureImage();
 
     }

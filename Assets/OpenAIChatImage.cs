@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEditor;
 using System.Collections.Generic;
 using Microsoft.Identity.Client;
+using ProcGenMusic;
 
 
 // This is used to communicate with your backend
@@ -12,12 +13,15 @@ public class OpenAIChatImage : MonoBehaviour
 {
     [SerializeField]
     private NetSync ns;
+    [SerializeField]
+    public MusicGenerator mGenerator;
 
     [System.Serializable]
     public class Response
     {
         public bool next_scene;
         public string response;
+        public int scala;
     }
 
     private Dictionary<string, string> backendEndpoint = new Dictionary<string, string> {
@@ -94,6 +98,25 @@ public class OpenAIChatImage : MonoBehaviour
                 
                 response = parsedResponse.response;
                 ns.next_scene.Value = parsedResponse.next_scene;
+                if (parsedResponse.next_scene)
+                {
+                    switch (parsedResponse.scala)
+                    {
+                        case 0:
+                            mGenerator.ConfigurationData.Scale = Scale.Major;
+                            break;
+                        case 1:
+                            mGenerator.ConfigurationData.Scale = Scale.HarmonicMajor;
+                            break;
+                        case 2:
+                            mGenerator.ConfigurationData.Scale = Scale.NatMinor;
+                            break;
+                        case 3:
+                            mGenerator.ConfigurationData.Scale = Scale.Major;
+                            mGenerator.ConfigurationData.Mode = Mode.Lydian;
+                            break;
+                    }
+                }
             }
             catch (System.Exception ex)
             {
