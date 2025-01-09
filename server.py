@@ -305,9 +305,9 @@ def handle_request_image():
 
         image_url = json.loads(result.model_dump_json())['data'][0]['url']
         directory = f"Assets/Images/Backgrounds/image{n_image}.png"
-        urllib.request.urlretrieve(image_url, directory)
+        #urllib.request.urlretrieve(image_url, directory)
         
-        return directory, 200
+        return jsonify({"url": image_url, "dir": directory}), 200
     except Exception as e:
         print("Error:", e)
         return jsonify({"error": "Server error"}), 400

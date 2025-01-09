@@ -8,10 +8,18 @@ using Microsoft.Identity.Client;
 using ProcGenMusic;
 using Unity.Netcode;
 using UnityEngine.Rendering;
+using Unity.Collections;
+using UnityEditor.PackageManager;
+using System.Net.Http;
+using System.IO;
+using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+using System;
+using UnityEditor.Overlays;
 
 
 // This is used to communicate with your backend
-public class OpenAIChatImage : MonoBehaviour
+public class OpenAIChatImage : NetworkBehaviour
 {
     [SerializeField]
     private NetSync ns;
@@ -302,12 +310,12 @@ public class OpenAIChatImage : MonoBehaviour
         else
         {
             
-            string directory_image = request.downloadHandler.text;
+            string image = request.downloadHandler.text;
+            ImageObj im = JsonUtility.FromJson<ImageObj>(image);
             yield return new WaitForSeconds(0.5f);
-            Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(directory_image);
-            byte[] imageBytes = newTexture.EncodeToPNG(); // Or EncodeToJPG if needed
+            //byte[] imageBytes = newTexture.EncodeToPNG(); // Or EncodeToJPG if needed
             DebugRpc();
-            ReceiveImageRpc(imageBytes);
+            ReceiveImageRpc(im);
             
         }
     }
@@ -321,18 +329,81 @@ public class OpenAIChatImage : MonoBehaviour
     [Rpc(SendTo.ClientsAndHost)]
     public void DebugRpc()
     {
-        Debug.Log("Receiving image");
+        Debug.Log("Recieving image");
     }
-    [Rpc(SendTo.ClientsAndHost)]
-    public void ReceiveImageRpc(byte[] imageBytes)
+    [Rpc(SendTo.ClientsAndHost, Delivery = RpcDelivery.Reliable)]
+    public void ReceiveImageRpc(ImageObj im)
     {
+        StartCoroutine(DownloadImageCoroutine(im));
         // Reconstruct the image on the client
-        Texture2D receivedTexture = new Texture2D(2, 2); // Placeholder size, will resize
-        receivedTexture.LoadImage(imageBytes);
-        GameObject imageComponent = GameObject.Find("Bckg");
-        RawImage backgroundImage = imageComponent.GetComponent<RawImage>();
-        backgroundImage.texture = receivedTexture;
-        GameManager.imageGenerated = true;
-        Debug.Log("Image downloaded correctly");
+        //Debug.Log("Image downloaded correctly");
+
+        //using (HttpClient client = new HttpClient())
+        //{
+        //    // Send a GET request to download the image
+        //    byte[] imageBytes = await client.GetByteArrayAsync(im.url);
+
+        //    // Save the image to a file
+        //    await File.WriteAllBytesAsync(im.dir, imageBytes);
+
+        //    Console.WriteLine("Image downloaded successfully!");
+        //}
+
+        //Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(im.dir);
+        //GameObject imageComponent = GameObject.Find("Bckg");
+        //RawImage backgroundImage = imageComponent.GetComponent<RawImage>();
+        //backgroundImage.texture = newTexture;
+        //GameManager.imageGenerated = true;
+        
+    }
+
+    private IEnumerator DownloadImageCoroutine(ImageObj im)
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            // Send a GET request to download the image asynchronously
+            var request = client.GetByteArrayAsync(im.url);
+
+            // Wait until the request is finished
+            yield return new WaitUntil(() => request.IsCompleted);
+
+            // Check if the request was successful
+            if (request.IsCompletedSuccessfully)
+            {
+                byte[] imageBytes = request.Result;
+
+                // Save the image to a file
+                File.WriteAllBytes(im.dir, imageBytes);
+                Debug.Log("Image downloaded successfully!");
+
+                // Load the image into a Texture2D
+                Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(im.dir);
+
+                // Update the RawImage component with the downloaded texture
+                GameObject imageComponent = GameObject.Find("Bckg");
+                RawImage backgroundImage = imageComponent.GetComponent<RawImage>();
+                backgroundImage.texture = newTexture;
+
+                // Set a flag that the image is generated
+                GameManager.imageGenerated = true;
+            }
+            else
+            {
+                Debug.LogError("Image download failed");
+            }
+        }
+    }
+}
+
+[System.Serializable]
+public class ImageObj : INetworkSerializable
+{
+    public string url;
+    public string dir;
+
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        serializer.SerializeValue(ref url);
+        serializer.SerializeValue(ref dir);
     }
 }
