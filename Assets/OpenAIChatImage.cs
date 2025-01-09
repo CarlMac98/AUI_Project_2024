@@ -100,7 +100,7 @@ public class OpenAIChatImage : MonoBehaviour
                 
                 response = parsedResponse.response;
                 ns.next_scene.Value = parsedResponse.next_scene;
-                if (parsedResponse.next_scene)
+                if (parsedResponse.next_scene && mGenerator.gameObject.activeInHierarchy)
                 {
                     switch (parsedResponse.scala)
                     {
@@ -301,27 +301,30 @@ public class OpenAIChatImage : MonoBehaviour
         }
         else
         {
-            Debug.Log("Image downloaded correctly");
             
             string directory_image = request.downloadHandler.text;
             yield return new WaitForSeconds(0.5f);
             Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(directory_image);
-            SendImageToClientServerRpc(newTexture);
+            byte[] imageBytes = newTexture.EncodeToPNG(); // Or EncodeToJPG if needed
+            DebugRpc();
+            ReceiveImageRpc(imageBytes);
             
         }
     }
 
-    [ServerRpc]
-    public void SendImageToClientServerRpc(Texture2D texture)
+    //[ServerRpc(RequireOwnership = false)]
+    //public void SendImageToClient(byte[] imageBytes)
+    //{
+    //    // Send the image to all clients
+    //    ReceiveImageClientRpc(imageBytes);
+    //}
+    [Rpc(SendTo.ClientsAndHost)]
+    public void DebugRpc()
     {
-        byte[] imageBytes = texture.EncodeToPNG(); // Or EncodeToJPG if needed
-
-        // Send the image to all clients
-        ReceiveImageClientRpc(imageBytes);
+        Debug.Log("Receiving image");
     }
-
-    [ClientRpc]
-    private void ReceiveImageClientRpc(byte[] imageBytes)
+    [Rpc(SendTo.ClientsAndHost)]
+    public void ReceiveImageRpc(byte[] imageBytes)
     {
         // Reconstruct the image on the client
         Texture2D receivedTexture = new Texture2D(2, 2); // Placeholder size, will resize
@@ -330,5 +333,6 @@ public class OpenAIChatImage : MonoBehaviour
         RawImage backgroundImage = imageComponent.GetComponent<RawImage>();
         backgroundImage.texture = receivedTexture;
         GameManager.imageGenerated = true;
+        Debug.Log("Image downloaded correctly");
     }
 }
