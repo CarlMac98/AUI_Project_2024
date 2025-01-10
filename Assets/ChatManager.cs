@@ -27,7 +27,7 @@ public class ChatManager : NetworkBehaviour
     [SerializeField]
     public Button storyButton, chatButton;
 
-    public GameObject chatPanel, storyPanel, textObject, chatSection, summarySection;
+    public GameObject chatPanel, storyPanel, textObject, chatSection, summarySection, bubbleChat;
     public TMP_Text storySummary;
     public TMP_InputField chatBox;
     GameObject storyPanelText;
@@ -129,8 +129,12 @@ public class ChatManager : NetworkBehaviour
 
     public void Summary()
     {
+        Color brownOn = new Color(0.6156863f, 0.5137255f, 0.3254902f, 1f);
+        Color brownOff = new Color(0.6156863f, 0.5137255f, 0.3254902f, 0f);
         chatSection.SetActive(false);
+        chatButton.gameObject.GetComponent<Image>().color = brownOff;
         summarySection.SetActive(true);
+        storyButton.gameObject.GetComponent<Image>().color = brownOn;
         ns.AskSummaryServerRpc();
         //if (GameManager.isServer)
         //{
@@ -151,8 +155,12 @@ public class ChatManager : NetworkBehaviour
         storySummary.text = ns.recap.Value.ToString();
     }
     public void Chat() {
+        Color brownOn = new Color(0.6156863f, 0.5137255f, 0.3254902f, 1f);
+        Color brownOff = new Color(0.6156863f, 0.5137255f, 0.3254902f, 0f);
         chatSection.SetActive(true);
+        chatButton.gameObject.GetComponent<Image>().color = brownOn;
         summarySection.SetActive(false);
+        storyButton.gameObject.GetComponent<Image>().color = brownOff;
     }
     public IEnumerator RequestSummary() { 
         yield return chatSystem.SendRequestSummmary();
@@ -228,6 +236,49 @@ public class ChatManager : NetworkBehaviour
         messageList.Add(msg);
     }
 
+    void AddMessage2(Message msg)
+    {
+        GameObject newText = Instantiate(bubbleChat, chatPanel.transform);
+
+        TMP_Text user = newText.transform.Find("Username").GetComponent<TMP_Text>();
+        TMP_Text msgText = newText.transform.Find("Msg").GetComponent<TMP_Text>();
+
+        user.text = msg.username;
+        msgText.text = msg.text;
+
+        // Force TextMeshPro to update before adjusting size
+        msgText.ForceMeshUpdate();
+
+        // Adjust the RectTransform height to match the preferred height of the text
+        RectTransform messageRect = msgText.GetComponent<RectTransform>();
+        messageRect.sizeDelta = new Vector2(messageRect.sizeDelta.x, msgText.preferredHeight);
+
+
+
+        Image bubbleBackground = newText.GetComponent<Image>();
+        switch (msg.player)
+        {
+            case Message.messageType.assistantMessage:
+                bubbleBackground.color = new Color(240f / 255f, 165f / 255f, 165f / 255f);
+                break;
+            case Message.messageType.firstPlayerMessage:
+                bubbleBackground.color = new Color(165f / 255f, 224f / 255f, 240f / 255f);
+                break;
+            case Message.messageType.secondPlayerMessage:
+                bubbleBackground.color = new Color(209f / 255f, 240f / 255f, 165f / 255f);
+                break;
+            default:
+                bubbleBackground.color = new Color(1f, 1f, 1f);
+                break;
+        }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(newText.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(chatPanel.GetComponent<RectTransform>());
+
+        messageList.Add(msg);
+    }
+
+    
+
     public void RemoveAllChildren(GameObject parent)
     {
         foreach (Transform child in parent.transform)
@@ -265,7 +316,7 @@ public class ChatManager : NetworkBehaviour
             HandleChatMessage(message);
         }
         
-        ChatManager.Singleton.AddMessage(message);
+        ChatManager.Singleton.AddMessage2(message);
     }
 }
 
