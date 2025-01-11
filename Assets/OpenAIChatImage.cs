@@ -179,7 +179,7 @@ public class OpenAIChatImage : NetworkBehaviour
         Debug.Log("Payload being sent: " + jsonPayload);
 
         // Set up the UnityWebRequest
-        var request = new UnityWebRequest(backendEndpoint["chat"], "POST");
+        var request = new UnityWebRequest(backendEndpoint["help"], "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();

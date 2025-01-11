@@ -27,7 +27,7 @@ public class HelperManager : NetworkBehaviour
     [SerializeField]
     //public Button storyButton, chatButton;
 
-    public GameObject chatPanel, textObject, chatSection;
+    public GameObject chatPanel, textObject,  bubbleChat; //chatSection,
 
     public TMP_InputField chatBox;
 
@@ -41,7 +41,7 @@ public class HelperManager : NetworkBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
-        HelperManager.Singleton = this;
+        Singleton = this;
     }
 
     void Start()
@@ -62,7 +62,7 @@ public class HelperManager : NetworkBehaviour
                 msg.text = chatBox.text;
                 chatBox.text = "";
                 msg.username = userName;
-                HandleChatMessage(msg);
+                HandleHelpMessage(msg);
             }
         }
 
@@ -74,27 +74,20 @@ public class HelperManager : NetworkBehaviour
             }
         }
     }
-    public void HandleChatMessage(Message message)
+    public void HandleHelpMessage(Message message)
     {
-        StartCoroutine(ProcessChatMessage(message));
+        StartCoroutine(ProcessHelpMessage(message));
     }
-    private IEnumerator ProcessChatMessage(Message message)
+    private IEnumerator ProcessHelpMessage(Message message)
     {
-        if (message.player == Message.messageType.firstPlayerMessage)
-        {
-            //sendMessageToChat("<color=blue><b>" + message.username + "</b></color>: " + message.text);
-            //ChatManager.Singleton.AddMessage(message);
-            SendChatMessageServerRpc(message);
-        }
-        //else if(message.player == Message.messageType.secondPlayerMessage)
+        //if (message.player == Message.messageType.firstPlayerMessage)
         //{
-        //    //sendMessageToChat("<color=green><b>" + message.username + "</b></color>: " + message.text);
-        //    ChatManager.Singleton.AddMessage(message);
-        //    //SendChatMessageServerRpc(message);
+        //    SendHelpMessageServerRpc(message);
         //}
+
         if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
         {
-            yield return chatSystem.SendMessageToAzureChat(message.username + ": " + message.text);
+            yield return chatSystem.SendHelpMessage(message.text, message.username);
             if (!chatSystem.response.Equals("None"))
             {
                 //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
@@ -105,7 +98,7 @@ public class HelperManager : NetworkBehaviour
                 msg.player = Message.messageType.assistantMessage;
                 msg.username = "Assistant";
 
-                SendChatMessageServerRpc(msg);
+                SendHelpMessageServerRpc(msg);
             }
         }
 
@@ -146,26 +139,44 @@ public class HelperManager : NetworkBehaviour
         messageList.Add(newMessage);
     }
 
-    void AddMessage(Message msg)
+    void AddMessage2(Message msg)
     {
-        GameObject newText = Instantiate(textObject, chatPanel.transform);
+        GameObject newText = Instantiate(bubbleChat, chatPanel.transform);
 
-        TMP_Text chat = newText.GetComponent<TMP_Text>();
+        TMP_Text user = newText.transform.Find("Username").GetComponent<TMP_Text>();
+        TMP_Text msgText = newText.transform.Find("Msg").GetComponent<TMP_Text>();
+
+        user.text = msg.username;
+        msgText.text = msg.text;
+
+        // Force TextMeshPro to update before adjusting size
+        msgText.ForceMeshUpdate();
+
+        // Adjust the RectTransform height to match the preferred height of the text
+        RectTransform messageRect = msgText.GetComponent<RectTransform>();
+        messageRect.sizeDelta = new Vector2(messageRect.sizeDelta.x, msgText.preferredHeight);
+
+
+
+        Image bubbleBackground = newText.GetComponent<Image>();
         switch (msg.player)
         {
             case Message.messageType.assistantMessage:
-                chat.text = "<color=red><b>" + msg.username + ":</b></color> " + msg.text;
+                bubbleBackground.color = new Color(240f / 255f, 165f / 255f, 165f / 255f);
                 break;
             case Message.messageType.firstPlayerMessage:
-                chat.text = "<color=blue><b>" + msg.username + ":</b></color> " + msg.text;
+                bubbleBackground.color = new Color(165f / 255f, 224f / 255f, 240f / 255f);
                 break;
             case Message.messageType.secondPlayerMessage:
-                chat.text = "<color=green><b>" + msg.username + ":</b></color> " + msg.text;
+                bubbleBackground.color = new Color(209f / 255f, 240f / 255f, 165f / 255f);
                 break;
             default:
-                chat.text = "Error";
+                bubbleBackground.color = new Color(1f, 1f, 1f);
                 break;
         }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(newText.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(chatPanel.GetComponent<RectTransform>());
+
         messageList.Add(msg);
     }
 
@@ -180,13 +191,14 @@ public class HelperManager : NetworkBehaviour
 
 
     [ServerRpc(RequireOwnership = false)]
-    void SendChatMessageServerRpc(Message message)
+    void SendHelpMessageServerRpc(Message message)
     {
-        ReceiveChatMessageClientRpc(message);
+        //if (message.username == userName)
+        ReceiveHelpMessageClientRpc(message);
     }
 
     [ClientRpc]
-    void ReceiveChatMessageClientRpc(Message message)
+    void ReceiveHelpMessageClientRpc(Message message)
     {
         if (message.player != Message.messageType.assistantMessage && message.username != userName)
         {
@@ -194,7 +206,7 @@ public class HelperManager : NetworkBehaviour
         }
         else
         {
-            Singleton.AddMessage(message);
+            Singleton.AddMessage2(message);
         }
 
 
