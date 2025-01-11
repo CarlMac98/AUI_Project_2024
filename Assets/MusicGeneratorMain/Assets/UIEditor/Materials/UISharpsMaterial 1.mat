@@ -104,7 +104,7 @@ Material:
     - _GSharpColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &2477829892440416679
+--- !u!114 &1869066499445891150
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Custom Music Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Custom Music Assets
+  m_GUID: 3fa57d3fd3a226b42b81e723719317cf
+  m_SerializeEntries:
+  - m_GUID: 9bf995017ee669814a997a00da3372e8
+    m_Address: Assets/MusicGeneratorMain/Assets/PMGFmod
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0c43cb0c3808c55a97fa515214eee2c
+    m_Address: Assets/MusicGeneratorMain/Assets/PMGBaseConfigFiles
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7b2b8d260b15bc40a7dde176f97b8df
+    m_Address: Assets/MusicGeneratorMain/Assets/Audio/Assets
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6fe7a383a6a777ac2ad28141b31c79fe, type: 2}
+  m_SchemaSet:
+    m_Schemas: []
