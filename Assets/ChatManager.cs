@@ -316,31 +316,35 @@ public class ChatManager : NetworkBehaviour
             HandleChatMessage(message);
         }
         
-        ChatManager.Singleton.AddMessage2(message);
+        Singleton.AddMessage2(message);
     }
 }
 
-[System.Serializable]
-public class Message : INetworkSerializable
-{
-    public string text;
-    //public TMP_Text textObject;
-    public messageType player;
-    public string username;
+//[System.Serializable]
+//public class Message : INetworkSerializable
+//{
+//    public string text;
+//    //public TMP_Text textObject;
+//    public messageType player;
+    
+//    public string username;
 
-    public enum messageType
-    {
-        firstPlayerMessage,
-        secondPlayerMessage,
-        assistantMessage
-    }
+//    public string dest = "";
 
-    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-    {
-        serializer.SerializeValue(ref text);
-        //serializer.SerializeValue(ref textObject);
-        serializer.SerializeValue(ref player);
-        serializer.SerializeValue(ref username);
-    }
-}
+//    public enum messageType
+//    {
+//        firstPlayerMessage,
+//        secondPlayerMessage,
+//        assistantMessage
+//    }
+
+//    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+//    {
+//        serializer.SerializeValue(ref text);
+//        //serializer.SerializeValue(ref textObject);
+//        serializer.SerializeValue(ref player);
+//        serializer.SerializeValue(ref username);
+//        serializer.SerializeValue(ref dest);
+//    }
+//}
 

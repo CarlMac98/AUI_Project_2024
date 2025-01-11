@@ -33,6 +33,7 @@ public class HelperManager : NetworkBehaviour
 
     public Message msg;
 
+    
 
     [SerializeField]
     List<Message> messageList = new List<Message>();
@@ -85,22 +86,40 @@ public class HelperManager : NetworkBehaviour
         //    SendHelpMessageServerRpc(message);
         //}
 
-        if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
+        AddMessage2(message);
+
+        yield return chatSystem.SendHelpMessage(message.text, message.username);
+        
+        if (!chatSystem.response.Equals("None"))
         {
-            yield return chatSystem.SendHelpMessage(message.text, message.username);
-            if (!chatSystem.response.Equals("None"))
-            {
-                //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
+            //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
 
-                Message msg = new Message();
+            Message msg = new Message();
 
-                msg.text = chatSystem.response;
-                msg.player = Message.messageType.assistantMessage;
-                msg.username = "Assistant";
+            msg.text = chatSystem.response;
+            msg.player = Message.messageType.assistantMessage;
+            msg.username = "Assistant";
+            msg.dest = userName;
 
-                SendHelpMessageServerRpc(msg);
-            }
+            SendHelpMessageServerRpc(msg);
         }
+
+        //if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
+        //{
+        //    yield return chatSystem.SendHelpMessage(message.text, message.username);
+        //    if (!chatSystem.response.Equals("None"))
+        //    {
+        //        //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
+
+        //        Message msg = new Message();
+
+        //        msg.text = chatSystem.response;
+        //        msg.player = Message.messageType.assistantMessage;
+        //        msg.username = "Assistant";
+
+        //        SendHelpMessageServerRpc(msg);
+        //    }
+        //}
 
 
     }
@@ -122,22 +141,22 @@ public class HelperManager : NetworkBehaviour
     {
         chatBox.DeactivateInputField();
     }
-    public void sendMessageToChat(string text)
-    {
+    //public void sendMessageToChat(string text)
+    //{
 
-        Message newMessage = new Message();
+    //    Message newMessage = new Message();
 
-        newMessage.text = text;
+    //    newMessage.text = text;
 
-        GameObject newText = Instantiate(textObject, chatPanel.transform);
+    //    GameObject newText = Instantiate(textObject, chatPanel.transform);
 
-        TMP_Text chat = newText.GetComponent<TMP_Text>();
+    //    TMP_Text chat = newText.GetComponent<TMP_Text>();
 
-        chat.text = newMessage.text;
-        //chat.color = messageTypeColor(messageType);
+    //    chat.text = newMessage.text;
+    //    //chat.color = messageTypeColor(messageType);
 
-        messageList.Add(newMessage);
-    }
+    //    messageList.Add(newMessage);
+    //}
 
     void AddMessage2(Message msg)
     {
@@ -200,16 +219,14 @@ public class HelperManager : NetworkBehaviour
     [ClientRpc]
     void ReceiveHelpMessageClientRpc(Message message)
     {
-        if (message.player != Message.messageType.assistantMessage && message.username != userName)
-        {
-            return;
-        }
-        else
+        if(message.player == Message.messageType.assistantMessage && message.dest == userName)
         {
             Singleton.AddMessage2(message);
         }
-
-
+        else if (message.player != Message.messageType.assistantMessage && message.username != userName)
+        {
+            return;
+        }
     }
 }
 

@@ -108,6 +108,7 @@ public class OpenAIChatImage : NetworkBehaviour
                 
                 response = parsedResponse.response;
                 ns.next_scene.Value = parsedResponse.next_scene;
+
                 if (parsedResponse.next_scene && mGenerator.gameObject.activeInHierarchy)
                 {
                     switch (parsedResponse.scala)
@@ -196,7 +197,8 @@ public class OpenAIChatImage : NetworkBehaviour
         {
             help = request.downloadHandler.text;            
             Debug.Log("Help: " + help);
-            
+
+            response = help;
         }
     }
 
