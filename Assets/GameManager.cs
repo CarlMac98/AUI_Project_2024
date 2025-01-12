@@ -24,7 +24,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     NetSync ns;
     [SerializeField]
-    private Button menu, help, X, cont, exit; //menuBackButt,
+    OpenAIChatImage openAIChatImage;
+    [SerializeField]
+    PythonBackendManager pythonBackendManager;
+
+    
+    [SerializeField]
+    private Button quit, menu, help, X, cont, exit; //menuBackButt,
     [SerializeField]
     private GameObject menuBckg, helpChat;
     
@@ -44,13 +50,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.Singleton = this;
+        Singleton = this;
     }
     void Start()
     {
         storyCreated = false;
         //initialize first go button
         goButton.onClick.AddListener(GoAhead);
+
+        quit.onClick.AddListener(QuitGame);
 
         menu.onClick.AddListener(ShowMenu);
         cont.onClick.AddListener(CloseMenu);
@@ -107,12 +115,7 @@ public class GameManager : MonoBehaviour
                 if (playerInput.text != "")
                 {
                     playerName = playerInput.text;
-                    //if(isServer)
-                    //{
-                    //    ns.host_name.Value = playerName;
-                    //}
-                    //else
-                    //    ns.ChangeCharNameServerRpc(playerName);
+                    playerInput.text = "";
                 }
                 else
                 {
@@ -149,10 +152,6 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(chatManager.CreateStory(story));
                 storyCreated = true;   
             }
-            //if (currentScene == 4 && !isServer)
-            //{
-            //    chatManager.VisualizeSummary();
-            //}
             if (currentScene == 5 && isServer)
             {
                 chatManager.HandleInitialMessage();
@@ -250,6 +249,25 @@ public class GameManager : MonoBehaviour
         GoAhead();
     }
 
+    void ResetGameUI()
+    {
+        scenes[currentScene].SetActive(false);
+        currentScene = 0;
+        scenes[currentScene].SetActive(true);
+
+        if (!GameObject.Find("Go").IsUnityNull())
+        {
+            goButton = GameObject.Find("Go").GetComponent<Button>();
+            goButton.onClick.RemoveAllListeners();
+            goButton.onClick.AddListener(GoAhead);
+        }
+
+        chatManager.userName = "";
+        helperManager.userName = "";
+
+        background.HandleOn();
+    }
+
     private void ShowMenu()
     {
        menuBckg.SetActive(true);
@@ -262,7 +280,23 @@ public class GameManager : MonoBehaviour
 
     private void ExitGame()
     {
+        openAIChatImage.ResetStory();
+        pythonBackendManager.StopPythonBackend();
+        ResetGameUI();
+        pythonBackendManager.StartPythonBackend();
+    }
 
+    private void QuitGame()
+    {
+        openAIChatImage.ResetStory();
+        pythonBackendManager.StopPythonBackend();
+        
+        #if UNITY_STANDALONE
+                Application.Quit();
+        #endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 
     private void ShowHelper()

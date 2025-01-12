@@ -60,7 +60,7 @@ public class PythonBackendManager : MonoBehaviour
         StopPythonBackend();
     }
 
-    void StopPythonBackend()
+    public void StopPythonBackend()
     {
         if (pythonProcess != null && !pythonProcess.HasExited)
         {
