@@ -1,0 +1,45 @@
+{
+    "inizio": {
+        "introduzione_capitolo": "Due bambini si addentrano in una palude misteriosa, seguendo il suono di una melodia lontana che si perde tra nebbie e alberi contorti.",
+        "descrizione_scena": "Una palude avvolta dalla nebbia, con alberi dalle radici nodose che emergono dall'acqua scura. Lucciole verdi illuminano il sentiero fangoso.",
+        "personaggio_unico": {
+            "nome": "Murk",
+            "descrizione": "Un anziano rospo parlante con la pelle screziata e occhi dorati, che conosce ogni angolo nascosto della palude."
+        },
+        "collegamento_scena_successiva": {
+            "fine_capitolo": "Murk indica ai bambini due direzioni: una conduce al Villaggio degli Alberi Vuoti, l'altra al Lago degli Specchi Nascosti. Devono decidere quale strada seguire.",
+            "percorso_1": "Sentiero per il Villaggio degli Alberi Vuoti",
+            "percorso_2": "Sentiero per il Lago degli Specchi Nascosti"
+        }
+    },
+    "fase_intermedia": {
+        "percorso_1": {
+            "introduzione_capitolo": "I bambini seguono il sentiero verso il Villaggio degli Alberi Vuoti, attratti da strane luci che danzano tra i rami secchi.",
+            "descrizione_scena": "Un villaggio abbandonato costruito tra alberi cavi, con ponti di legno traballanti e lanterne spente che oscillano al vento.",
+            "personaggio_unico": {
+                "nome": "Willow",
+                "descrizione": "Un'ombra gentile che si manifesta come una ragazza fatta di nebbia, custode dei segreti dimenticati del villaggio."
+            }
+        },
+        "percorso_2": {
+            "introduzione_capitolo": "I bambini decidono di esplorare il Lago degli Specchi Nascosti, incantati dai riflessi che sembrano muoversi autonomamente sull'acqua.",
+            "descrizione_scena": "Un lago immobile come vetro, dove i riflessi mostrano immagini di mondi lontani e creature misteriose che osservano silenziose.",
+            "personaggio_unico": {
+                "nome": "Nyx",
+                "descrizione": "Un'anguilla luminosa che si muove tra le acque del lago, capace di svelare illusioni e verità nascoste."
+            }
+        },
+        "collegamento_scena_successiva": {
+            "fine_capitolo": "Dopo aver incontrato Willow o Nyx, i bambini vengono guidati verso il Cuore della Palude, dove si cela il mistero che li ha attratti fin lì."
+        }
+    },
+    "conclusione": {
+        "introduzione_capitolo": "I bambini raggiungono il Cuore della Palude, un luogo dove la natura e la magia si intrecciano in un equilibrio fragile.",
+        "descrizione_scena": "Un grande albero cavo illuminato dall'interno da luce verde, circondato da radici intrecciate e fiori che brillano nell'oscurità.",
+        "personaggio_unico": {
+            "nome": "Murk",
+            "descrizione": "Il vecchio rospo si rivela come il guardiano della palude, custode dell'armonia tra le sue creature e la magia antica."
+        },
+        "conclusione": "Murk spiega che la palude protegge i suoi segreti e premia chi la rispetta. I bambini, pieni di meraviglia, promettono di tornare per nuove avventure."
+    }
+}

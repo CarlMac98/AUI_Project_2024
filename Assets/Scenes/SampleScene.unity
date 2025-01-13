@@ -3205,7 +3205,7 @@ MonoBehaviour:
   openAIChatImage: {fileID: 1261007521}
   pythonBackendManager: {fileID: 1210686994}
   selectCharacter: {fileID: 1767565006}
-  selectStory: {fileID: 0}
+  selectStory: {fileID: 28335713}
   quit: {fileID: 1072670662}
   menu: {fileID: 2087190262}
   help: {fileID: 2032022718}

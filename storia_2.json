@@ -1,0 +1,45 @@
+{
+    "inizio": {
+        "introduzione_capitolo": "Due bambini intraprendono un viaggio tra le montagne innevate, seguendo le orme di un animale sconosciuto sulla neve fresca.",
+        "descrizione_scena": "Vette imponenti si ergono contro il cielo grigio, con boschi di pini coperti di neve e sentieri nascosti sotto coltri bianche.",
+        "personaggio_unico": {
+            "nome": "Fjorn",
+            "descrizione": "Un grande lupo bianco dagli occhi color ghiaccio, saggio guardiano delle montagne, che conosce ogni passaggio segreto."
+        },
+        "collegamento_scena_successiva": {
+            "fine_capitolo": "Fjorn mostra ai bambini due sentieri: uno porta al Picco delle Stelle, l'altro alla Grotta dei Cristalli. Devono scegliere quale seguire.",
+            "percorso_1": "Sentiero del Picco delle Stelle",
+            "percorso_2": "Sentiero della Grotta dei Cristalli"
+        }
+    },
+    "fase_intermedia": {
+        "percorso_1": {
+            "introduzione_capitolo": "I bambini decidono di scalare il Picco delle Stelle, affascinati dalle leggende di un antico faro che guida i viaggiatori.",
+            "descrizione_scena": "Una montagna altissima con pareti scoscese, dove il vento ulula tra le rocce e le stelle sembrano vicinissime.",
+            "personaggio_unico": {
+                "nome": "Eira",
+                "descrizione": "Un'aquila maestosa dalle piume argentee che veglia sul Picco delle Stelle e racconta antiche storie del cielo."
+            }
+        },
+        "percorso_2": {
+            "introduzione_capitolo": "I bambini scelgono di esplorare la Grotta dei Cristalli, attratti dai bagliori che filtrano attraverso il ghiaccio.",
+            "descrizione_scena": "Una grotta nascosta con pareti di ghiaccio che scintillano come diamanti, formando un labirinto di luci e riflessi.",
+            "personaggio_unico": {
+                "nome": "Skadi",
+                "descrizione": "Un'antica spirito delle nevi, avvolta in un mantello di gelo, che custodisce i segreti nascosti tra i cristalli."
+            }
+        },
+        "collegamento_scena_successiva": {
+            "fine_capitolo": "Dopo aver incontrato Eira o Skadi, i bambini vengono guidati verso una valle segreta, pronti per scoprire il cuore delle montagne."
+        }
+    },
+    "conclusione": {
+        "introduzione_capitolo": "I bambini raggiungono la Valle Silenziosa, un luogo sacro dove la neve brilla come stelle e tutto sembra sospeso nel tempo.",
+        "descrizione_scena": "Una valle nascosta tra le vette, con alberi di ghiaccio e fiumi congelati che scorrono come specchi. L'atmosfera è quieta e magica.",
+        "personaggio_unico": {
+            "nome": "Fjorn",
+            "descrizione": "Il lupo bianco appare di nuovo, ma ora ancora più imponente, rivelando ai bambini i misteri e la saggezza delle montagne."
+        },
+        "conclusione": "Fjorn spiega che le montagne premiano chi affronta il freddo con coraggio e rispetto. I bambini, affascinati, promettono di tornare per scoprire nuovi segreti."
+    }
+}

@@ -1,45 +1,45 @@
 {
     "inizio": {
-        "introduzione_capitolo": "C'era una volta un piccolo villaggio circondato da una foresta magica.",
-        "descrizione_scena": "Il sole splendeva alto nel cielo, e nel villaggio tutti erano indaffarati con le loro faccende. Al centro della piazza, un giovane elfo di nome Lino si preparava per una grande avventura.",
+        "introduzione_capitolo": "Due bambini si avventurano in un vasto deserto dorato, seguendo le impronte di un animale misterioso sulla sabbia calda.",
+        "descrizione_scena": "Un deserto infinito con dune ondulate che brillano sotto il sole. In lontananza, un'oasi sembra tremolare nell'aria calda.",
         "personaggio_unico": {
-            "nome": "Lino",
-            "descrizione": "Un giovane elfo curioso, con capelli verdi come le foglie e occhi luminosi come stelle."
+            "nome": "Zafir",
+            "descrizione": "Un antico camaleonte parlante con scaglie dai riflessi dorati, capace di mimetizzarsi perfettamente tra le dune. Conosce ogni angolo del deserto."
         },
         "collegamento_scena_successiva": {
-            "fine_capitolo": "Lino decise di entrare nella foresta magica per cercare un'antica gemma leggendaria.",
-            "percorso_1": "Sentiero Illuminato",
-            "percorso_2": "Sentiero Oscuro"
+            "fine_capitolo": "Zafir mostra ai bambini due percorsi: uno porta alle Rovine di Saphira, l'altro alla Caverna delle Sabbie Cantanti. Devono scegliere quale seguire.",
+            "percorso_1": "Sentiero delle Rovine di Saphira",
+            "percorso_2": "Sentiero della Caverna delle Sabbie Cantanti"
         }
     },
     "fase_intermedia": {
         "percorso_1": {
-            "introduzione_capitolo": "Sentiero Illuminato",
-            "descrizione_scena": "Lino percorse il sentiero illuminato e si ritrovò in una radura piena di fiori parlanti, che danzavano sotto la luce del sole.",
+            "introduzione_capitolo": "I bambini scelgono di seguire il sentiero verso le Rovine di Saphira, attratti da antiche leggende di tesori nascosti.",
+            "descrizione_scena": "Resti di un'antica città sepolta nella sabbia, con colonne spezzate e statue misteriose che emergono tra le dune.",
             "personaggio_unico": {
-                "nome": "Fiore Saggio",
-                "descrizione": "Un fiore dai petali dorati che conosce i segreti della foresta e ama raccontare storie."
+                "nome": "Kael",
+                "descrizione": "Uno spirito guardiano delle rovine, che appare come una figura luminosa avvolta da vesti di sabbia. Protegge i segreti dell'antica Saphira."
             }
         },
         "percorso_2": {
-            "introduzione_capitolo": "Sentiero Oscuro",
-            "descrizione_scena": "Seguendo il sentiero oscuro, Lino si imbatté in una caverna scintillante dove un vecchio gufo lo attendeva.",
+            "introduzione_capitolo": "I bambini decidono di esplorare la Caverna delle Sabbie Cantanti, incuriositi da melodie che sembrano provenire dal cuore del deserto.",
+            "descrizione_scena": "Una grotta nascosta tra le dune, le cui pareti di cristalli di quarzo emettono suoni dolci quando il vento le attraversa.",
             "personaggio_unico": {
-                "nome": "Gufo Saggio",
-                "descrizione": "Un gufo anziano con piume argentate che ama proporre enigmi per mettere alla prova i viaggiatori."
+                "nome": "Nirya",
+                "descrizione": "Una nomade del deserto con capelli intrecciati di perline, che conosce le leggende legate alla Caverna e sa interpretare i suoi canti."
             }
         },
         "collegamento_scena_successiva": {
-            "fine_capitolo": "Con la chiave magica in mano, Lino proseguì verso il cuore della foresta, dove la gemma leggendaria lo attendeva."
+            "fine_capitolo": "Dopo aver incontrato Kael o Nirya, i bambini vengono guidati verso un'antica oasi nascosta, pronti per scoprire il cuore del deserto."
         }
     },
     "conclusione": {
-        "introduzione_capitolo": "Lino raggiunse finalmente l'antico altare al centro della foresta.",
-        "descrizione_scena": "L'altare era circondato da una luce dorata, e al centro brillava la gemma leggendaria, protetta da un incantesimo.",
+        "introduzione_capitolo": "I bambini raggiungono l'Oasi del Sole, un luogo leggendario dove il deserto rivela i suoi segreti più profondi.",
+        "descrizione_scena": "Un'oasi rigogliosa con palme alte e acque cristalline, circondata da antichi simboli scolpiti nella roccia. L'aria è carica di magia e mistero.",
         "personaggio_unico": {
-            "nome": "Guardiano della Gemma",
-            "descrizione": "Un antico spirito della foresta che protegge la gemma con la sua saggezza e magia."
+            "nome": "Zafir",
+            "descrizione": "Il camaleonte che li ha guidati si mostra ora più saggio e fiero, rivelando la vera natura del deserto e i doni che offre a chi sa ascoltarlo."
         },
-        "conclusione": "Con il cuore puro e il coraggio dimostrato durante il viaggio, Lino riuscì a rompere l'incantesimo. La gemma illuminò tutta la foresta, portando pace e prosperità al villaggio per sempre."
+        "conclusione": "Zafir spiega che il deserto premia chi affronta le sue sfide con coraggio e curiosità. I bambini, pieni di meraviglia, promettono di tornare per vivere nuove avventure."
     }
 }

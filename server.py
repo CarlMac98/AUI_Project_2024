@@ -159,12 +159,6 @@ def handle_story_creation():
         n_story = request.get_json()["n_story"]
     # Load the story configuration
 
-
-
-    n_story = 0
-
-
-
     try:
         with open(f'storia_{n_story}.json', 'r') as file:
         #with open("C:/Users/Utente/Desktop/Karl/Uni/Poli/AUI/Unity/AUI_Project_2024/storia.json", 'r') as file:
