@@ -27,8 +27,12 @@ public class GameManager : MonoBehaviour
     OpenAIChatImage openAIChatImage;
     [SerializeField]
     PythonBackendManager pythonBackendManager;
+    [SerializeField]
+    SelectCharacter selectCharacter;
+    [SerializeField]
+    SelectStory selectStory;
 
-    
+
     [SerializeField]
     private Button quit, menu, help, X, cont, exit; //menuBackButt,
     [SerializeField]
@@ -130,13 +134,14 @@ public class GameManager : MonoBehaviour
             {
                 chatManager.userName = playerName;
                 helperManager.userName = playerName;
+                setServerPlayerName();
 
                 background.HandleOff();
-                if (!reset && isServer)
-                {
-                    chatManager.HandleReset();
-                    reset = true;
-                }
+                //if (!reset && isServer)
+                //{
+                //    chatManager.HandleReset();
+                //    reset = true;
+                //}
             }
 
             //scenes going forward handling
@@ -176,6 +181,10 @@ public class GameManager : MonoBehaviour
             if (currentScene == 4)
             {
                 goButton.gameObject.SetActive(false);
+            }
+            if (currentScene == 5)
+            {
+                selectCharacter.setCharacters();
             }
         }
 
@@ -251,6 +260,8 @@ public class GameManager : MonoBehaviour
 
     void ResetGameUI()
     {
+        CloseMenu();
+        CloseHelper();
         scenes[currentScene].SetActive(false);
         currentScene = 0;
         scenes[currentScene].SetActive(true);
@@ -264,8 +275,21 @@ public class GameManager : MonoBehaviour
 
         chatManager.userName = "";
         helperManager.userName = "";
-
+        storyCreated = false;
+        selectCharacter.resetCharacters();
+        selectStory.HighlightReset();
         background.HandleOn();
+    }
+    public void setServerPlayerName()
+    {
+        if (isServer)
+        {
+            ns.host_name.Value = playerName;
+        }
+        else
+        {
+            ns.SetNameServerRpc(playerName);
+        }
     }
 
     private void ShowMenu()
@@ -280,10 +304,10 @@ public class GameManager : MonoBehaviour
 
     private void ExitGame()
     {
-        openAIChatImage.ResetStory();
-        pythonBackendManager.StopPythonBackend();
+        chatManager.HandleReset();
+        //pythonBackendManager.StopPythonBackend();
         ResetGameUI();
-        pythonBackendManager.StartPythonBackend();
+        //pythonBackendManager.StartPythonBackend();
     }
 
     private void QuitGame()

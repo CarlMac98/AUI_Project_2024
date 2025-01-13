@@ -12,8 +12,8 @@ public class NetSync : NetworkBehaviour
     public NetworkVariable<bool> next_scene = new NetworkVariable<bool>();
     public NetworkVariable<bool> askSummary = new NetworkVariable<bool>();
 
-    //public NetworkVariable<string> host_name = new NetworkVariable<string>();
-    //public NetworkVariable<string> cli_name = new NetworkVariable<string>();
+    public NetworkVariable<FixedString32Bytes> host_name = new NetworkVariable<FixedString32Bytes>();
+    public NetworkVariable<FixedString32Bytes> cli_name = new NetworkVariable<FixedString32Bytes>();
 
     public NetworkVariable<FixedString4096Bytes> recap = new NetworkVariable<FixedString4096Bytes>();
     
@@ -34,8 +34,8 @@ public class NetSync : NetworkBehaviour
             next_scene.Value = false;
             askSummary.Value = false;
 
-            //host_name.Value = "";
-            //cli_name.Value = "";
+            host_name.Value = "Giocatore 1";
+            cli_name.Value = "Giocatore 2";
 
             //if (NetworkManager.ConnectedClients.Count > 1)
             //{
@@ -96,6 +96,11 @@ public class NetSync : NetworkBehaviour
     public void ChangeCharNumServerRpc(int i)
     {
         cli_char.Value = i;
+    }
+    [ServerRpc(RequireOwnership = false)]
+    public void SetNameServerRpc(string name)
+    {
+        cli_name.Value = name;
     }
     [ServerRpc(RequireOwnership = false)]
     public void AskSummaryServerRpc()

@@ -27,10 +27,12 @@ public class ChatManager : NetworkBehaviour
     [SerializeField]
     public Button storyButton, chatButton;
 
-    public GameObject chatPanel, storyPanel, textObject, chatSection, summarySection, bubbleChat;
+    public GameObject chatPanel, storyPanel, textObject, chatSection, summarySection, bubbleChat, helpPanel;
     public TMP_Text storySummary;
     public TMP_InputField chatBox;
     GameObject storyPanelText;
+    [SerializeField]
+    public Image[] players;
 
     //public Color playerMessage, player2Message;
 
@@ -179,12 +181,29 @@ public class ChatManager : NetworkBehaviour
     }
     public void HandleReset()
     {
-        StartCoroutine(ResetChat());
+        messageList.Clear();
+        RemoveAllChildren(helpPanel);
+        Chat();
+        resetPlayerLayot();
+        RemoveAllChildren(chatPanel);
+        chatBox.ActivateInputField();
+        if (GameManager.isServer)
+        {
+            StartCoroutine(ResetChat());
+        }
     }
     private IEnumerator ResetChat()
     {
-        messageList.Clear();
+        
         yield return chatSystem.ResetStory();
+    }
+    private void resetPlayerLayot()
+    {
+        Color notSpeaking = new Color(0.5f, 0.5f, 0.5f, 0.8f);
+        foreach (Image player in players)
+        {
+            player.color = notSpeaking;
+        }
     }
     public void Deactivate() {
         chatBox.DeactivateInputField();
@@ -253,19 +272,27 @@ public class ChatManager : NetworkBehaviour
         RectTransform messageRect = msgText.GetComponent<RectTransform>();
         messageRect.sizeDelta = new Vector2(messageRect.sizeDelta.x, msgText.preferredHeight);
 
-
-
+        Color speaking = new Color(1f, 1f, 1f, 1f);
+        Color notSpeaking = new Color(0.5f, 0.5f, 0.5f, 0.8f);
+        foreach (Image player in players)
+        {
+            player.color = notSpeaking;
+        }
         Image bubbleBackground = newText.GetComponent<Image>();
+        
         switch (msg.player)
         {
             case Message.messageType.assistantMessage:
                 bubbleBackground.color = new Color(240f / 255f, 165f / 255f, 165f / 255f);
+                players[1].color = speaking;
                 break;
             case Message.messageType.firstPlayerMessage:
                 bubbleBackground.color = new Color(165f / 255f, 224f / 255f, 240f / 255f);
+                players[0].color = speaking;
                 break;
             case Message.messageType.secondPlayerMessage:
                 bubbleBackground.color = new Color(209f / 255f, 240f / 255f, 165f / 255f);
+                players[2].color = speaking;
                 break;
             default:
                 bubbleBackground.color = new Color(1f, 1f, 1f);

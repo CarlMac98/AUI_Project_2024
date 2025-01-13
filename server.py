@@ -51,6 +51,7 @@ def cleanup():
     global counter, interactions, question, intervention, section, percorso, n_image, assistant
     # Call your cleanup function here
     try:
+        outcome = client.beta.threads.delete(thread.id)
         outcome2 = client.beta.assistants.delete(assistant.id)
         counter = 0
         interactions = 0
@@ -59,7 +60,7 @@ def cleanup():
         n_image = 0
         section = "inizio"
         percorso = "percorso_1"
-        outcome = client.beta.threads.delete(thread.id)
+        
         #print(f"Cleanup response: {outcome}")
     except Exception as e:
         print(f"Error during cleanup: {e}")
@@ -74,27 +75,30 @@ def create_assistant():
     )
 
 def int_intro(interactions):
+    nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
-        return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions == 2:
-        return f"{JSON["inizio"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]}, la loro scelta deve essere la stessa."
-    elif interactions >= 4 and interactions < 10:
-        return f"I bambini devono scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva' e la scelta fatta tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} (metti le parole esatte, non aggiungere parole in mezzo), altrimenti non introdurre le parole 'scena successiva'."
-    elif interactions >= 10:
-        return f"Scegli tu la strada da seguire tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} e metti le parole 'scena successiva' e il percorso scelto nella tua risposta."
+        return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
+    elif interactions == 6:
+        return f"Intervieni, {JSON["inizio"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]}, la loro scelta deve essere la stessa."
+    elif interactions >= 8 and interactions < 12:
+        return nonInt + f"I bambini devono scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva' e la scelta fatta tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} (metti le parole esatte, non aggiungere parole in mezzo), altrimenti non introdurre le parole 'scena successiva'."
+    elif interactions >= 12:
+        return f"Intervieni e scegli tu la strada da seguire tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} e metti le parole 'scena successiva' e il percorso scelto nella tua risposta."
 
 def int_intermedia(interactions):
+    nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
-        return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions >= 2:
-        return f"{JSON["fase_intermedia"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'."
+        return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
+    elif interactions >= 4:
+        return f"Intervieni, {JSON["fase_intermedia"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'."
 
 
 def int_concl(interactions):
+    nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
-        return "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
+        return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
     elif interactions >= 4:
-        return f"{JSON["conclusione"]["conclusione"]}, non fare la parte dei bambini, racconta cosa succede come conclusione e introduci nella tua risposta 'scena successiva'."
+        return f"Intervieni, {JSON["conclusione"]["conclusione"]}, non fare la parte dei bambini, racconta cosa succede come conclusione e introduci nella tua risposta 'scena successiva'."
 
 # Helper function to send messages to Azure OpenAI
 def sendMessage(question):
@@ -192,14 +196,16 @@ def handle_summary():
 
 @app.route('/api/reset', methods=['POST'])
 def handle_reset():
-    global counter, interactions, question, intervention, section, percorso, n_image, thread
-    counter = 0
-    interactions = 0
-    question = ""
-    intervention = ""
-    n_image = 0
-    section = "inizio"
-    percorso = "percorso_1"
+    global counter, interactions, question, intervention, section, percorso, n_image, thread, assistant
+
+    cleanup()
+    assistant = client.beta.assistants.create(
+        model="AI-assistant",
+        instructions =  "Sei un'AI assistente che aiuta i bambini a creare storie. Rispondi in modo breve e semplice, perché i bambini non possono leggere troppo. Risolvi eventuali conflitti tra i bambini e aiutali a sviluppare la storia. Parla direttamente con loro. Non permettere di introdurre nuovi personaggi o di abbandonare quelli già presenti nella scena. Non impersonare i bambini.",
+        temperature=0.8,
+        top_p=1
+    )
+    thread = client.beta.threads.create()
     return jsonify({"status": "success"}), 200
 
 @app.route('/api/init', methods=['POST'])
@@ -271,7 +277,8 @@ def handle_request_chat():
         interactions = 0
     #if "content_filter" in response.lower() or "token" in response.lower():
     #    response = "Non ho capito, potete ripetere quello che volete raccontare? " + response
-
+    if "non intervengo" in response.lower():
+        response = "Non intervengo"
     # Return the response back to Unity
     return jsonify({"response": response, "next_scene": next_scene, "scala": scala }), 200
 

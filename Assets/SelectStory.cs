@@ -25,7 +25,6 @@ public class SelectStory : MonoBehaviour
 
         for (int i = 0; i < stories.Length; i++)
         {
-            
             rectTransforms[i] = stories[i].GetComponent<RectTransform>();
         }
 
@@ -58,5 +57,13 @@ public class SelectStory : MonoBehaviour
         }
 
         gm.story = i;
+    }
+
+    public void HighlightReset()
+    {
+        foreach (var t in rectTransforms)
+        {
+            t.localScale = Vector3.one;
+        }
     }
 }

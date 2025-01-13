@@ -16,6 +16,8 @@ public class SelectCharacter : MonoBehaviour
 
     public GameManager gm;
     public NetSync ns;
+    Color selected = new Color(1, 1, 1, 1);
+    Color unselected = new Color(1, 1, 1, 0.7f);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,7 +32,6 @@ public class SelectCharacter : MonoBehaviour
 
         for (int i = 0; i < characters.Length; i++)
         {
-            
             rectTransforms[i] = characters[i].GetComponent<RectTransform>();
         }
 
@@ -55,31 +56,51 @@ public class SelectCharacter : MonoBehaviour
         //foreach (var o in outline) o.enabled = false;
         //outline[i].enabled = true;
 
-        int hs = 0, cl = 2 ;
+        
+        
 
         for (int j = 0; j < rectTransforms.Length; j++)
         {
             RectTransform t = rectTransforms[j];
             t.localScale = Vector3.one;
-            if(i == j) t.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+            t.gameObject.GetComponent<Image>().color = unselected;
+            if (i == j)
+            {
+                t.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+                t.gameObject.GetComponent<Image>().color = selected;
+            }
         }
 
         //gm.charachter = i;
         if (ns.IsHost)
         {
             ns.host_char.Value = i;
-        }
-
-        else
+        } else
         {
-            hs = 2;
-            cl = 0;
             //ns.cli_char.Value += i;
             ns.ChangeCharNumServerRpc(i);
         }
 
-        showCharacterImage.ShowCharachterImage(hs, ns.host_char.Value);
-        showCharacterImage.ShowCharachterImage(cl, ns.cli_char.Value);
+    }
+    public void setCharacters()
+    {
+        if (ns.IsHost) {
+            showCharacterImage.ShowCharachterImage(0, ns.host_char.Value, ns.host_name.Value.ToString());
+            showCharacterImage.ShowCharachterImage(2, ns.cli_char.Value, ns.cli_name.Value.ToString());
+        }
+        else
+        {
+            showCharacterImage.ShowCharachterImage(0, ns.cli_char.Value, ns.cli_name.Value.ToString());
+            showCharacterImage.ShowCharachterImage(2, ns.host_char.Value, ns.host_name.Value.ToString());
+        }
+    }
+    public void resetCharacters() {
+        for (int j = 0; j < rectTransforms.Length; j++)
+        {
+            RectTransform t = rectTransforms[j];
+            t.localScale = Vector3.one;
+            t.gameObject.GetComponent<Image>().color = selected;
+        }
 
     }
 }
