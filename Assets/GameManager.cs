@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
                     playerName = "";
                     return;
                 }
+                setServerPlayerName(playerName);
             }
 
             //change the background when the game itself starts
@@ -134,7 +135,7 @@ public class GameManager : MonoBehaviour
             {
                 chatManager.userName = playerName;
                 helperManager.userName = playerName;
-                setServerPlayerName();
+                
 
                 background.HandleOff();
                 //if (!reset && isServer)
@@ -280,15 +281,18 @@ public class GameManager : MonoBehaviour
         selectStory.HighlightReset();
         background.HandleOn();
     }
-    public void setServerPlayerName()
+    public void setServerPlayerName(string name)
     {
-        if (isServer)
+        Debug.Log("Changing player name");
+        if (GameManager.isServer)
         {
-            ns.host_name.Value = playerName;
+            ns.host_name.Value = name;
         }
         else
         {
-            ns.SetNameServerRpc(playerName);
+            ns.SetNameServerRpc(name);
+            Debug.Log("Name successfully changed into: " + name);
+
         }
     }
 

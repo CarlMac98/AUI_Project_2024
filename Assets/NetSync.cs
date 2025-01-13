@@ -100,6 +100,7 @@ public class NetSync : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void SetNameServerRpc(string name)
     {
+        Debug.Log("Changing name to: " + name);
         cli_name.Value = name;
     }
     [ServerRpc(RequireOwnership = false)]
