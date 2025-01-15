@@ -189,6 +189,7 @@ public class ChatManager : NetworkBehaviour
         chatBox.ActivateInputField();
         if (GameManager.isServer)
         {
+            ns.storyReady.Value = false;
             StartCoroutine(ResetChat());
         }
     }
@@ -200,10 +201,12 @@ public class ChatManager : NetworkBehaviour
     private void resetPlayerLayot()
     {
         Color notSpeaking = new Color(0.5f, 0.5f, 0.5f, 0.8f);
+        Color speaking = new Color(1f, 1f, 1f, 1f);
         foreach (Image player in players)
         {
             player.color = notSpeaking;
         }
+        players[2].color = speaking;
     }
     public void Deactivate() {
         chatBox.DeactivateInputField();

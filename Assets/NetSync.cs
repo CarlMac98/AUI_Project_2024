@@ -11,6 +11,7 @@ public class NetSync : NetworkBehaviour
 
     public NetworkVariable<bool> next_scene = new NetworkVariable<bool>();
     public NetworkVariable<bool> askSummary = new NetworkVariable<bool>();
+    public NetworkVariable<bool> storyReady = new NetworkVariable<bool>();
 
     public NetworkVariable<FixedString32Bytes> host_name = new NetworkVariable<FixedString32Bytes>();
     public NetworkVariable<FixedString32Bytes> cli_name = new NetworkVariable<FixedString32Bytes>();
@@ -33,6 +34,7 @@ public class NetSync : NetworkBehaviour
             cli_char.Value = 0;
             next_scene.Value = false;
             askSummary.Value = false;
+            storyReady.Value = false;
 
             host_name.Value = "Giocatore 1";
             cli_name.Value = "Giocatore 2";
@@ -63,6 +65,7 @@ public class NetSync : NetworkBehaviour
         askSummary.OnValueChanged += OnAskChanged;
         recap.OnValueChanged += OnRecapChanged;
         next_scene.OnValueChanged += OnSceneChanged;
+        storyReady.OnValueChanged += OnStoryReadyChanged;
     }
 
     private void OnSceneChanged(bool previous, bool current)
@@ -89,6 +92,15 @@ public class NetSync : NetworkBehaviour
     private void OnSomeValueChanged(int previous, int current)
     {
         Debug.Log($"Detected NetworkVariable Change: Previous: {previous} | Current: {current}");
+    }
+    private void OnStoryReadyChanged(bool previous, bool current)
+    {
+        if (current && !GameManager.isServer)
+        {
+            storyReady.Value = false;
+            Debug.Log("Story is ready");
+            GameManager.Singleton.StoryReady();
+        }
     }
 
 

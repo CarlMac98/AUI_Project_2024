@@ -8,6 +8,7 @@ using TMPro;
 using static UnityEngine.ParticleSystem;
 using System.Runtime.CompilerServices;
 using System.Collections;
+using Unity.Netcode;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
     SelectCharacter selectCharacter;
     [SerializeField]
     SelectStory selectStory;
+    [SerializeField]
+    GameObject[] serverClientScene;
 
 
     [SerializeField]
@@ -58,6 +61,17 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        NetworkManager.Singleton.OnClientDisconnectCallback += (clientId) =>
+        {
+            if (clientId == NetworkManager.Singleton.LocalClientId)
+            {
+                Debug.Log("Disconnected from the server.");
+                // Handle disconnection (e.g., return to main menu)
+            }
+        };
+
+
+
         storyCreated = false;
         //initialize first go button
         goButton.onClick.AddListener(GoAhead);
@@ -96,7 +110,7 @@ public class GameManager : MonoBehaviour
             imageGenerated = false;
             goButton.gameObject.SetActive(true);
         }
-        
+
     }
 
     public void GoAhead()
@@ -149,12 +163,19 @@ public class GameManager : MonoBehaviour
             scenes[currentScene].SetActive(false);
             if (!isServer && currentScene == 2)
             {
-                currentScene++;
+                serverClientScene[0].SetActive(false);
+                serverClientScene[1].SetActive(true);
+            }
+            if (isServer && currentScene == 2)
+            {
+                serverClientScene[0].SetActive(true);
+                serverClientScene[1].SetActive(false);
             }
             currentScene += 1;
             scenes[currentScene].SetActive(true);
             if (currentScene == 4 && isServer && !storyCreated)
-            {        
+            {      
+                ns.storyReady.Value = true;
                 StartCoroutine(chatManager.CreateStory(story));
                 storyCreated = true;   
             }
@@ -178,6 +199,14 @@ public class GameManager : MonoBehaviour
                 backButton = GameObject.Find("Back").GetComponent<Button>();
                 backButton.onClick.RemoveAllListeners();
                 backButton.onClick.AddListener(GoBack);
+            }
+            if (!ns.storyReady.Value && !isServer && currentScene == 3)
+            {
+                goButton.gameObject.SetActive(false);
+            }
+            if (ns.storyReady.Value && !isServer && currentScene == 3)
+            {
+                goButton.gameObject.SetActive(true);
             }
             if (currentScene == 4)
             {
@@ -203,13 +232,15 @@ public class GameManager : MonoBehaviour
             scenes.ToArray()[currentScene].SetActive(false);
             if (!isServer && currentScene == 4)
             {
-                currentScene--;
+                serverClientScene[0].SetActive(false);
+                serverClientScene[1].SetActive(true);
             }
             currentScene -= 1;
             scenes.ToArray()[currentScene].SetActive(true);
 
             if (currentScene == 4)
             {
+                backButton.gameObject.SetActive(false);
                 background.HandleOn();
                 background.HandleImageRequest();
             }
@@ -227,6 +258,17 @@ public class GameManager : MonoBehaviour
                 backButton.onClick.RemoveAllListeners();
                 backButton.onClick.AddListener(GoBack);
             }
+        }
+        if(currentScene == 0)
+        {
+            NetworkManager.Singleton.Shutdown();
+        }
+    }
+
+    public void StoryReady() {
+        if(currentScene == 3 && !isServer)
+        {
+            goButton.gameObject.SetActive(true);
         }
     }
 
@@ -311,6 +353,7 @@ public class GameManager : MonoBehaviour
         chatManager.HandleReset();
         //pythonBackendManager.StopPythonBackend();
         ResetGameUI();
+        NetworkManager.Singleton.Shutdown();
         //pythonBackendManager.StartPythonBackend();
     }
 

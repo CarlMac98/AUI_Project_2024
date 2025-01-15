@@ -378,6 +378,10 @@ public class OpenAIChatImage : NetworkBehaviour
                 File.WriteAllBytes(im.dir, imageBytes);
                 Debug.Log("Image downloaded successfully!");
 
+                // Force Unity to refresh the asset
+                AssetDatabase.ImportAsset(im.dir);
+                AssetDatabase.Refresh();
+
                 // Load the image into a Texture2D
                 Texture2D newTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(im.dir);
 
