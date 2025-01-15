@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             if (clientId == NetworkManager.Singleton.LocalClientId)
             {
+                ExitGame();
                 Debug.Log("Disconnected from the server.");
                 // Handle disconnection (e.g., return to main menu)
             }
@@ -170,6 +171,7 @@ public class GameManager : MonoBehaviour
             {
                 serverClientScene[0].SetActive(true);
                 serverClientScene[1].SetActive(false);
+                selectStory.HighlightReset();
             }
             currentScene += 1;
             scenes[currentScene].SetActive(true);
@@ -320,7 +322,10 @@ public class GameManager : MonoBehaviour
         helperManager.userName = "";
         storyCreated = false;
         selectCharacter.resetCharacters();
-        selectStory.HighlightReset();
+        if (isServer)
+        {
+            selectStory.HighlightReset();
+        }
         background.HandleOn();
     }
     public void setServerPlayerName(string name)
