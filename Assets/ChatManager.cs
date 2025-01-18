@@ -111,7 +111,7 @@ public class ChatManager : NetworkBehaviour
 
                 msg.text = chatSystem.response;
                 msg.player = Message.messageType.assistantMessage;
-                msg.username = "Assistant";
+                msg.username = "Assistente";
 
                 SendChatMessageServerRpc(msg);
             }
@@ -175,7 +175,7 @@ public class ChatManager : NetworkBehaviour
 
         msg.text = chatSystem.response;
         msg.player = Message.messageType.assistantMessage;
-        msg.username = "Assistant";
+        msg.username = "Assistente";
 
         SendChatMessageServerRpc(msg);
     }
@@ -348,7 +348,10 @@ public class ChatManager : NetworkBehaviour
             HandleChatMessage(message);
         }
         
-        Singleton.AddMessage2(message);
+        if(message.text != "Non intervengo")
+        {
+            Singleton.AddMessage2(message);
+        }
     }
 }
 

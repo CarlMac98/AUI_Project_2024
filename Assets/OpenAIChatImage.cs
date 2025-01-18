@@ -140,6 +140,10 @@ public class OpenAIChatImage : NetworkBehaviour
             {
                 Debug.Log("First interaction");
             }
+            else if(response == "Non intervengo")
+            {
+                Debug.Log("No intervention");
+            }
             else
             {
                 Debug.Log("Response: " + response);
