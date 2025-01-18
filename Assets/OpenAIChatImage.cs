@@ -394,6 +394,8 @@ public class OpenAIChatImage : NetworkBehaviour
 
                 // Set a flag that the image is generated
                 GameManager.imageGenerated = true;
+                GameManager.Singleton.goButton.gameObject.SetActive(true);
+                Debug.Log("Image generated");
             }
             else
             {

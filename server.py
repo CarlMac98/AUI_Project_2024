@@ -78,9 +78,9 @@ def int_intro(interactions):
     nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
         return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions == 4:
+    elif interactions == 2:
         return f"Intervieni, {JSON["inizio"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]}, la loro scelta deve essere la stessa."
-    elif interactions >= 6 and interactions < 12:
+    elif interactions >= 4 and interactions < 12:
         return nonInt + f"I bambini devono scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva' e la scelta fatta tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} (metti le parole esatte, non aggiungere parole in mezzo), altrimenti non introdurre le parole 'scena successiva'."
     elif interactions >= 12:
         return f"Intervieni e scegli tu la strada da seguire tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} e metti le parole 'scena successiva' e il percorso scelto nella tua risposta."

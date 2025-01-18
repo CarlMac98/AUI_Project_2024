@@ -111,12 +111,12 @@ public class GameManager : MonoBehaviour
         //    ns.next_scene.Value = false;
         //    StartCoroutine(GoToNextScene());           
         //}
-        if (imageGenerated)
-        {
-            Debug.Log("Image generated");
-            imageGenerated = false;
-            goButton.gameObject.SetActive(true);
-        }
+        //if (imageGenerated)
+        //{
+        //    Debug.Log("Image generated");
+        //    imageGenerated = false;
+        //    goButton.gameObject.SetActive(true);
+        //}
 
     }
 
@@ -200,10 +200,7 @@ public class GameManager : MonoBehaviour
                 download.gameObject.SetActive(false);
                 endGame.gameObject.SetActive(false);
                 background.HandleImageRequest();
-                if (imageGenerated)
-                {
-                    goButton.gameObject.SetActive(true);
-                }
+                
             }
             //update buttons
             if (!GameObject.Find("Go").IsUnityNull())
@@ -232,7 +229,14 @@ public class GameManager : MonoBehaviour
             }
             if (currentScene == 4)
             {
-                goButton.gameObject.SetActive(false);
+                if (imageGenerated)
+                {
+                    goButton.gameObject.SetActive(true);
+                }
+                else
+                {
+                    goButton.gameObject.SetActive(false);
+                }
             }
             if (currentScene == 5)
             {

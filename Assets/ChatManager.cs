@@ -186,6 +186,7 @@ public class ChatManager : NetworkBehaviour
         Chat();
         resetPlayerLayot();
         RemoveAllChildren(chatPanel);
+        chatBox.interactable = true;
         chatBox.ActivateInputField();
         if (GameManager.isServer)
         {
@@ -209,13 +210,14 @@ public class ChatManager : NetworkBehaviour
         players[2].color = speaking;
     }
     public void Deactivate() {
-        chatBox.interactable = false; ;
+        chatBox.interactable = false;
     }
     public void NextSceneReset() 
     {
         //yield return new WaitForSeconds(5);
         messageList.Clear();
         RemoveAllChildren(chatPanel);
+        chatBox.interactable = true;
         chatBox.ActivateInputField();
     }
     public void sendMessageToChat(string text)
