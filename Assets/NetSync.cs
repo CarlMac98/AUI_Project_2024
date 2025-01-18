@@ -99,7 +99,7 @@ public class NetSync : NetworkBehaviour
     {
         if (current && !GameManager.isServer)
         {
-            storyReady.Value = false;
+            //storyReady.Value = false;
             Debug.Log("Story is ready");
             GameManager.Singleton.StoryReady();
         }
