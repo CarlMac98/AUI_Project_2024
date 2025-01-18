@@ -7,7 +7,9 @@ public class SelectStory : MonoBehaviour
     //public Image border;
     private Button[] buttons;
     //public Outline[] outline;
+    [SerializeField]
     private Image[] stories;
+    [SerializeField]
     private RectTransform[] rectTransforms;
 
     public GameManager gm;

@@ -32,6 +32,7 @@ public class OpenAIChatImage : NetworkBehaviour
         public bool next_scene;
         public string response;
         public int scala;
+        public bool conclusion;
     }
 
     private Dictionary<string, string> backendEndpoint = new Dictionary<string, string> {
@@ -108,6 +109,7 @@ public class OpenAIChatImage : NetworkBehaviour
                 
                 response = parsedResponse.response;
                 ns.next_scene.Value = parsedResponse.next_scene;
+                ns.conclusione.Value = parsedResponse.conclusion;
 
                 if (parsedResponse.next_scene && mGenerator.gameObject.activeInHierarchy)
                 {

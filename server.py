@@ -78,9 +78,9 @@ def int_intro(interactions):
     nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
         return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions == 6:
+    elif interactions == 4:
         return f"Intervieni, {JSON["inizio"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]}, la loro scelta deve essere la stessa."
-    elif interactions >= 8 and interactions < 12:
+    elif interactions >= 6 and interactions < 12:
         return nonInt + f"I bambini devono scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva' e la scelta fatta tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} (metti le parole esatte, non aggiungere parole in mezzo), altrimenti non introdurre le parole 'scena successiva'."
     elif interactions >= 12:
         return f"Intervieni e scegli tu la strada da seguire tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} e metti le parole 'scena successiva' e il percorso scelto nella tua risposta."
@@ -253,6 +253,7 @@ def handle_request_chat():
 
     counter = (counter + 1) % 2
     next_scene = False
+    conclusione = False
     scala = 0
     if "scena successiva" in response.lower():
         next_scene = True
@@ -266,6 +267,8 @@ def handle_request_chat():
         elif section == "fase_intermedia":
             section = "conclusione"
             scala = 3
+        elif section == "conclusione":
+            conclusione = True
         else:
             section = "inizio"
         interactions = 0
@@ -273,8 +276,11 @@ def handle_request_chat():
     #    response = "Non ho capito, potete ripetere quello che volete raccontare? " + response
     if "non intervengo" in response.lower():
         response = "Non intervengo"
+
+    if 'incomplete_details' in request_data:
+        response = "Non ho capito, potete ripetere quello che volete raccontare?"
     # Return the response back to Unity
-    return jsonify({"response": response, "next_scene": next_scene, "scala": scala }), 200
+    return jsonify({"response": response, "next_scene": next_scene, "scala": scala, "conclusion": conclusione }), 200
 
 @app.route('/api/image', methods=['POST'])
 def handle_request_image():

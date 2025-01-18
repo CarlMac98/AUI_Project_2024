@@ -12,6 +12,7 @@ public class NetSync : NetworkBehaviour
     public NetworkVariable<bool> next_scene = new NetworkVariable<bool>();
     public NetworkVariable<bool> askSummary = new NetworkVariable<bool>();
     public NetworkVariable<bool> storyReady = new NetworkVariable<bool>();
+    public NetworkVariable<bool> conclusione = new NetworkVariable<bool>();
 
     public NetworkVariable<FixedString32Bytes> host_name = new NetworkVariable<FixedString32Bytes>();
     public NetworkVariable<FixedString32Bytes> cli_name = new NetworkVariable<FixedString32Bytes>();
@@ -35,6 +36,7 @@ public class NetSync : NetworkBehaviour
             next_scene.Value = false;
             askSummary.Value = false;
             storyReady.Value = false;
+            conclusione.Value = false;
 
             host_name.Value = "Giocatore 1";
             cli_name.Value = "Giocatore 2";

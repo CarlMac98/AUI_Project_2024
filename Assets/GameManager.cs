@@ -9,6 +9,8 @@ using static UnityEngine.ParticleSystem;
 using System.Runtime.CompilerServices;
 using System.Collections;
 using Unity.Netcode;
+using System.IO;
+using System.Xml;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,10 +36,12 @@ public class GameManager : MonoBehaviour
     SelectStory selectStory;
     [SerializeField]
     GameObject[] serverClientScene;
+    [SerializeField]
+    MultiplayerUI multiplayerUI;
 
 
     [SerializeField]
-    private Button quit, menu, help, X, cont, exit; //menuBackButt,
+    private Button quit, menu, help, X, cont, exit, download, endGame; //menuBackButt,
     [SerializeField]
     private GameObject menuBckg, helpChat;
     
@@ -85,6 +89,8 @@ public class GameManager : MonoBehaviour
         help.onClick.AddListener(ShowHelper);        
         X.onClick.AddListener(CloseHelper);
         exit.onClick.AddListener(ExitGame);
+        download.onClick.AddListener(DownladStory);
+        endGame.onClick.AddListener(ExitGame);
 
 
         menuBckg.SetActive(false);
@@ -121,6 +127,10 @@ public class GameManager : MonoBehaviour
 
         if (scenes.Length - 1 > currentScene)
         {
+            if(currentScene > 0)
+            {
+                backButton.gameObject.SetActive(true);
+            }
             //forbid passage to the third scene if name is not inserted
             if (currentScene == 1)
             {
@@ -171,12 +181,13 @@ public class GameManager : MonoBehaviour
             {
                 serverClientScene[0].SetActive(true);
                 serverClientScene[1].SetActive(false);
-                selectStory.HighlightReset();
             }
             currentScene += 1;
             scenes[currentScene].SetActive(true);
             if (currentScene == 4 && isServer && !storyCreated)
-            {      
+            {
+                download.gameObject.SetActive(false);
+                endGame.gameObject.SetActive(false);
                 ns.storyReady.Value = true;
                 StartCoroutine(chatManager.CreateStory(story));
                 storyCreated = true;   
@@ -184,6 +195,7 @@ public class GameManager : MonoBehaviour
             if (currentScene == 5 && isServer)
             {
                 chatManager.HandleInitialMessage();
+                chatManager.chatBox.interactable = true;
             }
             if (currentScene == 4)
             {
@@ -201,6 +213,10 @@ public class GameManager : MonoBehaviour
                 backButton = GameObject.Find("Back").GetComponent<Button>();
                 backButton.onClick.RemoveAllListeners();
                 backButton.onClick.AddListener(GoBack);
+            }
+            if(isServer && currentScene == 3)
+            {
+                selectStory.HighlightReset();
             }
             if (!ns.storyReady.Value && !isServer && currentScene == 3)
             {
@@ -237,14 +253,30 @@ public class GameManager : MonoBehaviour
                 serverClientScene[0].SetActive(false);
                 serverClientScene[1].SetActive(true);
             }
+            if (isServer && currentScene == 4)
+            {
+                serverClientScene[0].SetActive(true);
+                serverClientScene[1].SetActive(false);
+            }
             currentScene -= 1;
             scenes.ToArray()[currentScene].SetActive(true);
 
             if (currentScene == 4)
             {
+                download.gameObject.SetActive(false);
+                endGame.gameObject.SetActive(false);
                 backButton.gameObject.SetActive(false);
                 background.HandleOn();
-                background.HandleImageRequest();
+                if(!ns.conclusione.Value)
+                {
+                    background.HandleImageRequest();
+                }
+                else
+                {
+                    // Attivare i tasti di download con tasto di uscita
+                    download.gameObject.SetActive(true);
+                    endGame.gameObject.SetActive(true);
+                }
             }
 
             //update buttons
@@ -264,7 +296,15 @@ public class GameManager : MonoBehaviour
         if(currentScene == 0)
         {
             NetworkManager.Singleton.Shutdown();
+            multiplayerUI.hostBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartHost(); GameManager.isServer = true; });
         }
+    }
+
+    public void DownladStory()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "Storia.txt");
+        File.WriteAllText(path, chatManager.storySummary.text);
+        Debug.Log($"Text saved to: {path}");
     }
 
     public void StoryReady() {
@@ -299,8 +339,12 @@ public class GameManager : MonoBehaviour
         //yield return StartCoroutine(background.ProcessImageRequest());
 
         //update riassuntozzo
-        yield return new WaitForSeconds(20);
-        GoAhead();
+        //if(!ns.conclusione.Value)
+        //{
+        //    yield return new WaitForSeconds(20);
+        //    GoAhead();
+        //}
+
     }
 
     void ResetGameUI()
@@ -322,10 +366,6 @@ public class GameManager : MonoBehaviour
         helperManager.userName = "";
         storyCreated = false;
         selectCharacter.resetCharacters();
-        if (isServer)
-        {
-            selectStory.HighlightReset();
-        }
         background.HandleOn();
     }
     public void setServerPlayerName(string name)
@@ -359,6 +399,8 @@ public class GameManager : MonoBehaviour
         //pythonBackendManager.StopPythonBackend();
         ResetGameUI();
         NetworkManager.Singleton.Shutdown();
+        multiplayerUI.hostBtn.onClick.AddListener(delegate { NetworkManager.Singleton.StartHost(); GameManager.isServer = true; });
+
         //pythonBackendManager.StartPythonBackend();
     }
 

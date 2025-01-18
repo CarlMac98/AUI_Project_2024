@@ -209,7 +209,7 @@ public class ChatManager : NetworkBehaviour
         players[2].color = speaking;
     }
     public void Deactivate() {
-        chatBox.DeactivateInputField();
+        chatBox.interactable = false; ;
     }
     public void NextSceneReset() 
     {

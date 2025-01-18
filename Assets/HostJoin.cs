@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class MultiplayerUI : MonoBehaviour
 {
-    [SerializeField] Button hostBtn, joinBtn;
+    [SerializeField] public Button hostBtn, joinBtn;
     [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject networkManagerPrefab;
     [SerializeField] PythonBackendManager pythonBackendManager;
     void Awake()
     {
