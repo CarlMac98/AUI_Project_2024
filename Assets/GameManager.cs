@@ -186,8 +186,6 @@ public class GameManager : MonoBehaviour
             scenes[currentScene].SetActive(true);
             if (currentScene == 4 && isServer && !storyCreated)
             {
-                download.gameObject.SetActive(false);
-                endGame.gameObject.SetActive(false);
                 ns.storyReady.Value = true;
                 StartCoroutine(chatManager.CreateStory(story));
                 storyCreated = true;   
@@ -199,7 +197,13 @@ public class GameManager : MonoBehaviour
             }
             if (currentScene == 4)
             {
+                download.gameObject.SetActive(false);
+                endGame.gameObject.SetActive(false);
                 background.HandleImageRequest();
+                if (imageGenerated)
+                {
+                    goButton.gameObject.SetActive(true);
+                }
             }
             //update buttons
             if (!GameObject.Find("Go").IsUnityNull())
@@ -365,6 +369,7 @@ public class GameManager : MonoBehaviour
         chatManager.userName = "";
         helperManager.userName = "";
         storyCreated = false;
+        imageGenerated = false;
         selectCharacter.resetCharacters();
         background.HandleOn();
     }
