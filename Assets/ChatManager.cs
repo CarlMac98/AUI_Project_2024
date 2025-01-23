@@ -103,7 +103,7 @@ public class ChatManager : NetworkBehaviour
         if (GameManager.isServer && message.player != Message.messageType.assistantMessage)
         {
             yield return chatSystem.SendMessageToAzureChat(message.username + ": "+ message.text);
-            if (!chatSystem.response.Equals("None"))
+            if (!chatSystem.response.Equals("None") && !chatSystem.response.Equals("Non intervengo"))
             {
                 //sendMessageToChat("<color=red><b>" + "Assistant" + "</b></color>: " + chatSystem.response);
 
