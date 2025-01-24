@@ -11,7 +11,7 @@ First of all you will need to install __Unity__. Once downloaded the installer f
 Then clone the repository from this GitHub page. Once downloaded it is time to install the dependencies.
 
 ### Python Dependencies
-Of course the starting point is [__install Python 3.12](https://www.python.org/downloads/) and  __install pip__ through the terminal command `py -m ensurepip --upgrade`.
+Of course the starting point is [__install Python 3.12__](https://www.python.org/downloads/) and  __install pip__ through the terminal command `py -m ensurepip --upgrade`.
 You'll need then to install _Flask_ and _openai_ through _pip_. Run the command `$ pip install Flask, openai` into the terminal.
 
 ### Unity
