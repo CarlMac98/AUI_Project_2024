@@ -69,7 +69,13 @@ def create_assistant():
     global assistant
     assistant = client.beta.assistants.create(
         model="AI-assistant",
-        instructions =  "Sei un'AI assistente che aiuta i bambini a creare storie. Rispondi in modo breve e semplice, perché i bambini non possono leggere troppo. Risolvi eventuali conflitti tra i bambini e aiutali a sviluppare la storia. Parla direttamente con loro. Non permettere di introdurre nuovi personaggi o di abbandonare quelli già presenti nella scena. Non impersonare i bambini.",
+        instructions =  "Sei un'AI assistente che aiuta i bambini a creare storie." + 
+                        " Rispondi in modo breve e semplice," +
+                        " perché i bambini non possono leggere troppo." +
+                        " Risolvi eventuali conflitti tra i bambini e aiutali a" + 
+                        " sviluppare la storia. Parla direttamente con loro." +
+                        " Non permettere di introdurre nuovi personaggi o di" + 
+                        " abbandonare quelli già presenti nella scena. Non impersonare i bambini.",
         temperature=0.8,
         top_p=1
     )
@@ -78,18 +84,18 @@ def int_intro(interactions):
     nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
         return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions == 2:
+    elif interactions == 8:
         return f"Intervieni, {JSON["inizio"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e chiedigli di decidere tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]}, la loro scelta deve essere la stessa."
-    elif interactions >= 4 and interactions < 12:
+    elif interactions >= 10 and interactions < 16:
         return nonInt + f"I bambini devono scegliere la stessa strada. Solo e soltanto quando ti rendi conto che i bambini hanno scelto, introduci nella tua risposta 'scena successiva' e la scelta fatta tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} (metti le parole esatte, non aggiungere parole in mezzo), altrimenti non introdurre le parole 'scena successiva'."
-    elif interactions >= 12:
+    elif interactions >= 18:
         return f"Intervieni e scegli tu la strada da seguire tra {JSON["inizio"]["collegamento_scena_successiva"]["percorso_1"]} e {JSON["inizio"]["collegamento_scena_successiva"]["percorso_2"]} e metti le parole 'scena successiva' e il percorso scelto nella tua risposta."
 
 def int_intermedia(interactions):
     nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
         return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions >= 4:
+    elif interactions >= 10:
         return f"Intervieni, {JSON["fase_intermedia"]["collegamento_scena_successiva"]["fine_capitolo"]}, non fare la parte dei bambini, racconta cosa succede e introduci nella tua risposta 'scena successiva'."
 
 
@@ -97,7 +103,7 @@ def int_concl(interactions):
     nonInt = "Se credi non ci sia bisogno di intervenire scrivi 'non intervengo' altrimenti intervieni e "
     if interactions == 1:
         return nonInt + "non fare uscire i personaggi dall'ambiente e non introdurre nuovi personaggi, non far abbandonare il personaggio, non fare la parte dei bambini"
-    elif interactions >= 4:
+    elif interactions >= 10:
         return f"Intervieni, {JSON["conclusione"]["conclusione"]}, non fare la parte dei bambini, racconta cosa succede come conclusione e introduci nella tua risposta 'scena successiva'."
 
 # Helper function to send messages to Azure OpenAI
